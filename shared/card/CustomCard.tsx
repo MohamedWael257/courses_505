@@ -5,6 +5,7 @@ import LocalePath from "@/shared/LocalePath";
 import React from "react";
 import { useLocale, useTranslations } from "use-intl";
 import Vector from "@/assets/images/vector.png";
+import { HalfCircleLeft } from "../Icons";
 
 type Props = {
   title: string;
@@ -56,40 +57,10 @@ export default function CustomCard({
         {showIcons && (
           <>
             <div className="absolute top-16 -start-24">
-              <svg
-                width="95"
-                height="95"
-                viewBox="0 0 95 95"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M47.5005 95C34.9027 95 22.8209 89.9955 13.9129 81.0875C5.00494 72.1796 0.000490975 60.0977 0.000489473 47.4999C0.000487972 34.9022 5.00493 22.8203 13.9129 13.9124C22.8209 5.00438 34.9027 -7.80916e-05 47.5005 -8.05445e-05L47.5005 47.4999L47.5005 95Z"
-                  fill="#FF7993"
-                />
-                <path
-                  d="M95.0005 94.9999C82.4027 94.9999 70.3209 89.9955 61.4129 81.0875C52.5049 72.1795 47.5005 60.0977 47.5005 47.4999C47.5005 34.9022 52.5049 22.8203 61.4129 13.9123C70.3209 5.00433 82.4027 -0.000119617 95.0005 -0.00012207L95.0005 94.9999Z"
-                  fill="#FF7993"
-                />
-              </svg>
+              <HalfCircleLeft color={"#FF7993"} />
             </div>
             <div className="absolute bottom-16 -end-24">
-              <svg
-                width="95"
-                height="95"
-                viewBox="0 0 95 95"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M47.5005 95C34.9027 95 22.8209 89.9955 13.9129 81.0875C5.00494 72.1796 0.000490975 60.0977 0.000489473 47.4999C0.000487972 34.9022 5.00493 22.8203 13.9129 13.9124C22.8209 5.00438 34.9027 -7.80916e-05 47.5005 -8.05445e-05L47.5005 47.4999L47.5005 95Z"
-                  fill="#FFBAA4"
-                />
-                <path
-                  d="M95.0005 94.9999C82.4027 94.9999 70.3209 89.9955 61.4129 81.0875C52.5049 72.1795 47.5005 60.0977 47.5005 47.4999C47.5005 34.9022 52.5049 22.8203 61.4129 13.9123C70.3209 5.00433 82.4027 -0.000119617 95.0005 -0.00012207L95.0005 94.9999Z"
-                  fill="#FFBAA4"
-                />
-              </svg>
+              <HalfCircleLeft color={"#FFBAA4"} />
             </div>
           </>
         )}

@@ -33,6 +33,7 @@ import { SessionType } from "../Header";
 import { useRouter } from "next/navigation";
 import { GreenDiscountIcon, RS } from "@/shared/Icons";
 import RelatedCourses from "../courses/RelatedCourses";
+import CartFilter from "./CartFilter";
 
 export default function CartCopmonent({ code }: { code: string }) {
   const locale = useLocale();
@@ -292,6 +293,7 @@ export default function CartCopmonent({ code }: { code: string }) {
       <div className="container grid lg:grid-cols-[2fr_1fr] gap-4 my-8">
         {/* CartDetails */}
         <div key="CartDetails" className="h-fit grid gap-4 mb-4">
+          <CartFilter/>
           {/* {cartData?.map((ele: any, index: number) => {
             return (
               <CartCard
