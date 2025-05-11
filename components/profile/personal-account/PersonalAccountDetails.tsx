@@ -102,7 +102,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
       children: (
         <>
           {activeUpdateData ? (
-            <>
+            <div className="bg-greynormal p-4 rounded-2xl">
               <div className="flex justify-start">
                 <div className="relative">
                   {nationalImageLoading ? (
@@ -158,9 +158,9 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                 image={image}
                 profile={profile}
               />
-            </>
+            </div>
           ) : (
-            <div>
+            <div className="bg-greynormal p-4 rounded-2xl">
               <div className="flex justify-between items-center">
                 <h2>معلومات شخصية</h2>
                 <button
@@ -200,7 +200,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
       children: (
         <>
           {activeUpdatePassword ? (
-            <>
+            <div className="bg-greynormal p-4 rounded-2xl">
               <div className="flex justify-start">
                 <div className="relative">
                   {nationalImageLoading ? (
@@ -256,9 +256,9 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                 image={image}
                 profile={profile}
               />
-            </>
+            </div>
           ) : (
-            <div>
+            <div className="bg-greynormal p-4 rounded-2xl">
               <div className="flex justify-between items-center">
                 <h2>تغيير كلمة المرور</h2>
                 <button
