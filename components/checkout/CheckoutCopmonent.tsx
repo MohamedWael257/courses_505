@@ -6,8 +6,8 @@ import CheckoutSummary from "./CheckoutSummary";
 import axiosInstance from "@/utils/axiosClient";
 import EmptyCart from "../cart/EmptyCart";
 import Loader from "@/shared/Loader/Loader";
-import { useSelector } from "react-redux";
-import { RootState } from "@/store/store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/store/store";
 import ShowAlertMixin from "@/shared/ShowAlertMixin";
 import axiosInstanceGeneralClient from "@/utils/axiosClientGeneral";
 import { SessionType } from "../Header";
@@ -16,12 +16,22 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { Form } from "@/shared/ui/form";
+import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import Swal from "sweetalert2";
+import Success from "@/assets/images/success2.gif";
+import { clearCart } from "@/store/cartStore.slice";
 
 type Props = {
   code: any;
 };
 
 export default function CheckoutCopmonent({ code }: Props) {
+  const router = useRouter();
+  const locale = useLocale();
+  const t = useTranslations();
+  const dispatch = useDispatch<AppDispatch>();
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<any>(null);
   const [locations, setLocations] = useState<any>(null);
   const session = UseSession();
@@ -31,17 +41,9 @@ export default function CheckoutCopmonent({ code }: Props) {
   const { location_id } = useSelector(
     (state: RootState) => state.locationConfig
   );
-  const [shipping_type, setShipping_type] = useState<any>("");
-  const [shipping_Value, setShipping_Value] = useState<any>("");
 
-  const [payment_method, setPayment_method] = useState<any>("");
-  const [settings, setSettings] = useState<any>(null);
-  const setting = settings?.reduce((acc: any, item: any) => {
-    acc[item.key] = item.value;
-    return acc;
-  }, {});
-   const formSchema = yup.object({
-        full_name: yup
+  const formSchema = yup.object({
+    full_name: yup
       .string()
       .required("name is a required field")
       .matches(/^(\S+\s)+\S+(\S|$)/, "The value must be two words")
@@ -56,37 +58,47 @@ export default function CheckoutCopmonent({ code }: Props) {
     country_id: yup.string().required("country is a required field"),
     level: yup.string().required("level is a required field"),
     payment_method: yup.string().required("this_field_is_required"),
-      location: yup.string().required("this_field_is_required"),
-      shipping_type: yup.string().required("this_field_is_required"),
-    });
-   const form = useForm({
-      // resolver: yupResolver(formSchema),
-      defaultValues: {
-         full_name: "",
+    location: yup.string().required("this_field_is_required"),
+    addtional_phone: yup.string().required("this_field_is_required"),
+    addtional_phone_code: yup.string().required("this_field_is_required"),
+    city_id: yup.string().required("this_field_is_required"),
+    location_id: yup.string().required("this_field_is_required"),
+    address_id: yup.string().required("this_field_is_required"),
+    location_name: yup.string().required("this_field_is_required"),
+    location_number: yup.string().required("this_field_is_required"),
+    room_number: yup.string().required("this_field_is_required"),
+    location_discription: yup.string().required("this_field_is_required"),
+    location_email: yup.string().required("this_field_is_required"),
+    location_defalut: yup.string().required("this_field_is_required"),
+  });
+  const form = useForm({
+    // resolver: yupResolver(formSchema),
+    defaultValues: {
+      full_name: "",
       email: "",
       phone: "",
       phone_code: "",
-       country_id: "",
+      country_id: "",
       level: "",
+
       location: "",
       addtional_phone: "",
       addtional_phone_code: "",
-      city_id:"",
-      location_id:"",
-      address_id:"",
-home_number:"",
-room_number:"",
-location_discription:"",
-location_email:"",
-location_defalut:"",
+      city_id: "",
+      location_id: "",
+      address_id: "",
+      location_name: "",
+      location_number: "",
+      room_number: "",
+      location_discription: "",
+      location_email: "",
+      location_defalut: "",
+
       payment_method: "",
-        shipping_type: "",
-      },
-    });
-  const { getvalues,setValue, watch } = form;
-  const selectedTypeShipping = watch("shipping_type"); // Watch TypeVerify changes
-  const selectedTypePayment = watch("payment_method"); // Watch TypeVerify changes
- 
+    },
+  });
+  const { getValues, setValue, watch } = form;
+
   //  const { mutate: RegisterMutate, isLoading: LoadingComplete } = UseMutate({
   //   endpoint: "complete-register",
   //   onSuccess: (responseData: any) => {
@@ -140,17 +152,10 @@ location_defalut:"",
   // useEffect(() => {
   //   fetchData();
   // }, []);
- async function onSubmit(
+  async function onSubmit(
     values: yup.InferType<typeof formSchema>,
     actions: any
   ) {
-    // @ts-ignore
-    // if (values.phone === "") {
-    //   setThrowErrorPhone(true);
-    //   return;
-    // } else {
-    //   setThrowErrorPhone(false);
-    // }
     const finalOut = {
       full_name: values?.full_name,
       email: values?.email,
@@ -161,23 +166,46 @@ location_defalut:"",
       location: values?.location,
       addtional_phone: values?.addtional_phone,
       addtional_phone_code: values?.addtional_phone_code,
-      city_id:values?.city_id,
-      location_id:values?.location_id,
-      address_id:values?.address_id,
-home_number:values?.home_number,
-room_number:values?.room_number,
-location_discription:values?.location_discription,
-location_email:values?.location_email,
-location_defalut:values?.location_defalut,
+      city_id: values?.city_id,
+      location_id: values?.location_id,
+      address_id: values?.address_id,
+      location_name: values?.location_name,
+      location_number: values?.location_number,
+      room_number: values?.room_number,
+      location_discription: values?.location_discription,
+      location_email: values?.location_email,
+      location_defalut: values?.location_defalut,
       payment_method: values?.payment_method,
-        shipping_type: values?.shipping_type,
     };
-    ShowAlertMixin({
-      type: 15,
-      icon: "success",
-      title: "success",
+    Swal.fire({
+      title: "res?.data?.message",
+      showConfirmButton: false,
+      imageUrl: `${Success.src}`,
+      footer: `<p id="swal2-footer"> ${t("Text.goToMyOrders")}</p>`,
+      customClass: {
+        popup: "custom-popup-class",
+        title: "custom-title-class",
+        footer: "custom-footer-class",
+      },
+      padding: "1rem",
+      didOpen: () => {
+        const footerLink = document.getElementById("swal2-footer");
+
+        if (footerLink) {
+          footerLink.addEventListener("click", () => {
+            Swal.close();
+            router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
+            dispatch(clearCart());
+          });
+        }
+      },
     });
-    router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
+    setTimeout(() => {
+      Swal.close();
+      router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
+      dispatch(clearCart());
+    }, 3000);
+    setIsLoading(false);
   }
   return (
     <>
@@ -185,33 +213,34 @@ location_defalut:values?.location_defalut,
         <Loader />
       ) : data?.data?.length > 0 ? (
         <> */}
-                <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
-      <div className="container py-8 grid lg:grid-cols-[2fr_1fr] gap-4 overflow-hidden">
-        <div>
-          <CheckoutDetails
-            setPayment_method={setPayment_method}
-            setShipping_type={setShipping_type}
-            setShipping_Value={setShipping_Value}
-            data={data}
-            setting={setting}
-            locations={locations}
-            // refresh={fetchData}
-          />
-        </div>
-        <CheckoutSummary
-          location_id={location_id}
-          payment_method={payment_method}
-          shipping_type={shipping_type}
-          shipping_Value={shipping_Value}
-          data={data}
-          code={code}
-          locations={locations}
-          memoizedSession={memoizedSession}
-        />
-      </div>
-      </form>
-        </Form>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <div className="container py-8 grid lg:grid-cols-[2fr_1fr] gap-4 overflow-hidden">
+            <div>
+              <CheckoutDetails
+                data={data}
+                getValues={getValues}
+                setValue={setValue}
+                watch={watch}
+                form={form}
+                // refresh={fetchData}
+              />
+            </div>
+            <CheckoutSummary
+              isLoading={false}
+              location_id={location_id}
+              data={data}
+              code={code}
+              locations={locations}
+              memoizedSession={memoizedSession}
+              getValues={getValues}
+              setValue={setValue}
+              watch={watch}
+              form={form}
+            />
+          </div>
+        </form>
+      </Form>
       {/* </>
        ) : (
          <EmptyCart />

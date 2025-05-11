@@ -1,3 +1,4 @@
+//@ts-nocheck
 import React, { useEffect, useState } from "react";
 import {
   FormControl,
@@ -13,6 +14,7 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/utils/helpers";
 import { CountryPhoneCodes } from "@/public/countries/country-phone-code";
 import { Skeleton } from "../ui/skeleton";
+import axiosInstanceGeneralClient from "@/utils/axiosClientGeneral";
 
 interface PhoneNumberProps {
   label?: string;
@@ -21,17 +23,22 @@ interface PhoneNumberProps {
   placeholder?: string;
   disabled?: boolean;
   className?: string;
+  name?: string;
+  phone_code_name?: string;
   throwErrorPhone?: boolean;
 }
 
 const PhoneNumber: React.FC<PhoneNumberProps> = ({
   label,
+  name,
+  phone_code_name,
   showRequired = false,
   country = "sa",
   placeholder = "Enter phone number",
   disabled = false,
   className,
-  throwErrorPhone = false,
+  throwErrorPhone,
+  ...props
 }) => {
   const form = useFormContext();
   const t = useTranslations("LABELS");
@@ -54,18 +61,10 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
     const fetchCountries = async () => {
       try {
         setLoading(true);
-        const response = await fetch(
-          "https://doom.elsayed.aait-d.com/api/general/countries",
-          {
-            method: "GET",
-            headers: {
-              "Accept-Language": "en",
-            },
-          }
-        );
-        const data = await response.json();
+        const response = await axiosInstanceGeneralClient.get("countries");
+        const data = await response?.data;
 
-        const filteredCountries = data.data.filter((country: any) =>
+        const filteredCountries = data?.data?.filter((country: any) =>
           CountryPhoneCodes.some(
             (item) =>
               item.dial_code.replace("+", "") === String(country.phone_code)
@@ -126,15 +125,7 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
   ) => {
     const phoneNumber = value.slice(country.dialCode.length).trim();
 
-    // Only set the phone value if it's not empty
-    if (phoneNumber) {
-      setValue("phone", phoneNumber);
-    } else {
-      // If the phone number is empty, do not update the phone_code
-      setValue("phone", "");
-    }
-
-    // Always set the phone_code based on the selected country
+    setValue("phone", phoneNumber);
     setValue("phone_code", country.dialCode);
   };
   const onlyCountries = countries
@@ -148,7 +139,7 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
       render={({ field }) => (
         <FormItem className={cn("w-full", className)}>
           {label && (
-            <FormLabel className="font-medium text-lg leading-6 my-2 px-2">
+            <FormLabel className="font-medium text-lg   leading-8 my-2 px-2">
               {showRequired && <span className="text-error">*</span>}
               {t(label)}
             </FormLabel>
@@ -157,7 +148,7 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
           <FormControl>
             <div dir="ltr" className="relative">
               {loading ? (
-                <Skeleton className="w-full h-14 rounded-full" />
+                <Skeleton className="w-full h-16 rounded-[12px]" />
               ) : (
                 <PhoneInput
                   enableSearch
@@ -177,7 +168,8 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
                     height: "64px",
                     paddingLeft: "60px",
                     borderColor:
-                      errors["phone"] || errors["phone_code"] || throwErrorPhone
+                      (errors.phone || errors.phone_code) &&
+                      !errors.phone?.ref.value
                         ? "#ef233c"
                         : "#EAEDF0",
                   }}
@@ -189,25 +181,25 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
                     borderRadius: "50%",
                     border: "none",
                   }}
+                  // {...field}
                   value={formatPhoneNumber(phone_code, phone)}
                   onChange={handlePhoneChange}
+                  // {...props}
                 />
               )}
-              {errors &&
-                (errors.phone || errors.phone_code || throwErrorPhone) && (
+              {(errors.phone || errors.phone_code) &&
+                !errors.phone?.ref.value && (
                   <p
                     role="alert"
                     style={{ color: "#ef233c " }}
                     className="text-error text-sm rtl:text-end"
                   >
-                    {throwErrorPhone && t("The phone field must be a number")}
+                    {/* {throwErrorPhone && t("The phone field must be a number")} */}
                     {errors.phone && t(errors.phone?.message)}
-                    {errors.phone_code && t(errors.phone_code?.message)}
                   </p>
                 )}
             </div>
           </FormControl>
-
           <FormMessage />
         </FormItem>
       )}
