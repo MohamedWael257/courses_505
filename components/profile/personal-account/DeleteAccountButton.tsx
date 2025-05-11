@@ -16,10 +16,13 @@ import { ClearCompare } from "@/store/comparisons";
 import { handleLocationFetch } from "@/utils/helpers";
 import Cookies from "js-cookie";
 import { setLocation } from "@/store/locationSlice";
+import { Delete } from "@/shared/Icons";
 
-type Props = {};
+type Props = {
+  setOpen?: any;
+};
 
-export default function DeleteAccountButton({}: Props) {
+export default function DeleteAccountButton({ setOpen }: Props) {
   const t = useTranslations();
   const locale = useLocale();
   const router = useRouter();
@@ -74,23 +77,18 @@ export default function DeleteAccountButton({}: Props) {
       });
   };
   return (
-    <>
-      <div className="sm:flex gap-4 items-center mb-4">
-        <div className=" flex-1 mb-3">
-          <h2 className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
-            {t("Text.deleteAccount")}
-          </h2>
-          <h2 className="text-secondrydark  text-base font-medium   leading-7 text-start">
-            {t("Text.deleteAccountDesc")}
-          </h2>
-        </div>
-        <button
-          onClick={deleteItem}
-          className="text-center w-fit px-12 py-3 bg-white text-error font-medium rounded-lg border-[1px] border-error"
-        >
-          {t("BUTTONS.deleteAccount")}
-        </button>
-      </div>
-    </>
+    <button
+      onClick={() => {
+        deleteItem();
+        if (setOpen) {
+          setOpen(false);
+        }
+      }}
+      className="text-error flex gap-2 text-lg font-medium   leading-8 items-center lg:px-3"
+    >
+      <Delete className="size-6" color={"#ef233c"} />
+
+      {t("BUTTONS.deleteAccount")}
+    </button>
   );
 }

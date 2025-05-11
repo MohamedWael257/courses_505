@@ -3,14 +3,6 @@ import Image from "next/image";
 import React from "react";
 import ImageWithFallback from "../ImageWithFallback";
 import { SlLocationPin } from "react-icons/sl";
-import { LiaUserEditSolid } from "react-icons/lia";
-import { BiCoinStack } from "react-icons/bi";
-import { LiaGiftSolid } from "react-icons/lia";
-import { FaRegStar } from "react-icons/fa";
-import { BsChatSquareText } from "react-icons/bs";
-import { LuWallet } from "react-icons/lu";
-import { PiBookmarkSimpleBold } from "react-icons/pi";
-import { RiFileCopy2Line } from "react-icons/ri";
 import {
   Chats,
   Coupons,
@@ -27,6 +19,13 @@ const useAccountLinks = () => {
 
   const accountMenuItems = [
     {
+      name: t("Edit profile"),
+      path: "/profile/personal-account",
+      icon: <EditProfile className="size-10" color={"#3E3E3E"} />,
+
+      activeIcon: <EditProfile className="size-10" color={"#4F008C"} />,
+    },
+    {
       name: t("addresses"),
       path: "/profile/addresses",
       icon: <SlLocationPin size={40} />,
@@ -39,13 +38,6 @@ const useAccountLinks = () => {
       icon: <Orders className="size-10" color={"#3E3E3E"} />,
 
       activeIcon: <Orders className="size-10" color={"#4F008C"} />,
-    },
-    {
-      name: t("Edit profile"),
-      path: "/profile/personal-account",
-      icon: <EditProfile className="size-10" color={"#3E3E3E"} />,
-
-      activeIcon: <EditProfile className="size-10" color={"#4F008C"} />,
     },
     {
       name: t("wallet"),

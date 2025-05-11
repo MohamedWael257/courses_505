@@ -12,6 +12,7 @@ import MobileSheet from "@/shared/MobileSheet";
 import LogoutButton from "@/components/profile/LogoutButton";
 import UseSession from "@/store/UseSession";
 import ProfileImage from "@/assets/images/profile.png";
+import DeleteAccountButton from "@/components/profile/personal-account/DeleteAccountButton";
 
 export default function ProfileLayout({
   children,
@@ -133,6 +134,7 @@ export default function ProfileLayout({
                     );
                   })}
                   <LogoutButton />
+                  <DeleteAccountButton/>
                 </ul>
               </div>
             </div>
