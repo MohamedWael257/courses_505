@@ -1,0 +1,296 @@
+@layer base {
+  /* Allura */
+  @font-face {
+    font-display: swap;
+    font-family: "SchibstedGrotesk";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Regular.ttf")
+      format("woff2");
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "SchibstedGrotesk";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../public/assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Medium.ttf")
+      format("woff2");
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "SchibstedGrotesk";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../public/assets/fonts/SchibstedGrotesk/SchibstedGrotesk-SemiBold.ttf")
+      format("woff2");
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "SchibstedGrotesk";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../public/assets/fonts/SchibstedGrotesk/SchibstedGrotesk-Bold.ttf")
+      format("woff2");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Alex";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/assets/fonts/AlexBrush-Regular.ttf") format("woff2");
+  }
+  @font-face {
+    font-display: swap;
+    font-family: "Allura";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/assets/fonts/Allura-Regular.ttf") format("woff2");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Switzer";
+    font-style: normal;
+    font-weight: 300;
+    src: url("../public/assets/fonts/switzer/Switzer-Light.otf") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Switzer";
+    font-style: normal;
+    font-weight: 400;
+    src: url("../public/assets/fonts/switzer/Switzer-Regular.otf")
+      format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Switzer";
+    font-style: normal;
+    font-weight: 500;
+    src: url("../public/assets/fonts/switzer/Switzer-Medium.otf")
+      format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* Switzer-600 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: "Switzer";
+    font-style: normal;
+    font-weight: 600;
+    src: url("../public/assets/fonts/switzer/Switzer-Semibold.otf")
+      format("woff2");
+  }
+
+  /* Switzer-700 - latin */
+
+  /* Switzer-900 - latin */
+  @font-face {
+    font-display: swap;
+    font-family: "Switzer";
+    font-style: normal;
+    font-weight: 700;
+    src: url("../public/assets/fonts/switzer/Switzer-Bold.otf") format("woff2");
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  @font-face {
+    font-family: "Din";
+    font-weight: 200;
+
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNextLTArabic-UltraLight.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Din";
+    font-weight: 300;
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNEXTLTARABIC-LIGHT-.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Din";
+    font-weight: 400;
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNextLTArabic-Regular.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Din";
+    font-weight: 500;
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNextLTArabic-Medium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Din";
+    font-weight: 600;
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNextLTArabic-Medium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Din";
+    font-weight: 700;
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNextLTArabic-Bold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Din";
+    font-weight: 800;
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNextLTArabic-Heavy.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Din";
+    font-weight: 900;
+    src: url("../public/assets/fonts/din/ArbFONTS-DINNextLTArabic-Black.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 100;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Thin.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 200;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-XLight.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 300;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Light.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 400;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Regular.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 500;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Medium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 600;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Medium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 700;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Demi.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 800;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Bold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "URWDin";
+    font-weight: 900;
+    src: url("../public/assets/fonts/urwdin/URWDINArabic-Black.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Cairo";
+    font-weight: 600;
+    src: url("../public/assets/fonts/Cairo/Cairo-Medium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Cairo";
+    font-weight: 700;
+    src: url("../public/assets/fonts/Cairo/Cairo-Bold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Cairo";
+    font-weight: 800;
+    src: url("../public/assets/fonts/Cairo/Cairo-SemiBold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Cairo";
+    font-weight: 900;
+    src: url("../public/assets/fonts/Cairo/Cairo-Black.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 100;
+    src: url("../public/assets/fonts/Alex/Alexandria-Thin.ttf");
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: "Alex";
+    font-weight: 200;
+    src: url("../public/assets/fonts/Alex/Alexandria-ExtraLight.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 300;
+    src: url("../public/assets/fonts/Alex/Alexandria-Light.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 400;
+    src: url("../public/assets/fonts/Alex/Alexandria-Regular.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 500;
+    src: url("../public/assets/fonts/Alex/Alexandria-Medium.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 600;
+    src: url("../public/assets/fonts/Alex/Alexandria-SemiBold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 700;
+    src: url("../public/assets/fonts/Alex/Alexandria-Bold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 800;
+    src: url("../public/assets/fonts/Alex/Alexandria-ExtraBold.ttf");
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alex";
+    font-weight: 900;
+    src: url("../public/assets/fonts/Alex/Alexandria-Black.ttf");
+    font-display: swap;
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

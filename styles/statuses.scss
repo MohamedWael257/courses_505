@@ -1,0 +1,57 @@
+.statuses {
+  margin-top: 5px;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 16px;
+}
+.statuses.rent,
+.statuses.delivered_for_shipment {
+  background: #fff4cc;
+  color: #9c8157;
+}
+.statuses.pending,
+.statuses.under_construction,
+.statuses.reserved,
+.statuses.preparing,
+.statuses.prepare {
+  background: #fff4cc;
+  color: #ffc800;
+}
+
+.statuses.canceled,
+.statuses.un_read,
+.statuses.rejected,
+.statuses.unavailable,
+.statuses.cancelled,
+.statuses.inactive,
+.statuses.sold,
+.statuses.returned {
+  background: #ffdee8;
+  color: #ff2366;
+}
+
+.statuses.shipped,
+/* .statuses.under_construction, */
+.statuses.on_the_way {
+  background: #f3dcff;
+  color: #a900ff;
+}
+
+.statuses.accepted,
+.statuses.active,
+.statuses.available,
+.statuses.paid,
+.statuses.completed,
+.statuses.is_read,
+.statuses.sale,
+.statuses.delivered_to_customer,
+.statuses.finished {
+  background: #ccf2e4;
+  color: #16c182;
+}
+
+.statuses.unpaid,
+.statuses.returned {
+  background: #e5e7ec;
+  color: #8994a8;
+}

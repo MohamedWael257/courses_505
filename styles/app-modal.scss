@@ -1,0 +1,31 @@
+
+.createApp-Modal{
+    .ant-modal-content{
+        @apply lg:max-w-[550px] ;
+        .ant-modal-title{
+            @apply text-sm md:text-[20px] text-text #{!important};
+        }
+        .ant-modal-close{
+            @apply bg-[#F0F0F2];
+        }
+        .ant-modal-header{
+            @apply mb-6;
+        }
+    }
+}
+
+.register-video-wrap{
+    .createApp-Modal{
+        @apply lg:w-[1200px] #{!important};
+        .ant-modal-content{
+            @apply max-w-full  p-[50px] bg-transparent #{!important};
+        }
+    }
+}
+
+
+.custom-Modal{
+    .ant-modal-content{
+        @apply lg:max-w-full ;
+    }
+}

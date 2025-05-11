@@ -1,0 +1,234 @@
+// Slider customization
+.ant-slider {
+  .ant-slider-step {
+    @apply bg-[#000]/[.026];
+  }
+  .ant-slider-track-1,
+  .ant-slider-track,
+  .ant-slider-handle-dragging {
+    @apply bg-primary;
+  }
+  .ant-slider-handle {
+    @apply after:bg-primary after:shadow-none before:hidden;
+  }
+}
+
+// Drawer customization
+.ant-drawer-body {
+  @apply overflow-hidden !important;
+}
+
+// Collapse customization
+.ant-collapse {
+  @apply border-none bg-transparent border-b-transparent rounded-none !important;
+
+  .ant-collapse-item {
+    @apply border-b-transparent !important;
+
+    .ant-collapse-content-box,
+    .ant-collapse-header {
+      @apply px-0 !important;
+    }
+
+    .ant-collapse-expand-icon {
+      @apply rotate-90 text-lg font-bold p-0 !important;
+    }
+
+    .ant-collapse-arrow {
+      @apply text-sm font-bold !important;
+    }
+
+    &.ant-collapse-item-active {
+      .ant-collapse-expand-icon {
+        @apply -rotate-180 !important;
+      }
+    }
+  }
+
+  .ant-collapse-content {
+    @apply bg-transparent border-none !important;
+  }
+}
+
+// Checkbox customization
+.ant-checkbox {
+  .ant-checkbox-inner {
+    @apply rounded-s-none rounded-e-[4px] after:hidden border-[#ccc] bg-transparent 
+           hover:border-[#ccc] size-5 transition-all duration-150;
+  }
+  span {
+    @apply font-semibold;
+  }
+}
+
+.ant-checkbox-wrapper-checked {
+  .ant-checkbox .ant-checkbox-inner {
+    @apply bg-primary hover:bg-primary !important;
+  }
+}
+
+// Input Number customization
+.ant-input-number-outlined {
+  @apply w-[85px] font-bold rounded-[4px] p-2 h-10 border-0 border-[#b0b0b0]   leading-[18px];
+
+  .ant-input-number-suffix {
+    @apply m-0;
+  }
+}
+
+// Pagination customization
+.ant-pagination {
+  .ant-pagination-prev,
+  .ant-pagination-next,
+  .anticon-double-right,
+  .anticon-double-left {
+    @apply rtl:rotate-180;
+  }
+
+  .ant-pagination-item {
+    @apply border-secondary rounded-full;
+
+    a {
+      @apply text-secondary font-bold;
+    }
+
+    &.ant-pagination-item-active {
+      @apply bg-secondary;
+
+      a {
+        @apply text-white;
+      }
+    }
+  }
+}
+
+// Additional common components
+
+// Button customization
+.ant-btn {
+  @apply font-semibold rounded-md transition-all duration-200;
+
+  &.ant-btn-primary {
+    @apply bg-primary hover:bg-primary/90;
+  }
+
+  &.ant-btn-default {
+    @apply border-greynormal hover:border-primary hover:text-primary;
+  }
+}
+
+// Input customization
+.ant-input {
+  @apply rounded-md border-greynormal transition-all duration-200;
+
+  &:hover,
+  &:focus {
+    @apply border-primary;
+  }
+}
+
+// Select customization
+.ant-select {
+  .ant-select-selector {
+    @apply rounded-md border-greynormal transition-all duration-200;
+  }
+
+  &:hover .ant-select-selector {
+    @apply border-primary;
+  }
+}
+
+// Modal customization
+.ant-modal {
+  .ant-modal-content {
+    @apply rounded-lg p-6;
+  }
+
+  .ant-modal-header {
+    @apply mb-4;
+  }
+
+  .ant-modal-title {
+    @apply text-xl font-bold;
+  }
+}
+.order-steps {
+  .ant-steps-item-container {
+    @apply flex;
+    .ant-steps-item-icon {
+      @apply bg-platinum z-[1] size-4 #{!important};
+      .ant-steps-icon {
+        @apply hidden;
+        svg {
+          @apply size-2;
+        }
+        .anticon {
+          @apply text-white  #{!important};
+          vertical-align: inherit;
+        }
+      }
+    }
+    .ant-steps-item-tail {
+      @apply h-[135%] inset-auto ms-[7px] after:bg-platinum after:h-[150%] after:-mt-[2.3rem] after:w-[2px] #{!important};
+    }
+    .ant-steps-item-title {
+      @apply font-bold !text-text text-xs sm:text-sm   leading-none mb-3 #{!important};
+    }
+    .ant-steps-item-description {
+      @apply font-semibold !text-secondrydark text-xs sm:text-sm   leading-none  mb-3  #{!important};
+    }
+  }
+  .ant-steps-item-active,
+  .ant-steps-item-finish {
+    .ant-steps-item-icon {
+      @apply flex items-center justify-center;
+      .ant-steps-icon {
+        @apply block #{!important};
+      }
+      @apply bg-success #{!important};
+    }
+    .ant-steps-item-tail::after {
+      @apply bg-success  #{!important};
+    }
+  }
+  .ant-steps-item-error {
+    .ant-steps-icon {
+      @apply block #{!important};
+    }
+    .ant-steps-item-icon,
+    .ant-steps-item-tail::after {
+      @apply bg-[#C21D20] #{!important};
+    }
+  }
+}
+
+.custom-tabs-wrapper {
+  .ant-tabs-nav {
+    .ant-tabs-ink-bar,
+    &::before {
+      @apply hidden;
+    }
+  }
+  .ant-tabs-nav-list {
+    @apply flex items-center pb-4 p-0 text-center w-fit gap-3 lg:gap-6 overflow-x-auto;
+    // &::-webkit-scrollbar {
+    //   height: 5px; /* Set scrollbar height */
+    // }
+    .ant-tabs-tab {
+      @apply flex items-center justify-center border border-solid lg:min-w-[175px]  hover:text-primary focus:text-primary rounded-xl border-platinum m-0;
+      .ant-tabs-tab-btn {
+        @apply px-1.5 text-sm font-semibold;
+      }
+      &.ant-tabs-tab-active {
+        @apply border-primary;
+        .ant-tabs-tab-btn {
+          @apply text-primary;
+        }
+      }
+    }
+  }
+}
+
+.search-drop-down .ant-dropdown-menu{
+  @apply max-h-[400px];
+}

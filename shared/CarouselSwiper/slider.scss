@@ -1,0 +1,36 @@
+.swiper {
+  overflow: visible !important;
+  @apply pb-16;
+
+  .swiper-slide {
+    img {
+      @apply scale-100 w-full h-full object-contain;
+      transition: transform 0.3s ease;
+    }
+    &.swiper-slide-active {
+      @apply relative;
+      img.image {
+        @apply scale-100;
+      }
+      .image-wrapper {
+        @apply block absolute top-0 left-0 w-full h-full scale-110;
+      }
+    }
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: calc(100% + 15px) !important;
+    margin-top: unset !important;
+    @apply bg-white size-16 rounded-full text-sm;
+    &::after {
+      @apply text-primary text-xl;
+    }
+  }
+  .swiper-button-prev {
+    left: unset;
+    right: unset;
+    @apply end-20;
+  }
+  .swiper-button-next {
+  }
+}

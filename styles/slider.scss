@@ -1,0 +1,12 @@
+.swiper.swiper-initialized {
+  @apply pb-10;
+  .swiper-pagination {
+    @apply bottom-[45px];
+    .swiper-pagination-bullet {
+      @apply w-[.5rem] h-[.5rem] bg-white  rounded-[35px];
+    }
+    .swiper-pagination-bullet-active {
+      @apply w-8 lg:w-[45px] h-1.5 bg-white  rounded-[35px];
+    }
+  }
+}

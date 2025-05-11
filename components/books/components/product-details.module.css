@@ -1,0 +1,13 @@
+@media (max-width: 380px) {
+  .product-details-button-style,
+  .product-details-outer {
+    flex-direction: column;
+  }
+  .product-details-button-control {
+    @apply md:!w-full w-fit;
+  }
+}
+
+.product-details-button-control .main-input-container {
+  @apply !w-full;
+}

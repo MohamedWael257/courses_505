@@ -1,0 +1,59 @@
+.app-form {
+  input,
+  textarea,
+  .ant-select,
+  .ant-input-password,
+  .ant-picker,
+  .ant-otp-input,
+  .ant-input {
+    @apply h-[52px] border-subborder rounded-full   placeholder:text-[#9E9E9E] focus:border-subborder hover:border-subborder;
+  }
+
+  .ant-input-password .ant-input {
+    @apply h-[42px];
+  }
+
+  textarea {
+    @apply h-[120px];
+  }
+
+  .ant-input,
+  .ant-picker,
+  .ant-input-number,
+  .ant-input-number-affix-wrapper {
+    @apply w-full;
+    .ant-input-number-input {
+      @apply text-secondrytext #{!important};
+    }
+  }
+
+  label {
+    @apply max-md:text-sm w-full text-greynormal font-semibold #{!important};
+  }
+
+  .ant-select-multiple {
+    .ant-select-selection-wrap {
+      align-self: center;
+    }
+  }
+
+  .full-modal-btn * {
+    @apply w-full;
+  }
+  .ant-otp {
+    @apply gap-4;
+    .ant-otp-input {
+      @apply size-[59px] #{!important};
+    }
+  }
+
+  .ant-radio-group {
+    @apply w-full gap-2 flex items-center;
+    .ant-radio-button-wrapper {
+      @apply flex-1 flex items-center justify-center border hover:text-primary min-h-11 rounded-xl border-platinum before:hidden;
+      &.ant-radio-button-wrapper-checked {
+        @apply border-primary text-primary #{!important};
+      }
+    }
+  }
+}
