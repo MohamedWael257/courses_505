@@ -12,6 +12,10 @@ import ShowAlertMixin from "@/shared/ShowAlertMixin";
 import axiosInstanceGeneralClient from "@/utils/axiosClientGeneral";
 import { SessionType } from "../Header";
 import UseSession from "@/store/UseSession";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { Form } from "@/shared/ui/form";
 
 type Props = {
   code: any;
@@ -36,6 +40,78 @@ export default function CheckoutCopmonent({ code }: Props) {
     acc[item.key] = item.value;
     return acc;
   }, {});
+   const formSchema = yup.object({
+        full_name: yup
+      .string()
+      .required("name is a required field")
+      .matches(/^(\S+\s)+\S+(\S|$)/, "The value must be two words")
+      .max(250, "The full name must be less than 250 characters"),
+    email: yup
+      .string()
+      .email("invalid_email_address")
+      .required("email is a required field"),
+    phone: yup.string().required("phone_required"),
+
+    phone_code: yup.string(),
+    country_id: yup.string().required("country is a required field"),
+    level: yup.string().required("level is a required field"),
+    payment_method: yup.string().required("this_field_is_required"),
+      location: yup.string().required("this_field_is_required"),
+      shipping_type: yup.string().required("this_field_is_required"),
+    });
+   const form = useForm({
+      // resolver: yupResolver(formSchema),
+      defaultValues: {
+         full_name: "",
+      email: "",
+      phone: "",
+      phone_code: "",
+       country_id: "",
+      level: "",
+      location: "",
+      addtional_phone: "",
+      addtional_phone_code: "",
+      city_id:"",
+      location_id:"",
+      address_id:"",
+home_number:"",
+room_number:"",
+location_discription:"",
+location_email:"",
+location_defalut:"",
+      payment_method: "",
+        shipping_type: "",
+      },
+    });
+  const { getvalues,setValue, watch } = form;
+  const selectedTypeShipping = watch("shipping_type"); // Watch TypeVerify changes
+  const selectedTypePayment = watch("payment_method"); // Watch TypeVerify changes
+ 
+  //  const { mutate: RegisterMutate, isLoading: LoadingComplete } = UseMutate({
+  //   endpoint: "complete-register",
+  //   onSuccess: (responseData: any) => {
+  //     // setTimeout(() => {
+  //     //   setIsDialogOpen(true);
+  //     //   setAuthStage("TypeVerifyCodeRegister");
+  //     // }, 300);
+  //     ShowAlertMixin({
+  //       type: 15,
+  //       icon: "success",
+  //       title: responseData?.message,
+  //     });
+  //     router.replace(`${locale == "ar" ? "" : "/en"}/auth/verify-code-email`);
+  //   },
+
+  //   onError: (error: any) => {
+  //     // @ts-ignore
+  //     const errorMessage = error?.message;
+  //     ShowAlertMixin({
+  //       type: 15,
+  //       icon: "error",
+  //       title: errorMessage,
+  //     });
+  //   },
+  // });
   // const fetchData = async () => {
   //   try {
   //     const [response1, response2, response3] = await Promise.all([
@@ -64,13 +140,53 @@ export default function CheckoutCopmonent({ code }: Props) {
   // useEffect(() => {
   //   fetchData();
   // }, []);
-
+ async function onSubmit(
+    values: yup.InferType<typeof formSchema>,
+    actions: any
+  ) {
+    // @ts-ignore
+    // if (values.phone === "") {
+    //   setThrowErrorPhone(true);
+    //   return;
+    // } else {
+    //   setThrowErrorPhone(false);
+    // }
+    const finalOut = {
+      full_name: values?.full_name,
+      email: values?.email,
+      phone: values?.phone,
+      phone_code: values?.phone_code,
+      country_id: values?.country_id,
+      level: values?.level,
+      location: values?.location,
+      addtional_phone: values?.addtional_phone,
+      addtional_phone_code: values?.addtional_phone_code,
+      city_id:values?.city_id,
+      location_id:values?.location_id,
+      address_id:values?.address_id,
+home_number:values?.home_number,
+room_number:values?.room_number,
+location_discription:values?.location_discription,
+location_email:values?.location_email,
+location_defalut:values?.location_defalut,
+      payment_method: values?.payment_method,
+        shipping_type: values?.shipping_type,
+    };
+    ShowAlertMixin({
+      type: 15,
+      icon: "success",
+      title: "success",
+    });
+    router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
+  }
   return (
     <>
       {/* {isLoadingFirstTime ? (
         <Loader />
       ) : data?.data?.length > 0 ? (
         <> */}
+                <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)}>
       <div className="container py-8 grid lg:grid-cols-[2fr_1fr] gap-4 overflow-hidden">
         <div>
           <CheckoutDetails
@@ -94,6 +210,8 @@ export default function CheckoutCopmonent({ code }: Props) {
           memoizedSession={memoizedSession}
         />
       </div>
+      </form>
+        </Form>
       {/* </>
        ) : (
          <EmptyCart />

@@ -222,3 +222,17 @@ function addQueryParams(url: string, params?: Record<string, any>): string {
   const query = new URLSearchParams(params as any).toString();
   return query ? `${url}?${query}` : url;
 }
+//  export const UpdateProfile = async () => {
+//     try {
+//       const response = await axiosInstanceClient.get("/profile");
+
+//       dispatch(updateUser(response.data.data));
+//     } catch (error: any) {
+//       ShowAlertMixin({
+//         type: 15,
+//         icon: "error",
+//         title: error?.response?.data?.message,
+//       });
+//     } finally {
+//     }
+//   };
