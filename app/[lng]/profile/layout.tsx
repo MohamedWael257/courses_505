@@ -4,7 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePathname } from "next/navigation";
 import React, { ReactNode, useMemo, useEffect, useState } from "react";
 import { SessionType } from "@/components/Header";
-import BreadcrumbSlugs from "@/shared/Breadcrumbs/CustomBreadcrumbs";
+import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
 import LocalePath from "@/shared/LocalePath";
 import useAccountLinks from "@/shared/header/useAccountLinks";
 import ImageWithFallback from "@/shared/ImageWithFallback";
@@ -63,7 +63,7 @@ export default function ProfileLayout({
     <div className="bg-greynormal overflow-hidden">
       <div className="container py-4">
         <div className="my-4">
-          <BreadcrumbSlugs paths={paths} />
+          <AppBreadCrumbs paths={paths} />
         </div>
         <div className="container mt-10 lg:!hidden">
           {filteredAccountMenuItems && (

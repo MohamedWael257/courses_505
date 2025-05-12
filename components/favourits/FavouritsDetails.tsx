@@ -110,7 +110,7 @@ export default function FavouritsDetails({
         )}
         {/* {products && products.length > 0 && (
           <div className="py-8">
-            <CustomPagination
+            <AppPagination
               itemsPerPage={pagination?.per_page}
               totalItems={pagination?.total}
               totalPage={pagination?.last_page}

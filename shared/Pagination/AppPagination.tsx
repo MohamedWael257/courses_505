@@ -12,7 +12,7 @@ import {
 } from "../ui/pagination";
 import { useLocale, useTranslations } from "next-intl";
 
-const CustomPagination = ({
+const AppPagination = ({
   itemsPerPage,
   totalItems,
   currentPage,
@@ -137,4 +137,4 @@ const CustomPagination = ({
   );
 };
 
-export default CustomPagination;
+export default AppPagination;

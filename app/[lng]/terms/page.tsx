@@ -1,5 +1,5 @@
 import React from "react";
-import BreadcrumbSlugs from "@/shared/Breadcrumbs/CustomBreadcrumbs";
+import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
 import GeneralServerAxios from "@/shared/AxiosPage/GeneralServerAxios";
 import CustomNotData from "@/shared/CustomNotData";
 export default function page() {
@@ -14,7 +14,7 @@ export default function page() {
               <>
                 <div className="bg-secgreynormal">
                   <div className=" container md:py-10 py-6">
-                    <BreadcrumbSlugs paths={paths} title={data?.title} />
+                    <AppBreadCrumbs paths={paths} title={data?.title} />
                   </div>
                 </div>
                 <div className=" container">

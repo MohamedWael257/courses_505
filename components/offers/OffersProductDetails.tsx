@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useTranslations } from "next-intl";
 import SortFilterElement from "./SortFilterElement";
 import { usePathname, useRouter } from "next/navigation";
-import CustomPagination from "@/shared/Pagination/CustomPagination";
+import AppPagination from "@/shared/Pagination/AppPagination";
 import StoreCard from "@/shared/card/StoreCard";
 type Props = {
   data: any;
@@ -74,7 +74,7 @@ export default function OffersProductDetails({
       </div>
       {data && data.length > 0 && (
         <div className="py-8">
-          <CustomPagination
+          <AppPagination
             itemsPerPage={paggination?.per_page}
             totalItems={paggination?.total}
             totalPage={paggination?.last_page}

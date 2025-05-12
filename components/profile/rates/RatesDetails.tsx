@@ -4,7 +4,7 @@ import ImageWithFallback from "@/shared/ImageWithFallback";
 import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Rate } from "antd";
-import CustomPagination from "@/shared/Pagination/CustomPagination";
+import AppPagination from "@/shared/Pagination/AppPagination";
 
 type Props = {
   rates: any;
@@ -174,7 +174,7 @@ export default function RatesDetails({
       </div>
       {rates && rates.length > 0 && (
         <div className="py-8">
-          <CustomPagination
+          <AppPagination
             itemsPerPage={paggination?.per_page}
             totalItems={paggination?.total}
             totalPage={paggination?.last_page}

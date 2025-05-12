@@ -8,7 +8,7 @@ import ShowAlertMixin from "@/shared/ShowAlertMixin";
 import { Notificaation } from "@/shared/Icons";
 import { ScrollArea } from "@/shared/ui/scroll-area";
 import { usePathname, useRouter } from "next/navigation";
-import CustomPagination from "@/shared/Pagination/CustomPagination";
+import AppPagination from "@/shared/Pagination/AppPagination";
 import UseSession from "@/store/UseSession";
 import { SessionType } from "../Header";
 import { useSocketContext } from "@/utils/providers/SocketProvider";
@@ -168,7 +168,7 @@ const NotificationsData = ({
         </div>
         {notifications && notifications.length > 0 && (
           <div className="py-8">
-            <CustomPagination
+            <AppPagination
               itemsPerPage={paggination?.per_page}
               totalItems={paggination?.total}
               totalPage={paggination?.last_page}

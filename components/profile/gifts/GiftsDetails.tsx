@@ -13,7 +13,7 @@ import { useDispatch } from "react-redux";
 import { updateUser } from "@/store/auth.slice";
 import Success from "@/assets/images/success2.gif";
 import { ScrollArea } from "@/shared/ui/scroll-area";
-import CustomPagination from "@/shared/Pagination/CustomPagination";
+import AppPagination from "@/shared/Pagination/AppPagination";
 
 type Props = {
   gifts: any;
@@ -154,7 +154,7 @@ export default function GiftsDetails({
       </div>
       {gifts && gifts.length > 0 && (
         <div className="py-8">
-          <CustomPagination
+          <AppPagination
             itemsPerPage={paggination?.per_page}
             totalItems={paggination?.total}
             totalPage={paggination?.last_page}

@@ -1,6 +1,6 @@
 import Faqs from "@/components/faqs/Faqs";
 import GeneralServerAxios from "@/shared/AxiosPage/GeneralServerAxios";
-import BreadcrumbSlugs from "@/shared/Breadcrumbs/CustomBreadcrumbs";
+import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
 import CustomNotData from "@/shared/CustomNotData";
 import React from "react";
 export default function page({
@@ -23,7 +23,7 @@ export default function page({
                 <>
                   <div className="bg-secgreynormal">
                     <div className=" container md:py-10 py-6">
-                      <BreadcrumbSlugs
+                      <AppBreadCrumbs
                         TranslateTitle
                         paths={paths}
                         title={"faqs"}

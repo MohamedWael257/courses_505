@@ -13,7 +13,7 @@ import { AppDispatch } from "@/store/store";
 import AddressCard from "@/shared/card/AddressCard";
 import { setLocation } from "@/store/locationSlice";
 import ShowAlertMixin from "@/shared/ShowAlertMixin";
-import CustomPagination from "@/shared/Pagination/CustomPagination";
+import AppPagination from "@/shared/Pagination/AppPagination";
 import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
@@ -198,7 +198,7 @@ export default function AddressesDetials({
       </div>
       {addresses && addresses.length > 0 && (
         <div className="py-8">
-          <CustomPagination
+          <AppPagination
             itemsPerPage={paggination?.per_page}
             totalItems={paggination?.total}
             totalPage={paggination?.last_page}

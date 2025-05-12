@@ -1,5 +1,5 @@
 "use client";
-import BreadcrumbSlugs from "@/shared/Breadcrumbs/CustomBreadcrumbs";
+import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
 import ImageWithFallback from "@/shared/ImageWithFallback";
 import React from "react";
 import { CgFormatSlash } from "react-icons/cg";
@@ -21,7 +21,7 @@ export default function CourseDetialsTop({ data }: Props) {
     <div className="bg-secprimary">
       <div className=" flex justify-start relative container md:py-10 py-6">
         <div className="h-fit lg:w-1/2">
-          <BreadcrumbSlugs
+          <AppBreadCrumbs
             icon={
               <>
                 <CgFormatSlash

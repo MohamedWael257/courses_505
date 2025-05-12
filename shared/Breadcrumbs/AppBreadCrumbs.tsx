@@ -10,18 +10,17 @@ import {
 } from "@/shared/ui/breadcrumb";
 import { useLocale, useTranslations } from "next-intl";
 import { RiArrowLeftSLine } from "react-icons/ri";
-import { CgFormatSlash } from "react-icons/cg";
 
-interface BreadcrumbSlugsProps {
+interface BreadCrumbsProps {
   paths: Array<{ name: string | undefined; href?: string }>;
   stopTranslate?: boolean;
   title?: any;
   subtitle?: any;
   TranslateTitle?: boolean;
-  icon?: boolean;
+  icon?: any;
 }
 
-const BreadcrumbSlugs: React.FC<BreadcrumbSlugsProps> = ({
+const AppBreadCrumbs: React.FC<BreadCrumbsProps> = ({
   paths,
   title,
   subtitle,
@@ -41,19 +40,18 @@ const BreadcrumbSlugs: React.FC<BreadcrumbSlugsProps> = ({
               <BreadcrumbItem>
                 {path.href ? (
                   <BreadcrumbLink
-                    className={`text-[#666666] text-[16px] font-medium ${
+                    className={`text-[#666666] text-[16px] ${
                       paths.length == 1 ? "text-center" : ""
                     }`}
                     href={`${locale == "ar" ? "" : "/en"}/${path.href}`}
                   >
-                    {/* {stopTranslate && index > 0 ? path.name : t(path.name)} */}
-                    {stopTranslate ? path.name : t(path.name)}
+                    {stopTranslate && index > 0 ? path.name : t(path.name)}
                   </BreadcrumbLink>
                 ) : (
                   <BreadcrumbPage
                     className={`${
                       paths.length == 1 ? "text-center" : ""
-                    } font-medium text-[#191919] text-[16px]`}
+                    } font-bold text-[#191919] text-[18px]`}
                   >
                     {stopTranslate ? path.name : t(path.name)}
                   </BreadcrumbPage>
@@ -62,10 +60,7 @@ const BreadcrumbSlugs: React.FC<BreadcrumbSlugsProps> = ({
               {index < paths.length - 1 && (
                 <p className="text-[#666666] font-bold text-[16px]">
                   {icon ? (
-                    <CgFormatSlash
-                      className={`${locale == "ar" ? "" : "rotate-180"}`}
-                      size={25}
-                    />
+                    <>{icon}</>
                   ) : (
                     <RiArrowLeftSLine
                       className={`${locale == "ar" ? "" : "rotate-180"}`}
@@ -85,12 +80,12 @@ const BreadcrumbSlugs: React.FC<BreadcrumbSlugsProps> = ({
         </h2>
       )}
       {subtitle && (
-        <h2 className="md:text-2xl text-xl  text-darkprimary leading-8 font-bold  mt-8  text-start">
-          {TranslateTitle ? t(`${subtitle}`) : subtitle}
+        <h2 className="md:text-2xl text-xl   leading-8 font-bold  mt-8  text-start">
+          {t(`${subtitle}`)}
         </h2>
       )}
     </>
   );
 };
 
-export default BreadcrumbSlugs;
+export default AppBreadCrumbs;

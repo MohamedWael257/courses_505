@@ -9,7 +9,7 @@ import { useTranslations, useLocale } from "next-intl";
 import EmptyOrders from "./EmptyOrders";
 import { Input } from "@/shared/ui/input";
 import Image from "next/image";
-import CustomPagination from "@/shared/Pagination/CustomPagination";
+import AppPagination from "@/shared/Pagination/AppPagination";
 import UseSession from "@/store/UseSession";
 import { SessionType } from "@/components/Header";
 import { useSocketContext } from "@/utils/providers/SocketProvider";
@@ -232,7 +232,7 @@ export default function OrdersDetails({
         )}
         {orders && orders.length > 0 && (
           <div className="py-8">
-            <CustomPagination
+            <AppPagination
               itemsPerPage={paggination?.per_page}
               totalItems={paggination?.total}
               totalPage={paggination?.last_page}

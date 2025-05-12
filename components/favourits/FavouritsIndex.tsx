@@ -1,5 +1,5 @@
 "use client";
-import BreadcrumbSlugs from "@/shared/Breadcrumbs/CustomBreadcrumbs";
+import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
 import React from "react";
 import FavouritsDetails from "@/components/favourits/FavouritsDetails";
 import EmptyFavourits from "@/components/favourits/EmptyFavourits";
@@ -13,7 +13,7 @@ export default function FavouritsIndex({ paths, category }: any) {
           <>
             <div className="bg-greynormal overflow-x-hidden">
               <div className=" container md:py-10 py-6">
-                <BreadcrumbSlugs paths={paths} />
+                <AppBreadCrumbs paths={paths} />
                 {data?.products?.length > 0 ? (
                   <>
                     <FavouritsCard refetch={refetch} count={data?.count} />

@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/shared/ui/accordion";
-import CustomPagination from "@/shared/Pagination/CustomPagination";
+import AppPagination from "@/shared/Pagination/AppPagination";
 import { usePathname, useRouter } from "next/navigation";
 type Props = {
   faqs: {
@@ -78,7 +78,7 @@ export default function Faqs({ faqs, current_page, paggination }: Props) {
         ))}
         {faqs && faqs.length > 0 && (
           <div className="py-8">
-            <CustomPagination
+            <AppPagination
               itemsPerPage={paggination?.per_page}
               totalItems={paggination?.total}
               totalPage={paggination?.last_page}

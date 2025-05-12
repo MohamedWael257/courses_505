@@ -17,7 +17,7 @@ import { addItem } from "@/store/cartStore.slice";
 import {  Cart5, Heart, RS, Share, Spinner } from "@/shared/Icons";
 import ShowAlertMixin from "@/shared/ShowAlertMixin";
 import QuantityControl from "./components/QuantityControl";
-import BreadcrumbSlugs from "@/shared/Breadcrumbs/CustomBreadcrumbs";
+import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
 
 interface MyFormValues {
   quantity: number;
@@ -184,7 +184,7 @@ export default function BooksDetails({ book }: { book: any }) {
     <div
     // data-aos="fade-left"
     >
-      <BreadcrumbSlugs
+      <AppBreadCrumbs
         icon
         // TranslateTitle
         stopTranslate
