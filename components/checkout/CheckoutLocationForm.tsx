@@ -46,56 +46,56 @@ export default function CheckoutLocationForm({}: Props) {
     }));
   };
   // Fetch Data
-  useEffect(() => {
-    const fetchData = async () => {
-      setloading(true);
-      try {
-        const [fetchCities, fetchLocations, fetchAddresses] = await Promise.all(
-          [
-            axiosInstanceGeneralClient.get("cities"),
-            axiosInstance.get("locations"),
-            axiosInstance.get("addresses"),
-          ]
-        );
-        const transformedCityData = transformCityData(fetchCities.data.data);
-        setCityOptions(transformedCityData);
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     setloading(true);
+  //     try {
+  //       const [fetchCities, fetchLocations, fetchAddresses] = await Promise.all(
+  //         [
+  //           axiosInstanceGeneralClient.get("cities"),
+  //           axiosInstance.get("locations"),
+  //           axiosInstance.get("addresses"),
+  //         ]
+  //       );
+  //       const transformedCityData = transformCityData(fetchCities.data.data);
+  //       setCityOptions(transformedCityData);
 
-        const transformedLocationsData = transformLocationsData(
-          fetchLocations.data.data
-        );
-        setLocationsOptions(transformedLocationsData);
+  //       const transformedLocationsData = transformLocationsData(
+  //         fetchLocations.data.data
+  //       );
+  //       setLocationsOptions(transformedLocationsData);
 
-        const transformedAddressesData = transformAddressesData(
-          fetchAddresses.data.data
-        );
-        setAddressesOptions(transformedAddressesData);
-      } catch (error: any) {
-        const errorMessage = error?.response?.data?.message;
-        ShowAlertMixin({
-          type: 15,
-          icon: "error",
-          title: errorMessage,
-        });
-        setloading(false);
-      } finally {
-        setloading(false);
-      }
-    };
+  //       const transformedAddressesData = transformAddressesData(
+  //         fetchAddresses.data.data
+  //       );
+  //       setAddressesOptions(transformedAddressesData);
+  //     } catch (error: any) {
+  //       const errorMessage = error?.response?.data?.message;
+  //       ShowAlertMixin({
+  //         type: 15,
+  //         icon: "error",
+  //         title: errorMessage,
+  //       });
+  //       setloading(false);
+  //     } finally {
+  //       setloading(false);
+  //     }
+  //   };
 
-    fetchData();
-  }, []); // Ensure locale is included in the dependencies if it can change
+  //   fetchData();
+  // }, []); // Ensure locale is included in the dependencies if it can change
 
   return (
     <div
-      data-aos="flip-left"
-      className="border border-greynormal p-4 rounded-2xl"
+      // data-aos="flip-left"
+      className="border border-secprimary bg-white p-4 rounded-2xl"
     >
       <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
         {t("LABELS.address")}
       </h2>
       <div className="flex flex-col gap-4">
         <PhoneNumber
-          name="addtional_phone"
+          phone_name="addtional_phone"
           phone_code_name="addtional_phone_code"
           country="sa"
           label="phoneNumber"
@@ -107,7 +107,6 @@ export default function CheckoutLocationForm({}: Props) {
             label="city"
             placeholder="city"
             customStyle={true}
-            className="!h-14 placeholder:text"
             options={cityOptions}
             disabled={loading} // Disable if no city is selected or cities are loading
           />
@@ -116,7 +115,6 @@ export default function CheckoutLocationForm({}: Props) {
             label="location"
             placeholder="location"
             customStyle={true}
-            className="!h-14 placeholder:text"
             options={locationsOptions}
             disabled={loading} // Disable if no city is selected or cities are loading
           />
@@ -127,7 +125,6 @@ export default function CheckoutLocationForm({}: Props) {
             label="address"
             placeholder="address"
             customStyle={true}
-            className="!h-14 placeholder:text"
             options={addressesOptions}
             disabled={loading} // Disable if no city is selected or cities are loading
           />

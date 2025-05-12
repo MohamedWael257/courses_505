@@ -1,0 +1,19 @@
+.image-uploader {
+  .ant-upload-list-item-container,
+  .ant-upload-select {
+    @apply w-full h-[125px] bg-white #{!important};
+    .ant-upload-list-item {
+      @apply p-0 rounded-2xl overflow-hidden w-full h-full before:size-full flex items-center justify-center #{!important};
+    }
+  }
+}
+
+.file-uploader {
+  .ant-upload-list-item-container,
+  .ant-upload-select {
+    @apply w-full h-[125px] bg-white #{!important};
+    .ant-upload-list-item {
+      @apply p-0 rounded-2xl overflow-hidden w-full h-full before:size-full flex items-center justify-center #{!important};
+    }
+  }
+}

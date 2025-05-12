@@ -19,8 +19,11 @@ export default function CheckoutPaymentForm({
   const locale = useLocale();
 
   return (
-    <div data-aos="flip-left">
-      <h2 className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
+    <div
+      //  data-aos="flip-left"
+      className="border border-secprimary bg-white p-4 rounded-2xl"
+    >
+      <h2 className=" text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
         {t("Text.paymentType")}
       </h2>
       <div className="bg-white shadow-md rounded-xl h-fit p-4">
@@ -54,7 +57,7 @@ export default function CheckoutPaymentForm({
             <RadioGroupItem value={"cash"} id={t("Text.paymentUponReceipt")} />
           </div>
           <div
-            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]   p-4 rounded-lg ${
+            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]  p-4 rounded-full ${
               selectedTypePayment == "wallet"
                 ? "border-primary"
                 : "border-greynormal"
@@ -75,7 +78,7 @@ export default function CheckoutPaymentForm({
             <RadioGroupItem value={"wallet"} id={t("Text.paymentViaWallet")} />
           </div>
           <div
-            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]   p-4 rounded-lg ${
+            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]  p-4 rounded-full ${
               selectedTypePayment == "card"
                 ? "border-primary"
                 : "border-greynormal"
@@ -96,8 +99,8 @@ export default function CheckoutPaymentForm({
             <RadioGroupItem value={"card"} id={t("Text.Payment by card")} />
           </div>
           <div
-            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]  p-4 rounded-lg ${
-              selectedTypePayment == "cash"
+            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]  p-4 rounded-full ${
+              selectedTypePayment == "visa"
                 ? "border-primary"
                 : "border-greynormal"
             }`}
@@ -114,11 +117,11 @@ export default function CheckoutPaymentForm({
                 <div>{t("Text.paymentUponReceipt")}</div>
               </div>
             </label>
-            <RadioGroupItem value={"cash"} id={t("Text.paymentUponReceipt")} />
+            <RadioGroupItem value={"visa"} id={t("Text.paymentUponReceipt")} />
           </div>
           <div
-            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]   p-4 rounded-lg ${
-              selectedTypePayment == "wallet"
+            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]  p-4 rounded-full ${
+              selectedTypePayment == "paypal"
                 ? "border-primary"
                 : "border-greynormal"
             }`}
@@ -135,11 +138,11 @@ export default function CheckoutPaymentForm({
                 <div>{t("Text.paymentViaWallet")}</div>
               </div>
             </label>
-            <RadioGroupItem value={"wallet"} id={t("Text.paymentViaWallet")} />
+            <RadioGroupItem value={"paypal"} id={t("Text.paymentViaWallet")} />
           </div>
           <div
-            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]   p-4 rounded-lg ${
-              selectedTypePayment == "card"
+            className={`flex justify-between items-center gap-2 space-x-2 bg-white border-[1px]  p-4 rounded-full ${
+              selectedTypePayment == "mada"
                 ? "border-primary"
                 : "border-greynormal"
             }`}
@@ -156,7 +159,7 @@ export default function CheckoutPaymentForm({
                 <div>{t("Text.Payment by card")}</div>
               </div>
             </label>
-            <RadioGroupItem value={"card"} id={t("Text.Payment by card")} />
+            <RadioGroupItem value={"mada"} id={t("Text.Payment by card")} />
           </div>
         </RadioGroup>
       </div>

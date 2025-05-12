@@ -39,33 +39,33 @@ export default function RequestQuote() {
     }));
   };
 
-  // Fetch levels
-  useEffect(() => {
-    const fetchCountries = async () => {
-      setLoading(true);
-      try {
-        const [response1, response2] = await Promise.all([
-          axiosInstance.get("settings"),
-          axiosInstance.get("files"),
-        ]);
-        const transformedCityData = transformLevelData(response2.data.data);
-        setSettings(response1.data.data);
-        setOptionsListFiles(transformedCityData);
-      } catch (error: any) {
-        const errorMessage = error?.response?.data?.message;
-        ShowAlertMixin({
-          type: 15,
-          icon: "error",
-          title: errorMessage,
-        });
-        setLoading(false);
-      } finally {
-        setLoading(false);
-      }
-    };
+  // // Fetch levels
+  // useEffect(() => {
+  //   const fetchCountries = async () => {
+  //     setLoading(true);
+  //     try {
+  //       const [response1, response2] = await Promise.all([
+  //         axiosInstance.get("settings"),
+  //         axiosInstance.get("files"),
+  //       ]);
+  //       const transformedCityData = transformLevelData(response2.data.data);
+  //       setSettings(response1.data.data);
+  //       setOptionsListFiles(transformedCityData);
+  //     } catch (error: any) {
+  //       const errorMessage = error?.response?.data?.message;
+  //       ShowAlertMixin({
+  //         type: 15,
+  //         icon: "error",
+  //         title: errorMessage,
+  //       });
+  //       setLoading(false);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
 
-    fetchCountries();
-  }, []); // Ensure locale is included in the dependencies if it can change
+  //   fetchCountries();
+  // }, []); // Ensure locale is included in the dependencies if it can change
 
   const initialValues = {
     name: "",
@@ -218,7 +218,8 @@ export default function RequestQuote() {
                     name="file_id"
                     label="file"
                     placeholder="file"
-                    options={optionsListFiles}
+                    options={[]}
+                    disabled={false}
                   />
                   <FormTextarea
                     name="order_details"

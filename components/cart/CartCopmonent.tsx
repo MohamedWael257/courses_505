@@ -293,7 +293,7 @@ export default function CartCopmonent({ code }: { code: string }) {
       <div className="container grid lg:grid-cols-[2fr_1fr] gap-4 my-8">
         {/* CartDetails */}
         <div key="CartDetails" className="h-fit grid gap-4 mb-4">
-          <CartFilter/>
+          <CartFilter />
           {/* {cartData?.map((ele: any, index: number) => {
             return (
               <CartCard
@@ -439,7 +439,7 @@ export default function CartCopmonent({ code }: { code: string }) {
                 {t("Text.orderDiscount")}
               </span>
               <span className="flex items-center gap-2 text-success">
-                10
+                -10
                 <RS className="*:fill-success" />
               </span>
             </div>
@@ -455,7 +455,8 @@ export default function CartCopmonent({ code }: { code: string }) {
             </div>
             <br />
             <LocalePath
-              href={`/checkout?code=${validCouponDiscount ? couponCode : ""}`}
+              href={`/checkout`}
+              // href={`/checkout?code=${validCouponDiscount ? couponCode : ""}`}
               className=" block my-3 text-center w-full bg-primary text-white p-4 rounded-full font-semibold hover:bg-white hover:text-primary transition-colors border-2 border-primary"
             >
               {t("BUTTONS.completeOrder")}

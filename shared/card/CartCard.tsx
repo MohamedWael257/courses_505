@@ -47,7 +47,7 @@ export default function CartCard({
             <p className="text-lg font-medium leading-8 text-start text-darkprimary">
               كيفية بناء علامتك التجارية الدولية في مجال العمل الحر
             </p>
-            {index >= 2 && (
+            {index < 2 && (
               <h2 className="text-base font-normal leading-5 text-start text-secondrydark">
                 6 إختبارات - 25 درس - 5 فصول
               </h2>

@@ -37,10 +37,10 @@ export default function CoursesRequest({}: Props) {
         </div>
 
         <div className="absolute top-16 start-24">
-          <Circle className="size-[121px]" color="#FF5F7E" />
+          <Circle className="size-[121px] *:fill-[#FF5F7E]" />
         </div>
         <div className="absolute bottom-16 end-24">
-          <HalfCircleLeft color="#E8FAFB" className="size-[170px]" />
+          <HalfCircleLeft className="size-[170px] *:fill-[#E8FAFB]" />
         </div>
       </div>
     </div>

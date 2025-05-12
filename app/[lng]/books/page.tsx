@@ -38,6 +38,7 @@ export default function pages({ searchParams }: Props) {
         link
         linkText="اطلب ملف مخصص الآن"
         path="requestQuote"
+        showIcons
       />
       <div
         className={`py-6 container grid xl:grid-cols-4 lg:grid-cols-2 gap-6`}

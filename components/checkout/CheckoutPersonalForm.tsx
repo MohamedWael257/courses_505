@@ -22,29 +22,29 @@ export default function CheckoutPersonalForm({}: Props) {
   };
 
   // Fetch levels
-  useEffect(() => {
-    const fetchCountries = async () => {
-      setLoadingLevel(true);
-      try {
-        const res = await axiosInstanceGeneralClient.get("level");
+  // useEffect(() => {
+  //   const fetchCountries = async () => {
+  //     setLoadingLevel(true);
+  //     try {
+  //       const res = await axiosInstanceGeneralClient.get("level");
 
-        const transformedCityData = transformLevelData(res.data.data);
-        setLevelOptions(transformedCityData);
-      } catch (error: any) {
-        const errorMessage = error?.response?.data?.message;
-        ShowAlertMixin({
-          type: 15,
-          icon: "error",
-          title: errorMessage,
-        });
-        setLoadingLevel(false);
-      } finally {
-        setLoadingLevel(false);
-      }
-    };
+  //       const transformedCityData = transformLevelData(res.data.data);
+  //       setLevelOptions(transformedCityData);
+  //     } catch (error: any) {
+  //       const errorMessage = error?.response?.data?.message;
+  //       ShowAlertMixin({
+  //         type: 15,
+  //         icon: "error",
+  //         title: errorMessage,
+  //       });
+  //       setLoadingLevel(false);
+  //     } finally {
+  //       setLoadingLevel(false);
+  //     }
+  //   };
 
-    fetchCountries();
-  }, []); // Ensure locale is included in the dependencies if it can change
+  //   fetchCountries();
+  // }, []); // Ensure locale is included in the dependencies if it can change
 
   const [loadingCountries, setLoadingCountries] = useState(false);
   const [countryOptions, setCountryOptions] = useState([]);
@@ -57,34 +57,34 @@ export default function CheckoutPersonalForm({}: Props) {
   };
 
   // Fetch countries
-  useEffect(() => {
-    const fetchCountries = async () => {
-      setLoadingCountries(true);
-      try {
-        const res = await axiosInstanceGeneralClient.get("countries");
+  // useEffect(() => {
+  //   const fetchCountries = async () => {
+  //     setLoadingCountries(true);
+  //     try {
+  //       const res = await axiosInstanceGeneralClient.get("countries");
 
-        const transformedCityData = transformCountryData(res.data.data);
-        setCountryOptions(transformedCityData);
-      } catch (error: any) {
-        const errorMessage = error?.response?.data?.message;
-        ShowAlertMixin({
-          type: 15,
-          icon: "error",
-          title: errorMessage,
-        });
-        setLoadingCountries(false);
-      } finally {
-        setLoadingCountries(false);
-      }
-    };
+  //       const transformedCityData = transformCountryData(res.data.data);
+  //       setCountryOptions(transformedCityData);
+  //     } catch (error: any) {
+  //       const errorMessage = error?.response?.data?.message;
+  //       ShowAlertMixin({
+  //         type: 15,
+  //         icon: "error",
+  //         title: errorMessage,
+  //       });
+  //       setLoadingCountries(false);
+  //     } finally {
+  //       setLoadingCountries(false);
+  //     }
+  //   };
 
-    fetchCountries();
-  }, []); // Ensure locale is included in the dependencies if it can change
+  //   fetchCountries();
+  // }, []); // Ensure locale is included in the dependencies if it can change
 
   return (
     <div
-      data-aos="flip-left"
-      className="border border-greynormal p-4 rounded-2xl"
+      // data-aos="flip-left"
+      className="border border-secprimary bg-white p-4 rounded-2xl"
     >
       <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
         {t("LABELS.address")}

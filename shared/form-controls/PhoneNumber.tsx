@@ -23,14 +23,14 @@ interface PhoneNumberProps {
   placeholder?: string;
   disabled?: boolean;
   className?: string;
-  name?: string;
+  phone_name?: string;
   phone_code_name?: string;
   throwErrorPhone?: boolean;
 }
 
 const PhoneNumber: React.FC<PhoneNumberProps> = ({
   label,
-  name,
+  phone_name,
   phone_code_name,
   showRequired = false,
   country = "sa",
@@ -46,8 +46,9 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
   const {
     formState: { errors },
   } = form;
-
-  const { phone, phone_code } = form.getValues();
+  const values = form.getValues();
+  const phone = values[phone_name] ?? values.phone;
+  const phone_code = values[phone_code_name] ?? values.phone_code;
   const { setValue } = form;
 
   const [countries, setCountries] = useState<
@@ -125,8 +126,8 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
   ) => {
     const phoneNumber = value.slice(country.dialCode.length).trim();
 
-    setValue("phone", phoneNumber);
-    setValue("phone_code", country.dialCode);
+    setValue(`${phone_name ?? "phone"}`, phoneNumber);
+    setValue(`${phone_code_name ?? "phone_code"}`, country.dialCode);
   };
   const onlyCountries = countries
     .map((c) => c.shortName.toLowerCase())
@@ -135,11 +136,11 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
   return (
     <Controller
       control={form.control}
-      name="phone"
+      name={`${phone_name ?? "phone"}`}
       render={({ field }) => (
         <FormItem className={cn("w-full", className)}>
           {label && (
-            <FormLabel className="font-medium text-lg   leading-8 my-2 px-2">
+            <FormLabel className="font-medium text-lg   leading-6 my-2 px-2">
               {showRequired && <span className="text-error">*</span>}
               {t(label)}
             </FormLabel>
@@ -160,11 +161,11 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
                   }
                   buttonClass="hover:bg-[green]"
                   containerStyle={{
-                    borderRadius: "12px",
+                    borderRadius: "9999px",
                   }}
                   inputStyle={{
                     width: "100%",
-                    borderRadius: "12px",
+                    borderRadius: "9999px",
                     height: "64px",
                     paddingLeft: "60px",
                     borderColor:

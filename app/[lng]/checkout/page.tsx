@@ -8,8 +8,10 @@ export default function page({
   const code = searchParams.code || "";
 
   return (
-    <div className="bg-greynormal overflow-hidden">
-      <CheckoutCopmonent code={code} />
+    <div className="bg-white overflow-x-hidden">
+      <div className="container">
+        <CheckoutCopmonent code={code} />
+      </div>
     </div>
   );
 }

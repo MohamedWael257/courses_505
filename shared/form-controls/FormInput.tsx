@@ -44,9 +44,7 @@ const FormInput: React.FC<FormInputProps> = ({
           <div className="flex items-center gap-2">
             {labelIcon && labelIcon}
             {label && (
-              <FormLabel
-                className=" text-secondary font-medium text-lg   leading-8 my-2  px-2"
-              >
+              <FormLabel className=" text-secondary font-medium text-lg   leading-6 my-2  px-2">
                 {showRequired && <span className="text-error">*</span>}
                 {t(label)}
                 {labelExtra && (

@@ -275,8 +275,8 @@ Props) {
 
   return (
     <div
-      data-aos="fade-left"
-      className="p-4 rounded-xl bg-greynormal border border-secondrydark 2xl:col-span-1 xl:col-span-1 h-fit"
+      // data-aos="fade-left"
+      className="p-4 rounded-xl bg-greynormal border border-secprimary 2xl:col-span-1 xl:col-span-1 h-fit"
     >
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-medium   leading-7 text-start text-darkprimary">
@@ -289,7 +289,7 @@ Props) {
           {t("BUTTONS.reset")}
         </button>
       </div>
-      <div className="line bg-greynormal w-full h-0.5 my-3"></div>
+      <div className="line bg-secprimary w-full h-[1px] my-3"></div>
       {sections?.length > 0 &&
         renderFilterSection(
           sections,

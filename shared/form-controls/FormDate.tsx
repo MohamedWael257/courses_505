@@ -51,7 +51,7 @@ const FormInputDate: React.FC<FormInputDateProps> = ({
           <div className="flex items-center gap-2">
             {labelIcon && labelIcon}
             {label && (
-              <FormLabel className="text-secondary font-medium text-xl   leading-8 my-2 px-2">
+              <FormLabel className="text-secondary font-medium text-xl   leading-6 my-2 px-2">
                 {showRequired && <span className="text-error">*</span>}
 
                 {t(label)}

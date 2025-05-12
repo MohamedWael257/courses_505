@@ -84,7 +84,7 @@ function HeroSection({ slider }: Props) {
           </div>
           <Square />
           <div className="flex items-center">
-            <Circle color={"#FF5F7E"} />
+            <Circle className={"*:fill-[#FF5F7E]"} />
             <HalfCircleRight />
           </div>
         </div>

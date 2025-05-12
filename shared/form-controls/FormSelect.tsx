@@ -37,21 +37,21 @@ const FormSelect: React.FC<FormSelectProps> = ({
       width: "100%",
       minHeight: "56px",
       backgroundColor: "#ffffff",
-      // borderColor: "#e2e8f0",
       borderColor:
         errors[name] && errors[name]?.message
           ? "#ef233c"
           : customStyle
           ? "#e2e8f0"
           : "#FCFCFB",
-      outline: "none",
-      borderRadius: "9999px", // Add border-radius here
+      borderRadius: "9999px",
     }),
-    indicatorSeparator: (provided: any) => ({
-      ...provided,
-
+    indicatorSeparator: () => ({
       display: "none",
-      outline: "none",
+    }),
+    placeholder: (provided: any) => ({
+      ...provided,
+      fontSize: "14px", // 👈 Change this to desired size
+      color: "#2d2d2db2", // Optional: placeholder color
     }),
   };
 
@@ -62,12 +62,15 @@ const FormSelect: React.FC<FormSelectProps> = ({
       minHeight: "56px",
       backgroundColor: "#ffffff",
       borderColor: "#FCFCFB",
-      borderRadius: "9999px", // Add border-radius here
+      borderRadius: "9999px",
     }),
-    indicatorSeparator: (provided: any) => ({
-      ...provided,
+    indicatorSeparator: () => ({
       display: "none",
-      outline: "none",
+    }),
+    placeholder: (provided: any) => ({
+      ...provided,
+      fontSize: "14px", // 👈 Apply consistent size here too
+      color: "#2d2d2db2",
     }),
   };
 

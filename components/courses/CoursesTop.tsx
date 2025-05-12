@@ -29,7 +29,7 @@ export default function CoursesTop({ data }: Props) {
                 />
               }
               // leftIcon={<SearchIcon />}
-              placeholder={t("ordersSearch")}
+              placeholder={t("search")}
             />
             {/* {data?.length > 1 && ( */}
             <div className="relative">

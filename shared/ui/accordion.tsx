@@ -32,11 +32,12 @@ const AccordionTrigger = React.forwardRef<
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
+      // [&[data-state=open]>svg]:bg-[#965C221a] [&[data-state=open]>svg]:p-1 [&[data-state=open]>svg]:rounded-lg
       className={cn(
         "flex flex-1 items-center  py-4 font-medium transition-all ",
         showIcon
           ? "[&[data-state=open]>svg.icon-open]:block [&[data-state=open]>svg.icon-closed]:hidden [&[data-state=closed]>svg.icon-open]:hidden [&[data-state=closed]>svg.icon-closed]:block"
-          : "justify-between [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg]:bg-[#965C221a] [&[data-state=open]>svg]:p-1 [&[data-state=open]>svg]:rounded-lg",
+          : "justify-between [&[data-state=open]>svg]:rotate-180 ",
         className
       )}
       {...props}
@@ -60,7 +61,7 @@ const AccordionTrigger = React.forwardRef<
       {!showIcon && (
         <ChevronDown
           className={`${
-            iconWidth ? `h-${iconWidth} w-${iconWidth}` : "h-10 w-10"
+            iconWidth ? `h-${iconWidth} w-${iconWidth}` : "h-6 w-6"
           } ${
             iconColor ? `text-[#${iconColor}]` : "text-[#965C22]"
           } shrink-0 transition-transform duration-200`}

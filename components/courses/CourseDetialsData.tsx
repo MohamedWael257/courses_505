@@ -11,6 +11,7 @@ import course from "@/assets/test.jpg";
 import { TiStar } from "react-icons/ti";
 import { Rate } from "antd";
 import { useTranslations } from "next-intl";
+import { DateIcon } from "@/shared/Icons";
 
 type Props = {
   data: any;
@@ -31,7 +32,7 @@ export default function CourseDetialsData({ data }: Props) {
     <div className=" flex justify-start relative container md:py-10 py-6">
       <div className="lg:w-[60%] space-y-6">
         tabs
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
           <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
             عن الدورة
           </h2>
@@ -44,7 +45,7 @@ export default function CourseDetialsData({ data }: Props) {
             الحالي.
           </p>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
           <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
             الأهداف
           </h2>
@@ -66,7 +67,7 @@ export default function CourseDetialsData({ data }: Props) {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
           <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
             محتوي الدورة
           </h2>
@@ -165,7 +166,64 @@ export default function CourseDetialsData({ data }: Props) {
             </SharedAccordion>
           ))}
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
+          <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
+            المواعيد المتاحة{" "}
+          </h2>
+          <div className="grid gap-6">
+            {[...Array(3)].map((item, index) => (
+              <div className="p-4 rounded-2xl border border-greynormal">
+                <div className="flex justify-between items-center">
+                  <h2 className="font-medium text-lg text-darkprimary leading-7 text-start">
+                    المجموعة الأولي
+                  </h2>
+                  <p className="text-base font-normal leading-6 text-start text-error bg-error/[0.15] p-3 rounded-full">
+                    متبقي 6 مقاعد
+                  </p>
+                </div>
+                <div className="flex gap-2 items-center my-4 text-base text-start font-normal leading-6">
+                  <DateIcon />
+                  <p>22 مارس 2025 - 25 إبريل 2025</p>
+                </div>
+                <SharedAccordion
+                  type="single"
+                  className="bg-[#E8FAFB] my-2 rounded-2xl"
+                  collapsible
+                  key={index}
+                >
+                  <AccordionItem
+                    value={`الفصل الأول: الانطلاقة نحو العمل الحر`}
+                    className="bg-[#E8FAFB]  border-2 border-[#E8FAFB] !text-success w-full px-2 rounded-2xl transition-[2s_height]"
+                  >
+                    <AccordionTrigger
+                      iconColor="#139299"
+                      className=" w-full  font-medium text-start   leading-6 text-base  text-[#0B575B]"
+                    >
+                      مواعيد الدروس الاونلاين
+                    </AccordionTrigger>
+
+                    <AccordionContent className="grid lg:grid-cols-3 md:grid-cols-2 gap-4">
+                      <div className="flex flex-col items-center gap-2 bg-white p-4 rounded-2xl">
+                        <p className="text-[#139299]">السبت</p>
+                        <p className="text-[#0B575B]">01:00 م</p>
+                      </div>
+                      <div className="flex flex-col items-center gap-2 bg-white p-4 rounded-2xl">
+                        <p className="text-[#139299]">السبت</p>
+
+                        <p className="text-[#0B575B]">01:00 م</p>
+                      </div>
+                      <div className="flex flex-col items-center gap-2 bg-white p-4 rounded-2xl">
+                        <p className="text-[#139299]">السبت</p>
+                        <p className="text-[#0B575B]">01:00 م</p>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </SharedAccordion>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-col gap-5">
           <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
             عن المدرب
           </h2>
@@ -189,7 +247,7 @@ export default function CourseDetialsData({ data }: Props) {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-5">
           <div className="my-6 flex gap-2 items-center">
             <TiStar color="#FF8861" size={25} />
             <div className="   text-lg font-semibold flex gap-1 items-center">

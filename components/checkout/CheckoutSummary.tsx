@@ -59,14 +59,14 @@ export default function CheckoutSummary({
   };
 
   return (
-    <div>
+    <div className="bg-greynormal shadow-md rounded-2xl h-fit p-4 border border-secprimary">
       <h2
         data-aos="fade-right"
         className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4"
       >
         {t("Text.orderSummary")}
       </h2>
-      <div className="bg-white shadow-md rounded-xl h-fit p-4">
+      <div className="bg-greynormal shadow-md rounded-xl h-fit p-4">
         <div className="flex justify-between items-center my-5 font-normal text-base   leading-4">
           <div>
             <span className="text-darkprimary">المبلغ الإجمالي</span>
@@ -95,7 +95,7 @@ export default function CheckoutSummary({
         </div>
         {/* )} */}
 
-        <div className="h-0.5 bg-greynormal my-2"></div>
+        <div className="h-0.5 bg-subborder my-2"></div>
         <div className="flex justify-between items-center my-5  font-normal text-base   leading-4">
           <div>
             <span className="text-darkprimary">{t("Text.orderTotal")}</span>

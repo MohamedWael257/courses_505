@@ -177,6 +177,7 @@ export default function CheckoutCopmonent({ code }: Props) {
       location_defalut: values?.location_defalut,
       payment_method: values?.payment_method,
     };
+    console.log("🚀 ~ CheckoutCopmonent ~ finalOut:", finalOut);
     Swal.fire({
       title: "res?.data?.message",
       showConfirmButton: false,
@@ -194,16 +195,16 @@ export default function CheckoutCopmonent({ code }: Props) {
         if (footerLink) {
           footerLink.addEventListener("click", () => {
             Swal.close();
-            router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
-            dispatch(clearCart());
+            // router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
+            // dispatch(clearCart());
           });
         }
       },
     });
     setTimeout(() => {
       Swal.close();
-      router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
-      dispatch(clearCart());
+      //   router.replace(`${locale == "ar" ? "" : "/en"}/profile/orders`);
+      //   dispatch(clearCart());
     }, 3000);
     setIsLoading(false);
   }
@@ -215,17 +216,15 @@ export default function CheckoutCopmonent({ code }: Props) {
         <> */}
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className="container py-8 grid lg:grid-cols-[2fr_1fr] gap-4 overflow-hidden">
-            <div>
-              <CheckoutDetails
-                data={data}
-                getValues={getValues}
-                setValue={setValue}
-                watch={watch}
-                form={form}
-                // refresh={fetchData}
-              />
-            </div>
+          <div className=" py-8 grid lg:grid-cols-[2fr_1fr] gap-4 overflow-hidden">
+            <CheckoutDetails
+              data={data}
+              getValues={getValues}
+              setValue={setValue}
+              watch={watch}
+              form={form}
+              // refresh={fetchData}
+            />
             <CheckoutSummary
               isLoading={false}
               location_id={location_id}

@@ -2,6 +2,7 @@ import React from "react";
 import Frame from "@/assets/images/frame.png";
 import Group from "@/assets/images/group.png";
 import ImageWithFallback from "@/shared/ImageWithFallback";
+import LocalePath from "@/shared/LocalePath";
 
 type Props = {};
 
@@ -20,9 +21,12 @@ export default function JoinUS({}: Props) {
           لتقديم دوراتك بكل سهولة واحترافية. أنشئ محتوى تدريبي، تفاعل مع الطلاب،
           وتابع آدائهم
         </p>
-        <button className="font-normal text-sm leading-6 text-center text-white bg-error/90 rounded-full px-5 p-3 w-fit">
+        <LocalePath
+          href="/joinus"
+          className="font-normal text-sm leading-6 text-center text-white bg-error/90 rounded-full px-5 p-3 w-fit"
+        >
           إنضم إلينا كمدرب
-        </button>
+        </LocalePath>
       </div>
       <ImageWithFallback
         src={Frame}

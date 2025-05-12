@@ -57,10 +57,10 @@ export default function CustomCard({
         {showIcons && (
           <>
             <div className="absolute top-16 -start-24">
-              <HalfCircleLeft color={"#FF7993"} />
+              <HalfCircleLeft className="*:fill-[#FF7993] size-[95px]" />
             </div>
             <div className="absolute bottom-16 -end-24">
-              <HalfCircleLeft color={"#FFBAA4"} />
+              <HalfCircleLeft className="*:fill-[#FFBAA4] size-[95px]" />
             </div>
           </>
         )}

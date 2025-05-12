@@ -125,7 +125,7 @@ export default function CourseDetialsCard({ course }: Props) {
     }
   };
   return (
-    <div className="container space-y-4 bg-white  w-[450px] h-fit p-4 rounded-2xl border border-greynormal lg:absolute top-0 end-[225px] z-50">
+    <div className="container space-y-4 bg-white  w-[450px] h-fit p-4 rounded-2xl border border-greynormal lg:absolute top-12 end-[225px] z-50">
       <div className="relative">
         <ImageWithFallback
           src={Image}
