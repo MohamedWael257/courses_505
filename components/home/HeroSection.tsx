@@ -18,16 +18,8 @@ type Props = {
 function HeroSection({ slider }: Props) {
   const t = useTranslations();
   const locale = useLocale();
-  const text = "اكتشف  منصة التعليم الإلكتروني المتكاملة لتنمية مهاراتك";
-  const words = text.split(" ");
-
-  if (words.length <= 2) {
-    return <p>{text}</p>; // Handle edge case
-  }
-
-  const firstWord = words[0];
-  const lastTwoWords = words.slice(-2).join(" ");
-  const middleWords = words.slice(1, -2);
+  const title = "اكتشف  منصة التعليم الإلكتروني المتكاملة لتنمية مهاراتك";
+  const words = title.split(" ");
 
   return (
     <>
@@ -41,13 +33,14 @@ function HeroSection({ slider }: Props) {
                   : "lg:text-3xl text-2xl !leading-8"
               }   text-center  capitalize font-medium transition-all  hover:scale-105 `}
             >
-              <span className="text-error">{firstWord}</span>{" "}
-              {middleWords.map((word, index) => (
-                <span key={index} className="text-gray-500">
-                  {word}{" "}
-                </span>
-              ))}
-              <span className="text-error">{lastTwoWords}</span>{" "}
+              <span className="text-error">{words[0]}</span>{" "}
+              {words?.length > 0 &&
+                words.slice(1, -2).map((word, index) => (
+                  <span key={index} className="text-gray-500">
+                    {word}{" "}
+                  </span>
+                ))}
+              <span className="text-error">{words.slice(-2).join(" ")}</span>{" "}
             </h2>
             <p className="my-4  text-center  font-normal text-xl  leading-10 text-primary lg:w-[80%] mx-auto">
               ابدأ رحلتك التعليمية الآن مع منصتنا التي تجمع لك أفضل الدورات
