@@ -11,6 +11,8 @@ import React, { useState } from "react";
 import { IoMdClose } from "react-icons/io";
 import { FiUploadCloud } from "react-icons/fi";
 import { AiOutlineFile } from "react-icons/ai";
+import axiosInstanceGeneralClient from "@/utils/axiosClientGeneral";
+import ShowAlertMixin from "../ShowAlertMixin";
 
 type Props = {
   accept?: string;
@@ -18,6 +20,8 @@ type Props = {
   maxSize?: number; // in MB
   required?: boolean;
   error?: string;
+  attachment_type?: string;
+  model?: string;
 };
 export default function FormUploadFile({
   accept = "*",
@@ -25,13 +29,15 @@ export default function FormUploadFile({
   maxSize = 10, // default 10MB
   required = false,
   error,
+  model = "users",
+  attachment_type = "image",
 }: Props) {
   const t = useTranslations("LABELS");
   const [file, setFile] = useState<File | null>(null);
   const [filePreview, setFilePreview] = useState<string | null>(null);
   const [dragActive, setDragActive] = useState(false);
   const [fileError, setFileError] = useState<string | null>(null);
-
+  const [uploadLoading, setUploadLoading] = useState<boolean>(false);
   const validateFile = (selectedFile: File) => {
     // Check file size
     const fileSize = selectedFile.size / (1024 * 1024); // Convert to MB
@@ -62,7 +68,7 @@ export default function FormUploadFile({
     return true;
   };
 
-  const handleFile = (selectedFile: File) => {
+  const handleFile = async (selectedFile: File) => {
     if (!validateFile(selectedFile)) return;
 
     setFile(selectedFile);
@@ -73,6 +79,54 @@ export default function FormUploadFile({
         setFilePreview(reader.result as string);
       };
       reader.readAsDataURL(selectedFile);
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+      formData.append("attachment_type", attachment_type);
+      formData.append("model", model);
+      try {
+        await axiosInstanceGeneralClient
+          .post(`attachments`, formData, {
+            headers: {
+              model: model,
+              attachment_type: attachment_type,
+              "Content-Type": "multipart/form-data",
+              Accept: "application/json",
+            },
+          })
+          .then((res: any) => {
+            ShowAlertMixin({
+              type: 15,
+              icon: "success",
+              title: res?.data?.message,
+            });
+            setUploadLoading(false);
+            const fileInput = document.getElementById(
+              "imageID"
+            ) as HTMLInputElement;
+            if (fileInput) fileInput.value = "";
+            // form.reset();
+          })
+          .catch((err: any) => {
+            ShowAlertMixin({
+              type: 15,
+              icon: "error",
+              title: err?.response?.data.message,
+            });
+            setUploadLoading(false);
+            const fileInput = document.getElementById(
+              "imageID"
+            ) as HTMLInputElement;
+            if (fileInput) fileInput.value = "";
+          });
+      } catch (error: any) {
+        console.log(error.message);
+        setUploadLoading(false);
+        setFilePreview(null);
+        const fileInput = document.getElementById(
+          "imageID"
+        ) as HTMLInputElement;
+        if (fileInput) fileInput.value = "";
+      }
     } else {
       setFilePreview(null);
     }
