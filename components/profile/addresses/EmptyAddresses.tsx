@@ -13,7 +13,7 @@ const EmptyAddresses = ({ setIsOpen, setAuthStage }: any) => {
   const dispatch = useDispatch<AppDispatch>();
 
   return (
-    <div className="flex items-center justify-center h-[600px]">
+    <div className="flex items-center justify-center h-[600px] bg-greynormal p-6 rounded-2xl">
       <div>
         {/* Location Icon */}
         <div className="flex justify-center mb-4">
@@ -42,7 +42,7 @@ const EmptyAddresses = ({ setIsOpen, setAuthStage }: any) => {
             setAuthStage("location");
             dispatch(CancelAddOrUpdateAddresses());
           }}
-          className="text-center flex mx-auto items-center gap-2 px-7 py-3 bg-primary text-white font-medium rounded-lg shadow-md hover:bg-orange-600 transition duration-300"
+          className="text-center flex mx-auto items-center gap-2 px-7 py-3 bg-primary text-white font-medium rounded-full shadow-md hover:bg-orange-600 transition duration-300"
         >
           <FaPlus size={20} />
           {t("BUTTONS.addNewAddress")}

@@ -25,32 +25,32 @@
 @import "../styles/app-uploader.scss";
 @import "../styles/react-quill.scss";
 
-.custom-tabs-wrapper {
-  .ant-tabs-nav {
-    .ant-tabs-ink-bar,
-    &::before {
-      @apply hidden;
-    }
-  }
-  .ant-tabs-nav-list {
-    @apply flex items-center pb-4 p-0 text-center w-fit gap-3 lg:gap-6 overflow-x-auto;
-    // &::-webkit-scrollbar {
-    //   height: 5px; /* Set scrollbar height */
-    // }
-    .ant-tabs-tab {
-      @apply flex items-center justify-center border border-solid lg:min-w-[175px]  hover:text-primary focus:text-primary rounded-xl border-platinum m-0;
-      .ant-tabs-tab-btn {
-        @apply px-1.5 text-sm font-semibold;
-      }
-      &.ant-tabs-tab-active {
-        @apply border-primary;
-        .ant-tabs-tab-btn {
-          @apply text-primary;
-        }
-      }
-    }
-  }
-}
+// .custom-tabs-wrapper {
+//   .ant-tabs-nav {
+//     .ant-tabs-ink-bar,
+//     &::before {
+//       @apply hidden;
+//     }
+//   }
+//   .ant-tabs-nav-list {
+//     @apply flex items-center pb-4 p-0 text-center w-fit gap-3 lg:gap-6 overflow-x-auto;
+//     // &::-webkit-scrollbar {
+//     //   height: 5px; /* Set scrollbar height */
+//     // }
+//     .ant-tabs-tab {
+//       @apply flex items-center justify-center border border-solid lg:min-w-[175px]  hover:text-primary focus:text-primary rounded-xl border-platinum m-0;
+//       .ant-tabs-tab-btn {
+//         @apply px-1.5 text-sm font-semibold;
+//       }
+//       &.ant-tabs-tab-active {
+//         @apply border-primary;
+//         .ant-tabs-tab-btn {
+//           @apply text-primary;
+//         }
+//       }
+//     }
+//   }
+// }
 ::-webkit-scrollbar {
   @apply w-2;
 }

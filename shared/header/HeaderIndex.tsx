@@ -21,11 +21,13 @@ import { getAllFavItems } from "@/store/favourtis";
 import ShowAlertMixin from "../ShowAlertMixin";
 import axiosInstance from "@/utils/axiosClient";
 import { updateUser } from "@/store/auth.slice";
+import { usePathname } from "next/navigation";
 
-export default function HeaderIndex({ settings, categories }: any) {
+export default function HeaderIndex({ settings }: any) {
   const t = useTranslations();
 
   const [authStage, setAuthStage] = useState<AuthStage>("");
+  const pathname = usePathname();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const session = UseSession();
   const memoizedSession: SessionType | any = useMemo(() => session, [session]);
@@ -59,16 +61,26 @@ export default function HeaderIndex({ settings, categories }: any) {
   //   dispatch(getAllCartItems());
   //   dispatch(getAllFavItems());
   // }, [token]);
+  const isRedLogo =
+    pathname?.endsWith("books") ||
+    pathname?.endsWith("faqs") ||
+    pathname?.endsWith("contact-us") ||
+    pathname?.includes("courses") ||
+    pathname?.endsWith("terms") ||
+    pathname?.endsWith("en") ||
+    pathname == "/";
 
   return (
     <>
       <header
-        className={` z-50 w-full shadow-sm  absolute top-0 left-0 h-fit bg-transparent`}
+        className={` z-50 w-full shadow-sm  relative top-0 left-0 h-fit ${
+          isRedLogo ? "bg-secprimary" : "bg-white"
+        }`}
       >
-        <nav className="relative z-10 w-full py-4 container lg:flex hidden justify-between fklex-wrap items-center gap-6">
-          <div className="flex items-center gap-8">
+        <nav className="relative z-10 w-full py-4 container lg:flex hidden justify-between fklex-wrap items-center gap-8">
+          <div className="flex items-center gap-10">
             <HeaderLogo />
-            <HeaderNavItems categories={categories} />
+            <HeaderNavItems />
           </div>
           {/* <div className="lg:hidden inline-block w-full">
             <MobileNav

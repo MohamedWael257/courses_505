@@ -59,10 +59,10 @@ export default function CheckoutSummary({
   };
 
   return (
-    <div className="bg-greynormal shadow-md rounded-2xl h-fit p-4 border border-secprimary">
+    <div className="bg-greynormal shadow-md rounded-xl h-fit p-4 border border-secprimary">
       <h2
-        data-aos="fade-right"
-        className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4"
+        // data-aos="fade-right"
+        className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start  leading-6"
       >
         {t("Text.orderSummary")}
       </h2>
@@ -104,10 +104,9 @@ export default function CheckoutSummary({
             500 <RS className="*:fill-darkprimary" />
           </span>
         </div>
-        <br />
-        {/* <button
+        <button
           type="submit"
-          className="flex gap-3 items-center justify-center mt-3 text-center w-full bg-primary text-white p-4 rounded-lg font-semibold"
+          className="flex gap-3 items-center justify-center mt-3 text-center w-full bg-primary text-white p-4 rounded-full hover:bg-white hover:text-primary border border-primary transition-colors font-semibold"
           disabled={isLoading}
         >
           {t("BUTTONS.followPayment")}
@@ -118,17 +117,22 @@ export default function CheckoutSummary({
               className={`${locale == "ar" ? "" : "rotate-180 me-4"}`}
             />
           )}
-        </button> */}
-        <div className="!pt-2">
+        </button>
+        {/* <div className="!pt-2">
           <CustomBtn
-            title={t("validations.followPayment")}
+            title={"تابع للدفع"}
             buttonType="submit"
             loader={isLoading}
             disabled={isLoading}
             button
             className=" !w-full !h-[56px] !rounded-full  !mt-[20px]"
+            rightIcon={
+              <TbArrowNarrowLeft
+                className={`${locale == "ar" ? "" : "rotate-180 me-4"} text-white`}
+              />
+            }
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

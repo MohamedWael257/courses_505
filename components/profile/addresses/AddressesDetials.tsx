@@ -17,20 +17,22 @@ import AppPagination from "@/shared/Pagination/AppPagination";
 import { usePathname, useRouter } from "next/navigation";
 
 type Props = {
-  addresses: {
-    id: string;
-    lat: number;
-    lng: number;
-    location: string;
-    address: string;
-    property_number: string;
-    details: string;
-    is_default: boolean;
-    city: {
-      id: string;
-      name: string;
-    };
-  }[];
+  addresses:
+    | {
+        id: string;
+        lat: number;
+        lng: number;
+        location: string;
+        address: string;
+        property_number: string;
+        details: string;
+        is_default: boolean;
+        city: {
+          id: string;
+          name: string;
+        };
+      }[]
+    | null;
   setIsOpen: any;
   setAuthStage: any;
   refetch: any;
@@ -157,29 +159,25 @@ export default function AddressesDetials({
   };
   return (
     <>
-      <div className="sm:flex gap-4 items-center mb-4">
-        <div className=" flex-1 mb-3">
-          <h2 className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
+      <div className="bg-greynormal p-6 rounded-2xl border border-secprimary">
+        <div className="flex gap-4 items-center my-6">
+          <h2 className="flex-1 text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
             {t("Text.addressesTitle")}
           </h2>
-          <h2 className="w-3/4 text-secondrydark  text-base font-medium   leading-7 text-start">
-            {t("Text.addressesDesc")}
-          </h2>
+          <button
+            onClick={() => {
+              setIsOpen(true);
+              setAuthStage("location");
+              dispatch(CancelAddOrUpdateAddresses());
+            }}
+            className="text-center grid grid-cols-[auto_1fr] items-center gap-2 px-7 py-3 bg-primary text-white font-medium rounded-full shadow-md hover:bg-orange-600 transition duration-300"
+          >
+            <FaPlus size={25} />
+            {t("BUTTONS.addNewAddress")}
+          </button>
         </div>
-        <button
-          onClick={() => {
-            setIsOpen(true);
-            setAuthStage("location");
-            dispatch(CancelAddOrUpdateAddresses());
-          }}
-          className="text-center grid grid-cols-[auto_1fr] items-center gap-2 px-7 py-3 bg-primary text-white font-medium rounded-lg shadow-md hover:bg-orange-600 transition duration-300"
-        >
-          <FaPlus size={25} />
-          {t("BUTTONS.addNewAddress")}
-        </button>
-      </div>
-      <div ref={containerRef} className="grid gap-2">
-        {addresses.map((address, index: number) => {
+        <div ref={containerRef} className="grid gap-2">
+          {/* {addresses.map((address, index: number) => {
           return (
             <AddressCard
               setDefault={() => {
@@ -194,19 +192,34 @@ export default function AddressesDetials({
               key={index}
             />
           );
-        })}
-      </div>
-      {addresses && addresses.length > 0 && (
-        <div className="py-8">
-          <AppPagination
-            itemsPerPage={paggination?.per_page}
-            totalItems={paggination?.total}
-            totalPage={paggination?.last_page}
-            currentPage={+current_page}
-            paginate={handlePaggination}
-          />
+        })} */}
+          {[...Array(2)].map((address, index) => (
+            <AddressCard
+              setDefault={() => {
+                if (address.is_default == false) {
+                  toggleItemToDefault(address?.id);
+                }
+              }}
+              EditItem={() => EditItem(address?.id)}
+              deleteItem={() => deleteItem(address?.id)}
+              address={address}
+              index={index}
+              key={index}
+            />
+          ))}
         </div>
-      )}
+        {addresses && addresses.length > 0 && (
+          <div className="py-8">
+            <AppPagination
+              itemsPerPage={paggination?.per_page}
+              totalItems={paggination?.total}
+              totalPage={paggination?.last_page}
+              currentPage={+current_page}
+              paginate={handlePaggination}
+            />
+          </div>
+        )}
+      </div>
     </>
   );
 }

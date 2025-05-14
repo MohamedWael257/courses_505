@@ -26,7 +26,7 @@ export async function generateMetadata({
   const isArabic = lng === "ar";
 
   return {
-    title: isArabic ? "متجر متعدد" : "Matgar Doom",
+    title: isArabic ? "متجر كورسات" : "Matgar Courses",
     // description: isArabic
     // ? "ايفا وورلد هى منصة الإعلانات المبوبة الرائدة للعقارات في مصر، هدفها الأساسي هو الربط بين المشترين والمستثمرين وأصحاب المقاولات والبائعين والمستأجرين والوسطاء لتسهيل عملية البحث عن المقاولات. لأن عملية البحث عن المقاولات عملية مرهقة وتحتاج إلى كثير من الوقت والمجهود، نقدم لكم تجربة عقارية سهلة و مميزة تجعلك تبحث عن العقار المناسب لك سواء للإيجار، البيع أو الشراء كل ذلك من خلال منصة واحدة فقط"
     // : "Eva World is the leading classifieds platform for real estate in Egypt. Its primary goal is to connect buyers, investors, contractors, sellers, renters, and brokers to simplify the process of finding construction and real estate opportunities. Recognizing that searching for properties can be a time-consuming and exhaustive process, Eva World offers an easy and distinctive real estate experience. Whether you're looking to rent, sell, or buy, you can find the right property for your needs—all through one comprehensive platform.",
@@ -50,7 +50,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lng: string };
 }>) {
-  const { categories, settings, error } = await getHeaderData(); // Call getData
+  const { settings } = await getHeaderData(); // Call getData
   return (
     <html lang={lng} dir={lng == "ar" ? "rtl" : "ltr"}>
       <body className="bg-white ">
@@ -62,18 +62,10 @@ export default async function RootLayout({
           <ProviderStore>
             {/* <LocationHandler /> */}
             <div className="flex min-h-[100vh] flex-col">
-              {/* <Header
-                  categories={categories}
-                  settings={settings}
-                  error={error}
-                /> */}
+              <Header settings={settings} />
               {/* <div className="h-20">Header</div> */}
               {children}
-              {/* <MainFooter
-                  categories={categories}
-                  settings={settings}
-                  error={error}
-                /> */}
+              <MainFooter settings={settings} />
               {/* <div className="h-20">Footer</div> */}
 
               <ScrollBtn />

@@ -91,7 +91,7 @@ export default function CheckoutLocationForm({}: Props) {
       className="border border-secprimary bg-white p-4 rounded-2xl"
     >
       <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
-        {t("LABELS.address")}
+        معلومات الشحن
       </h2>
       <div className="flex flex-col gap-4">
         <PhoneNumber

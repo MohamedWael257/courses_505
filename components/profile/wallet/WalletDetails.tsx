@@ -9,55 +9,20 @@ import { ScrollArea } from "@/shared/ui/scroll-area";
 
 type Props = {
   transactions: any;
-  defaultType: any;
   refetch: any;
 };
 
 export default function WalletDetails({
   transactions,
-  defaultType,
   refetch,
 }: Props) {
   const locale = useLocale();
   const t = useTranslations();
-  const taps = [
-    { id: 1, title: t("Text.deposit_wallet"), slug: "deposit" },
-    { id: 2, title: t("Text.withdrawal_wallet"), slug: "withdrawal" },
-  ];
 
-  const [active, setActive] = useState(defaultType || "deposit");
-  const Router = useRouter();
 
   return (
     <>
-      <div className="buttons mb-8 w-full grid lg:grid-cols-2 gap-3">
-        {taps.map((ele) => {
-          return (
-            <button
-              key={ele?.id}
-              className={` h-fit mt-3 font-medium   leading-6 grid place-content-center  bg-white ${
-                active == ele?.slug
-                  ? " text-primary border-2 border-primary "
-                  : " text-dark border-2 border-subborder "
-              }  px-6 py-4 text-sm rounded-xl`}
-              onClick={() => {
-                setActive(ele?.slug);
-                Router.replace(
-                  `${locale == "ar" ? "" : "/en"}/profile/wallet?type=${
-                    ele?.slug
-                  }`,
-                  {
-                    scroll: false,
-                  }
-                );
-                //  refetch();
-              }}
-            >
-              {ele?.title}
-            </button>
-          );
-        })}
-      </div>
+   
       <div className="p-4 bg-white rounded-lg shadow">
         {transactions?.length > 0 ? (
           <>

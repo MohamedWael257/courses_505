@@ -60,7 +60,7 @@ export default function ProfileLayout({
   }, []);
 
   return (
-    <div className="bg-greynormal overflow-hidden">
+    <div className="bg-white overflow-hidden">
       <div className="container py-4">
         <div className="my-4">
           <AppBreadCrumbs paths={paths} />
@@ -73,31 +73,31 @@ export default function ProfileLayout({
         <section className="flex gap-8 my-4 px-2">
           {filteredAccountMenuItems && (
             <div className="hidden lg:flex w-[28%] min-w-[358px] h-min sticky top-16 flex-col gap-2">
-              <div className="bg-[#ffffff] rounded-2xl px-8 py-10">
-                {isClient && (
-                  <div className="flex gap-3 items-center mb-6">
-                    <ImageWithFallback
-                      src={memoizedSession?.image || ProfileImage}
-                      width={1000}
-                      height={1000}
-                      className="w-14 h-14 rounded-full object-cover"
-                      alt="profile image"
-                    />
-                    <div className="flex flex-col gap-2">
-                      <h2 className="capitalize font-semibold lg:text-xl text-lg text-start lg:leading-8">
-                        {memoizedSession?.full_name || "Guest User"}
-                      </h2>
-                      <h2 className="text-secondrydark text-base font-medium   leading-6 text-start">
-                        {memoizedSession?.email || "No email provided"}
-                      </h2>
-                    </div>
+              <div className="bg-greynormal rounded-2xl px-8 py-10">
+                {/* {isClient && ( */}
+                <div className="flex gap-3 items-center mb-6">
+                  <ImageWithFallback
+                    src={ProfileImage}
+                    width={1000}
+                    height={1000}
+                    className="w-14 h-14 rounded-full object-cover"
+                    alt="profile image"
+                  />
+                  <div className="flex flex-col gap-2">
+                    <h2 className="capitalize font-semibold lg:text-xl text-lg text-start lg:leading-8">
+                      {"Guest User"}
+                    </h2>
+                    <h2 className="text-secondrydark text-base font-medium   leading-6 text-start">
+                      {"No email provided"}
+                    </h2>
                   </div>
-                )}
+                </div>
+                {/* )} */}
                 <ul>
                   {filteredAccountMenuItems.map((item: any, ind: number) => {
                     const isActive =
                       cleanPath(
-                        `${locale == "ar" ? "" : "/en"}/${item.path}`
+                        `${locale == "ar" ? "" : "/en"}${item.path}`
                       ) === cleanedPathname;
                     return (
                       <li key={ind}>
@@ -105,9 +105,9 @@ export default function ProfileLayout({
                           href={item.path}
                           scroll={!isActive}
                           className={clsx(
-                            "flex gap-3 items-center px-3 mb-4 text-base py-4",
+                            "flex gap-3 items-center px-3 mb-4 text-base py-4 font-normal",
                             {
-                              "bg-secprimary text-primary rounded-xl": isActive,
+                              "bg-white text-primary rounded-xl": isActive,
                             }
                           )}
                         >
@@ -122,9 +122,9 @@ export default function ProfileLayout({
                             {isActive ? item.activeIcon : item.icon}
                           </span>
                           <span
-                            className={clsx("text-[16px] font-semibold", {
+                            className={clsx("text-[16px] font-normal", {
                               "text-primary": isActive,
-                              "text-dark": !isActive,
+                              "text-[#3C4143]": !isActive,
                             })}
                           >
                             {item.name}
@@ -134,7 +134,8 @@ export default function ProfileLayout({
                     );
                   })}
                   <LogoutButton />
-                  <DeleteAccountButton/>
+                  <br />
+                  <DeleteAccountButton />
                 </ul>
               </div>
             </div>

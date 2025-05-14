@@ -13,11 +13,9 @@ import { NavItems } from "./NavbarLinks";
 const HeaderNavItems = ({
   className,
   toggleDrawer,
-  categories,
 }: {
   className?: string;
   toggleDrawer?: () => void;
-  categories: any;
 }) => {
   const t = useTranslations("");
   const locale = useLocale();
@@ -40,7 +38,7 @@ const HeaderNavItems = ({
         className ? className : ""
       }`}
     >
-      <div className="flex gap-4 flex-wrap items-center">
+      <div className="flex gap-6 flex-wrap items-center">
         {NavItems?.length > 0 &&
           NavItems?.map((el, index: number) => {
             const isActive =

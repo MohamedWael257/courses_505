@@ -5,16 +5,16 @@ import { useTranslations } from "next-intl";
 const EmptyWallet = () => {
   const t = useTranslations("");
   return (
-    <div className="flex items-center justify-center h-[600px] bg-gray-100">
+    <div className="flex items-center justify-center h-[600px] bg-gray-100 bg-transparent">
       <div>
         {/* transactions Icon */}
         <div className="flex justify-center mb-4">
-          <div className="bg-red-100 p-4 rounded-full">
+          <div className=" p-4 rounded-full">
             <ImageWithFallback
               src={Transactions}
               width={900}
               height={900}
-              className="w-[100px] h-[100px] object-contain  "
+              className="w-[150px] h-[150px] object-contain  "
               alt="hero"
             />
           </div>

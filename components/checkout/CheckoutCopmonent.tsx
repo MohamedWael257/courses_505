@@ -21,6 +21,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Swal from "sweetalert2";
 import Success from "@/assets/images/success2.gif";
 import { clearCart } from "@/store/cartStore.slice";
+import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
 
 type Props = {
   code: any;
@@ -208,15 +209,27 @@ export default function CheckoutCopmonent({ code }: Props) {
     }, 3000);
     setIsLoading(false);
   }
+  const paths = [
+    { name: "home", href: "/" },
+    { name: "cart", href: "/cart" },
+    { name: "checkout" },
+  ];
+
   return (
     <>
       {/* {isLoadingFirstTime ? (
         <Loader />
       ) : data?.data?.length > 0 ? (
         <> */}
+      <br />
+      <AppBreadCrumbs paths={paths} title={data?.title} />
+      <h2 className=" text-darkprimary font-medium lg:text-xl text-base text-start  leading-4 my-4">
+        {t("Text.order")}
+      </h2>
+
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <div className=" py-8 grid lg:grid-cols-[2fr_1fr] gap-4 overflow-hidden">
+          <div className=" py-4 grid lg:grid-cols-[2.5fr_1fr] gap-4 overflow-hidden">
             <CheckoutDetails
               data={data}
               getValues={getValues}

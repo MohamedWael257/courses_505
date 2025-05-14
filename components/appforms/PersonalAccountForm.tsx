@@ -23,17 +23,21 @@ import axiosInstance from "@/utils/axiosClient";
 
 type Props = {
   image: string;
-  profile: SessionType;
+  profile: SessionType | null;
   refetch: any;
+  setActiveUpdateData: any;
+  setIsDialogOpen: any;
+  setAuthStage: any;
 };
 export default function PersonalAccountForm({
   profile,
   image,
   refetch,
+  setActiveUpdateData,
+  setAuthStage,
+  setIsDialogOpen,
 }: Props) {
   const t = useTranslations("");
-  const [isOpen, setIsOpen] = useState(false);
-  const [authStage, setAuthStage] = useState<AuthStage>("phoneVerify");
   const locale = useLocale();
   const dispatch = useDispatch();
   // Form Schema Validation
@@ -42,65 +46,14 @@ export default function PersonalAccountForm({
     image: Yup.string(),
     full_name: Yup.string().required(t("name is a required field")),
     email: Yup.string().email().required(t("email is a required field")),
-    birthday: Yup.string().required(t("date_of_birth is a required field")),
-    gender: Yup.string().required(t("gender is a required field")),
     phone: Yup.string(),
     phone_code: Yup.string(),
-    password: Yup.string(),
   });
-  function convertDate(dateString: string) {
-    const arabicMonthMapping: Record<string, string> = {
-      يناير: "01",
-      فبراير: "02",
-      مارس: "03",
-      أبريل: "04",
-      مايو: "05",
-      يونيو: "06",
-      يوليو: "07",
-      أغسطس: "08",
-      سبتمبر: "09",
-      أكتوبر: "10",
-      نوفمبر: "11",
-      ديسمبر: "12",
-    };
-
-    const englishMonthMapping: Record<string, string> = {
-      January: "01",
-      February: "02",
-      March: "03",
-      April: "04",
-      May: "05",
-      June: "06",
-      July: "07",
-      August: "08",
-      September: "09",
-      October: "10",
-      November: "11",
-      December: "12",
-    };
-
-    // Handle different formats (e.g., "2024 يناير 05" or "2024 January 05")
-    const [year, monthName, day] = dateString.split(" ");
-
-    // Try both mappings
-    const month =
-      arabicMonthMapping[monthName] || englishMonthMapping[monthName];
-
-    if (!month) return dateString; // fallback in case month name not found
-
-    return `${year}-${month.padStart(2, "0")}-${day}`;
-  }
 
   // Default Form Values
   const defaultValues = {
     full_name: profile?.full_name || "",
     email: profile?.email || "",
-    password: "**************",
-    birthday: profile?.birthday ? convertDate(profile?.birthday) : "",
-    // birthday: profile?.birthday
-    //   ? convertDate(profile?.birthday) + "T22:00:00.000Z"
-    //   : "",
-    gender: profile?.gender || "",
     image: "",
     phone: profile?.phone || "",
     phone_code: profile?.phone_code || "",
@@ -108,19 +61,11 @@ export default function PersonalAccountForm({
 
   // Hook Form Initialization
   const form = useForm({
-    resolver: yupResolver(formSchema),
+    // resolver: yupResolver(formSchema),
     defaultValues,
   });
-  const formatLocalDate = (date: any) => {
-    if (!date) return "";
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, "0"); // Months are zero-indexed
-    const day = String(date.getDate()).padStart(2, "0");
-    return `${year}-${month}-${day}`;
-  };
+
   // Extract necessary functions from useForm
-  const { setValue, watch } = form;
-  const selectedGender = watch("gender"); // Watch gender changes
   const UpdateProfile = async () => {
     try {
       const response = await axiosInstance.get("/profile");
@@ -174,146 +119,73 @@ export default function PersonalAccountForm({
       full_name: values?.full_name,
       email: values?.email,
       // password: values?.password,
-      birthday: formatLocalDate(new Date(values?.birthday)),
       gender: values?.gender,
       image: image,
     };
     if (finalOut["image"].includes("https")) {
       delete finalOut["image"];
     }
-    UpdateProfileMutate({ ...finalOut });
+    ShowAlertMixin({
+      icon: "success",
+      type: 15,
+      title: "success",
+    });
+
+    setActiveUpdateData(false);
+    setTimeout(() => {
+      setAuthStage("verify");
+      setIsDialogOpen(true);
+    }, 500);
+    // UpdateProfileMutate({ ...finalOut });
   };
 
   return (
     <>
       <Form {...form}>
-        <form className="pt-6" onSubmit={form.handleSubmit(handleSubmit)}>
-          <FormInput
-            name="full_name"
-            label={"fullname"}
-            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
-            placeholder={"fullname"}
-            showRequired
-          />
-          <FormInput
-            name="email"
-            label={"email"}
-            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
-            placeholder={"email"}
-            showRequired
-          />
+        <form className="pt-2" onSubmit={form.handleSubmit(handleSubmit)}>
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl leading-6 text-start font-medium text-darkprimary my-3">
+              معلومات شخصية
+            </h2>
+            <FormInput
+              name="full_name"
+              label={"fullname"}
+              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              placeholder={"fullname"}
+            />
+            <FormInput
+              name="email"
+              label={"email"}
+              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              placeholder={"email"}
+            />
 
-          {/* Radio Group for Gender Selection */}
-          <div className="flex flex-col gap-3 my-3">
-            <label className="text-sm font-medium">{t("Text.gender")}</label>
-
-            <RadioGroup
-              dir={`${locale == "ar" ? "rtl" : "ltr"}`}
-              value={selectedGender}
-              onValueChange={(value) => setValue("gender", value)}
-              className="grid lg:grid-cols-2 gap-4"
-            >
-              <div
-                className={`flex items-center gap-2 space-x-2 bg-white border-[1px]  p-4 rounded-lg ${
-                  selectedGender == "male"
-                    ? "border-primary"
-                    : "border-greynormal"
-                }`}
-              >
-                <RadioGroupItem value="male" id="male" />
-
-                <label htmlFor="male" className="text-sm">
-                  {t("Text.male")}
-                </label>
-              </div>
-              <div
-                className={`flex items-center gap-2 space-x-2 bg-white border-[1px]   p-4 rounded-lg ${
-                  selectedGender == "female"
-                    ? "border-primary"
-                    : "border-greynormal"
-                }`}
-              >
-                <RadioGroupItem value="female" id="female" />
-                <label htmlFor="female" className="text-sm">
-                  {t("Text.female")}
-                </label>
-              </div>
-            </RadioGroup>
-          </div>
-          <FormInputDate
-            name="birthday"
-            label={"date_of_birth"}
-            className="h-16 !w-full  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder px-7 pe-10"
-            placeholder={"date_of_birth"}
-            showRequired
-            rightIcon={
-              <>
-                <DateIcon className="size-6" />
-              </>
-            }
-          />
-          {/* <FormInput
-            name="birthday"
-            label={"date_of_birth"}
-            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
-            placeholder={"date_of_birth"}
-            showRequired
-          /> */}
-          <div className="relative my-2">
             <PhoneNumber
               label={"phoneNumber"}
               placeholder={"phoneNumber"}
               country="sa"
-              disabled
               // showRequired
             />
-            <div
-              onClick={() => {
-                setAuthStage("phoneVerify");
-                setIsOpen(true);
-              }}
-              className="text-primary cursor-pointer text-base font-normal absolute top-0 end-0   leading-8"
-            >
-              {t("Text.change_phone")}
-            </div>
-          </div>
-          <div className="relative my-2">
-            <FormInput
-              name="password"
-              label="password"
-              placeholder="password"
-              className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
-              disabled
-            />
-            <div
-              onClick={() => {
-                setAuthStage("change-password");
-                setIsOpen(true);
-              }}
-              className="text-primary cursor-pointer text-base font-normal absolute top-0 end-0   leading-8"
-            >
-              {t("validations.Change password")}
-            </div>
-          </div>
 
-          <div className="!pt-2 z-[1] relative">
-            <CustomBtn
-              title={t("BUTTONS.save_changes")}
-              buttonType="submit"
-              loader={LoadingComplete}
-              disabled={LoadingComplete}
-              button
-              className="rounded-2xl font-bold w-fit px-12s  text-center !h-[56px] !mt-[30px] md:!mt-[56px] bg-primary text-white"
-            />
+            <div className="flex justify-end items-center gap-2">
+              <button
+                disabled={LoadingComplete}
+                className="rounded-full font-bold w-[177px] px-12s  text-center !h-[56px] !mt-[30px] md:!mt-[56px] bg-white hover:bg-primary hover:text-white transition-colors text-primary border border-primary"
+              >
+                {t("BUTTONS.cancel")}
+              </button>
+              <CustomBtn
+                title={t("BUTTONS.save_changes")}
+                buttonType="submit"
+                loader={LoadingComplete}
+                disabled={LoadingComplete}
+                button
+                className="!rounded-full font-bold !w-[177px] px-12s  text-center !h-[56px] !mt-[30px] md:!mt-[56px] bg-primary text-white"
+              />
+            </div>
           </div>
         </form>
       </Form>
-      <AppDialog
-        setIsDialogOpen={setIsOpen}
-        isDialogOpen={isOpen}
-        authStage={authStage}
-        setAuthStage={setAuthStage}
-      />
     </>
   );
 }

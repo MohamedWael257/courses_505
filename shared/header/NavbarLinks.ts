@@ -4,17 +4,18 @@ export const NavItems: NavLink[] = [
     name: "home",
     path: "/",
   },
+
+  {
+    name: "courses",
+    path: "/courses",
+  },
+  {
+    name: "books",
+    path: "/books",
+  },
   {
     name: "about",
     path: "/about",
-  },
-  {
-    name: "clients",
-    path: "/clients",
-  },
-  {
-    name: "cataluge",
-    path: "/cataluge",
   },
   {
     name: "contactus",

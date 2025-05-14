@@ -97,7 +97,7 @@ export default function LogoutButton({ setOpen }: Props) {
           setOpen(false);
         }
       }}
-      className="text-error flex gap-2 text-lg font-medium   leading-8 items-center lg:px-3"
+      className="text-error flex gap-2 text-base font-normal   leading-8 items-center lg:px-3"
     >
       <RiLogoutCircleRLine size={25} />
       {t("NAV.logout")}

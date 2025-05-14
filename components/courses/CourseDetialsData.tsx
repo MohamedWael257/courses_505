@@ -9,9 +9,10 @@ import {
 import ImageWithFallback from "@/shared/ImageWithFallback";
 import course from "@/assets/test.jpg";
 import { TiStar } from "react-icons/ti";
-import { Rate } from "antd";
+import { Rate, Tabs, TabsProps } from "antd";
 import { useTranslations } from "next-intl";
 import { DateIcon } from "@/shared/Icons";
+import { useRouter } from "next/navigation";
 
 type Props = {
   data: any;
@@ -19,7 +20,8 @@ type Props = {
 
 export default function CourseDetialsData({ data }: Props) {
   const t = useTranslations("");
-
+  const [defaultActiveKey, setDefaultActiveKey] = useState("Tab-1");
+  const router = useRouter();
   const [step, setStep] = useState(0);
   const desc = [
     t("Text.terrible"),
@@ -28,12 +30,46 @@ export default function CourseDetialsData({ data }: Props) {
     t("Text.good"),
     t("Text.wonderful"),
   ];
+  const items: TabsProps["items"] = [
+    {
+      key: "Tab-1",
+      label: "عن الدورة",
+    },
+    {
+      key: "Tab-2",
+      label: "الأهداف",
+    },
+    {
+      key: "Tab-3",
+      label: "محتوي الدورة",
+    },
+    {
+      key: "Tab-4",
+      label: "المواعيد المتاحة",
+    },
+    {
+      key: "Tab-5",
+      label: "عن المدرب",
+    },
+    {
+      key: "Tab-6",
+      label: "تقييم الدوره",
+    },
+  ];
   return (
     <div className=" flex justify-start relative container md:py-10 py-6">
       <div className="lg:w-[60%] space-y-6">
-        tabs
-        <div className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
+        <Tabs
+          defaultActiveKey={defaultActiveKey}
+          items={items}
+          onChange={(key) => {
+            setDefaultActiveKey(key);
+            router.push(`#${key}`);
+          }}
+          className="custom-tabs-wrapper"
+        />
+        <div id="Tab-1" className="flex flex-col gap-5">
+          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
             عن الدورة
           </h2>
           <p className="text-secondrytext font-normal text-sm leading-8 text-start">
@@ -45,8 +81,8 @@ export default function CourseDetialsData({ data }: Props) {
             الحالي.
           </p>
         </div>
-        <div className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
+        <div id="Tab-1" className="flex flex-col gap-5">
+          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
             الأهداف
           </h2>
           <ul className="list-disc">
@@ -67,8 +103,8 @@ export default function CourseDetialsData({ data }: Props) {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
+        <div id="Tab-2" className="flex flex-col gap-5">
+          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
             محتوي الدورة
           </h2>
           <p className="text-secondrytext font-normal text-sm leading-8 text-start">
@@ -166,8 +202,8 @@ export default function CourseDetialsData({ data }: Props) {
             </SharedAccordion>
           ))}
         </div>
-        <div className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
+        <div id="Tab-3" className="flex flex-col gap-5">
+          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
             المواعيد المتاحة{" "}
           </h2>
           <div className="grid gap-6">
@@ -223,8 +259,8 @@ export default function CourseDetialsData({ data }: Props) {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-3xl text-start leading-8">
+        <div id="Tab-4" className="flex flex-col gap-5">
+          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
             عن المدرب
           </h2>
           <div className="bg-greynormal p-4  px-8 rounded-2xl mt-3">
@@ -247,7 +283,7 @@ export default function CourseDetialsData({ data }: Props) {
             </p>
           </div>
         </div>
-        <div className="flex flex-col gap-5">
+        <div id="Tab-6" className="flex flex-col gap-5">
           <div className="my-6 flex gap-2 items-center">
             <TiStar color="#FF8861" size={25} />
             <div className="   text-lg font-semibold flex gap-1 items-center">

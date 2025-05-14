@@ -24,14 +24,14 @@ function HeroSection({ slider }: Props) {
   return (
     <>
       <div className="bg-secprimary relative">
-        <div className="lg:h-screen h-[85vh] xl:w-[60%] w-3/4 mx-auto text-center relative lg:pt-52 pt-8 container">
+        <div className="lg:h-[90vh] h-[75vh] xl:w-[60%] w-3/4 mx-auto text-center relative lg:pt-16 pt-8 container">
           <div className="relative z-40">
             <h2
               className={` ${
                 locale === "ar"
                   ? "lg:text-6xl md:text-4xl text-2xl md:!leading-[84px] !leading-8"
                   : "lg:text-3xl text-2xl !leading-8"
-              }   text-center  capitalize font-medium transition-all  hover:scale-105 `}
+              }   text-center  capitalize font-medium  `}
             >
               <span className="text-error">{words[0]}</span>{" "}
               {words?.length > 0 &&

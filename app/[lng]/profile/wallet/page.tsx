@@ -3,11 +3,10 @@ import React from "react";
 
 type Props = {};
 
-export default function page({
-  searchParams,
-}: {
-  searchParams: { type?: string };
-}) {
-  const type = searchParams.type || "deposit"; // let page = 1;
-  return <WalletIndex type={type} />;
+export default function page() {
+  return (
+    <div className="bg-greynormal p-6 rounded-2xl border border-secprimary">
+      <WalletIndex  />
+    </div>
+  );
 }

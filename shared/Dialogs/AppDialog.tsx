@@ -11,7 +11,6 @@ import EmailVerify from "../Auth/components/EmailVerify";
 import TypeVerifyCodeRegister from "../Auth/components/TypeVerifyCodeRegister";
 import Welcome from "../Auth/components/Welcome";
 import LocationForm from "@/components/appforms/LocationForm";
-import LocationConfirmForm from "@/components/appforms/LocationConfirmForm";
 import CancelProductForm from "@/components/appforms/CancelProductForm";
 import CancelOrderForm from "@/components/appforms/CancelOrderForm";
 import ProductRateForm from "@/components/appforms/ProductRateForm";
@@ -33,8 +32,6 @@ const AppDialog = ({
   rateable_id,
 }: any) => {
   const locale = useLocale();
-  const [longitude, setLongitude] = useState<number | null>(null);
-  const [latitude, setLatitude] = useState<number | null>(null);
 
   return (
     <>
@@ -92,20 +89,11 @@ const AppDialog = ({
                   dialogOpen={setIsDialogOpen}
                 />
               )}
+
               {authStage === "location" && (
                 <LocationForm
-                  setLongitude={setLongitude}
-                  setLatitude={setLatitude}
                   setAuthStage={setAuthStage}
                   dialogOpen={setIsDialogOpen}
-                />
-              )}
-              {authStage === "locationconfirm" && (
-                <LocationConfirmForm
-                  setAuthStage={setAuthStage}
-                  dialogOpen={setIsDialogOpen}
-                  longitude={longitude}
-                  latitude={latitude}
                   refetch={refetch}
                   refresh={refresh}
                 />

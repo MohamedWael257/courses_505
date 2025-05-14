@@ -26,7 +26,7 @@ const MetaComponent = async ({ metadata }: MetaTagsProps) => {
   return (
     <Head>
       <title>
-        {metadata?.title ?? dir === "rtl" ? "متجر متعدد" : "Matgar Doom"}
+        {metadata?.title ?? dir === "rtl" ? "متجر كورسات" : "Matgar Courses"}
       </title>
       <meta
         name="description"
@@ -43,7 +43,7 @@ const MetaComponent = async ({ metadata }: MetaTagsProps) => {
       <meta
         property="og:title"
         content={
-          metadata?.title ?? dir === "rtl" ? "متجر متعدد" : "Matgar Doom"
+          metadata?.title ?? dir === "rtl" ? "متجر كورسات" : "Matgar Courses"
         }
       />
       <meta

@@ -8,15 +8,15 @@ type Props = {};
 export default function PersonalIndex({}: Props) {
   return (
     <>
-      <GeneralClientAxios method="GET" url="profile">
+      {/* <GeneralClientAxios method="GET" url="profile">
         {(data, refetch) => (
           <>
-            <div className="bg-white p-4 rounded-lg mb-4">
-              <PersonalAccountDetails refetch={refetch} profile={data} />
-            </div>
+            <div className="bg-white p-4 rounded-lg mb-4"> */}
+              <PersonalAccountDetails refetch={null} profile={null} />
+            {/* </div>
           </>
         )}
-      </GeneralClientAxios>
+      </GeneralClientAxios> */}
     </>
   );
 }

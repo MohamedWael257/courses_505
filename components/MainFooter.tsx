@@ -1,14 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import FooterIndex from "@/shared/footer/MainFooter";
-export default async function Footer({ categories, settings, error }: any) {
-  if (error) {
-    return <>{error}</>;
-  }
+export default async function Footer({ settings }: any) {
   return (
     <div className=" overflow-x-hidden">
-      {categories && settings && (
-        <FooterIndex categories={categories} settings={settings} />
-      )}
+      {/* {  settings && ( */}
+      <FooterIndex settings={settings} />
+      {/* )} */}
     </div>
   );
 }

@@ -37,7 +37,7 @@ const locationSlice = createSlice({
           lat: action.payload.lat,
           lng: action.payload.lng,
           location_description: action.payload.location_description,
-          location_id:action.payload.location_id
+          location_id: action.payload.location_id,
         }),
         { expires: 30 }
       );

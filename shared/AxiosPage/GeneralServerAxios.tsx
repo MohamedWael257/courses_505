@@ -142,17 +142,12 @@ function addQueryParams(url: string, params?: Record<string, any>): string {
 
 export const getHeaderData = async () => {
   try {
-    const [categoriesRes, settingRes] = await Promise.all([
-      axiosInstanceGeneralServer.get(`categories?level=1`),
-      axiosInstanceGeneralServer.get("settings"),
-    ]);
-
+    const { data } = await axiosInstanceGeneralServer.get("settings");
     return {
-      categories: categoriesRes.data.data,
-      settings: settingRes.data.data,
+      settings: data,
     };
   } catch (error: any) {
     console.error(error);
-    return { error: error?.message, categories: null, settings: null }; // Return empty on error
+    return { settings: [] }; // Return empty on error
   }
 };

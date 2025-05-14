@@ -27,7 +27,7 @@ export async function generateMetadataFromEndpoint({
     const metadata = response?.data?.metadata;
 
     return {
-      title: metadata?.title ?? (isArabaic ? "متجر متعدد" : "Matgar Doom"),
+      title: metadata?.title ?? (isArabaic ? "متجر كورسات" : "Matgar Courses"),
       // description:
       //   metadata?.description ??
       //   (isArabaic
@@ -38,7 +38,8 @@ export async function generateMetadataFromEndpoint({
         canonical: metadata?.canonical_tags || "",
       },
       openGraph: {
-        title: metadata?.title ?? (isArabaic ? "متجر متعدد" : "Matgar Doom"),
+        title:
+          metadata?.title ?? (isArabaic ? "متجر كورسات" : "Matgar Courses"),
         // description:
         //   metadata?.description ??
         //   (isArabaic
@@ -58,7 +59,7 @@ export async function generateMetadataFromEndpoint({
     };
   } catch (error) {
     return {
-      title: isArabaic ? "متجر متعدد" : "Matgar Doom",
+      title: isArabaic ? "متجر كورسات" : "Matgar Courses",
       // description:
       //   isArabaic
       //     ? "رعاية شاملة و مميزة لتلبية احتياجاتك الصحية"

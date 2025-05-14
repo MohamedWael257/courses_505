@@ -36,7 +36,7 @@ export default function CustomCard({
               locale === "ar"
                 ? "lg:text-6xl md:text-4xl text-2xl md:!leading-[84px] !leading-8"
                 : "lg:text-3xl text-2xl !leading-8"
-            }   text-center  capitalize font-medium transition-all  hover:scale-105 `}
+            }   text-center  capitalize font-medium `}
           >
             {title}
           </h2>

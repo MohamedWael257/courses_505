@@ -45,7 +45,7 @@ const config: Config = {
       secgreynormal: "#FFF5EB",
       footer: "#1E1E1E",
       error: "#EF233C",
-      sub: "#8B9693",
+      sub: "#818C92",
       transparent: "transparent",
       current: "currentColor",
       keyframes: {

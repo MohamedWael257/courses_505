@@ -40,10 +40,10 @@ const LangSwitcher: React.FC = () => {
       className={`flex items-center gap-1 text-dark  font-bold`}
       onClick={() => setLanguage(locale)}
     >
-      <Internet />
       <span className=" inline-flex    leading-[1] mx-2">
         {t(`locale.${locale}`)}
       </span>
+      <Internet />
     </button>
   );
 };

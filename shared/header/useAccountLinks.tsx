@@ -1,16 +1,11 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import React from "react";
-import ImageWithFallback from "../ImageWithFallback";
-import { SlLocationPin } from "react-icons/sl";
 import {
-  Chats,
-  Coupons,
+  Courses,
+  Downloads,
   EditProfile,
-  Gifts,
+  Location,
   Orders,
-  Points,
-  Starts,
   Wallet,
 } from "../Icons";
 
@@ -28,9 +23,9 @@ const useAccountLinks = () => {
     {
       name: t("addresses"),
       path: "/profile/addresses",
-      icon: <SlLocationPin size={40} />,
+      icon: <Location className="size-10" color={"#3E3E3E"} />,
 
-      activeIcon: <SlLocationPin size={40} color={"#4F008C"} />,
+      activeIcon: <Location className="size-10" color={"#4F008C"} />,
     },
     {
       name: t("orders"),
@@ -40,46 +35,25 @@ const useAccountLinks = () => {
       activeIcon: <Orders className="size-10" color={"#4F008C"} />,
     },
     {
+      name: t("courses"),
+      path: "/profile/courses",
+      icon: <Courses className="size-10" color={"#3E3E3E"} />,
+
+      activeIcon: <Courses className="size-10" color={"#4F008C"} />,
+    },
+    {
+      name: t("downloads"),
+      path: "/profile/downloads?filter=",
+      icon: <Downloads className="size-10" color={"#3E3E3E"} />,
+
+      activeIcon: <Downloads className="size-10" color={"#4F008C"} />,
+    },
+    {
       name: t("wallet"),
-      path: "/profile/wallet?type=deposit",
+      path: "/profile/wallet",
       icon: <Wallet className="size-10" color={"#3E3E3E"} />,
 
       activeIcon: <Wallet className="size-10" color={"#4F008C"} />,
-    },
-    {
-      name: t("coupons"),
-      path: "/profile/coupons?filter=",
-      icon: <Coupons className="size-10" color={"#3E3E3E"} />,
-
-      activeIcon: <Coupons className="size-10" color={"#4F008C"} />,
-    },
-    {
-      name: t("points"),
-      path: "/profile/points",
-      icon: <Points className="size-10" color={"#3E3E3E"} />,
-
-      activeIcon: <Points className="size-10" color={"#4F008C"} />,
-    },
-    {
-      name: t("gifts"),
-      path: "/profile/gifts",
-      icon: <Gifts className="size-10" color={"#3E3E3E"} />,
-
-      activeIcon: <Gifts className="size-10" color={"#4F008C"} />,
-    },
-    {
-      name: t("rates"),
-      path: "/profile/rates",
-      icon: <Starts className="size-10" color={"#3E3E3E"} />,
-
-      activeIcon: <Starts className="size-10" color={"#4F008C"} />,
-    },
-    {
-      name: t("chats"),
-      path: "/profile/chats",
-      icon: <Chats className="size-10" color={"#3E3E3E"} />,
-
-      activeIcon: <Chats className="size-10" color={"#4F008C"} />,
     },
   ];
 

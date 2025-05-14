@@ -32,7 +32,7 @@ export type AuthStage =
   | "welcome"
   | "locationData"
   | "location"
-  | "locationconfirm"
+  | "location"
   | "cancelorder"
   | "returnorder"
   | "cancelproduct"
@@ -40,14 +40,11 @@ export type AuthStage =
   | "providerrate"
   | "shippingrate"
   | "Questionier";
-export default async function Header({ categories, settings, error }: any) {
-  if (error) {
-    return <>{error}</>;
-  }
+export default async function Header({  settings }: any) {
   return (
     <>
-      {/* {categories && settings && ( */}
-      <HeaderIndex categories={categories} settings={settings} />
+      {/* { settings && ( */}
+      <HeaderIndex  settings={settings} />
       {/* )} */}
     </>
   );
