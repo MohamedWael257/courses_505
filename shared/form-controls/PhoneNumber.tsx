@@ -1,245 +1,7 @@
-// // @ts-nocheck
-// import React, { useEffect, useRef, useState } from "react";
-// import {
-//   FormControl,
-//   FormItem,
-//   FormLabel,
-//   FormMessage,
-// } from "@/shared/ui/form";
-// import { Controller, useFormContext } from "react-hook-form";
-// import PhoneInput from "react-phone-input-2";
-// import "react-phone-input-2/lib/style.css";
-// import { useTranslations } from "next-intl";
-// import { cn } from "@/utils/helpers";
-// import { CountryPhoneCodes } from "@/public/countries/country-phone-code";
-// import { Skeleton } from "../ui/skeleton";
-// import axiosInstanceGeneralClient from "@/utils/axiosClientGeneral";
-
-// interface PhoneNumberProps {
-//   label?: string;
-//   showRequired?: boolean;
-//   country?: string;
-//   placeholder?: string;
-//   disabled?: boolean;
-//   className?: string;
-//   throwErrorPhone?: boolean;
-// }
-
-// const PhoneNumber: React.FC<PhoneNumberProps> = ({
-//   label,
-//   showRequired = false,
-//   country = "sa",
-//   placeholder = "Enter phone number",
-//   disabled = false,
-//   className,
-//   throwErrorPhone,
-// }) => {
-//   const form = useFormContext();
-//   const t = useTranslations("LABELS");
-//   const inputRef = useRef<HTMLInputElement>(null);
-
-//   const {
-//     formState: { errors },
-//   } = form;
-
-//   const { phone, phone_code } = form.getValues();
-//   const { setValue } = form;
-
-//   const [countries, setCountries] = useState<
-//     { name: string; shortName: string; dialCode: string }[]
-//   >([]);
-//   const [loading, setLoading] = useState(false);
-//   const [defaultCountry, setDefaultCountry] = useState<string>(country);
-//   const [dialCode, setDialCode] = useState<string>("");
-
-//   useEffect(() => {
-//     const fetchCountries = async () => {
-//       try {
-//         setLoading(true);
-//         const response = await axiosInstanceGeneralClient.get("countries");
-//         const data = await response?.data;
-
-//         const filteredCountries = data?.data?.filter((country: any) =>
-//           CountryPhoneCodes.some(
-//             (item) =>
-//               item.dial_code.replace("+", "") === String(country.phone_code)
-//           )
-//         );
-
-//         const formattedCountries = filteredCountries.map((country: any) => {
-//           const matched = CountryPhoneCodes.find(
-//             (item) =>
-//               item.dial_code.replace("+", "") === String(country.phone_code)
-//           );
-//           return {
-//             name: country.name,
-//             shortName: matched?.code.toLowerCase() || country.short_name,
-//             dialCode: country.phone_code,
-//           };
-//         });
-
-//         setCountries(formattedCountries);
-
-//         if (phone_code) {
-//           const foundCountry = formattedCountries.find(
-//             (c: any) => c.dialCode === phone_code
-//           );
-//           if (foundCountry) {
-//             setDefaultCountry(foundCountry.shortName);
-//             setDialCode(`+${foundCountry.dialCode}`);
-//           }
-//         }
-//       } catch (error) {
-//         console.error("Error fetching countries:", error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchCountries();
-//   }, []);
-
-//   const handlePhoneChange = (
-//     value: string,
-//     country: { dialCode: string; countryCode: string }
-//   ) => {
-//     const newDial = `+${country.dialCode}`;
-//     setDialCode(newDial);
-
-//     let currentValue = value;
-//     if (!currentValue.startsWith(newDial)) {
-//       currentValue = newDial + currentValue.replace(/^\+?\d+/, "");
-//     }
-
-//     const numberOnly = currentValue.slice(newDial.length).trim();
-//     setValue("phone", numberOnly);
-//     setValue("phone_code", country.dialCode);
-//   };
-
-//   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
-//     const input = inputRef.current;
-//     if (!input) return;
-
-//     const selectionStart = input.selectionStart ?? 0;
-//     const selectionEnd = input.selectionEnd ?? 0;
-//     const codeLength = dialCode.length;
-
-//     const isBackspaceAtCode =
-//       e.key === "Backspace" && selectionStart <= codeLength;
-//     const isDeleteAtCode = e.key === "Delete" && selectionStart < codeLength;
-//     const isSelectingCode =
-//       selectionStart < codeLength || selectionEnd < codeLength;
-
-//     if (isBackspaceAtCode || isDeleteAtCode || isSelectingCode) {
-//       e.preventDefault();
-//       setTimeout(() => {
-//         input.setSelectionRange(codeLength, codeLength);
-//       }, 0);
-//     }
-//   };
-
-//   const handleClick = () => {
-//     const input = inputRef.current;
-//     if (input) {
-//       const cursorPos = input.selectionStart ?? 0;
-//       if (cursorPos < dialCode.length) {
-//         input.setSelectionRange(dialCode.length, dialCode.length);
-//       }
-//     }
-//   };
-
-//   useEffect(() => {
-//     const current = inputRef.current;
-//     if (current && !current.value.startsWith(dialCode)) {
-//       current.value = dialCode;
-//     }
-//   }, [dialCode]);
-
-//   const onlyCountries = countries
-//     .map((c) => c.shortName.toLowerCase())
-//     .filter(Boolean);
-
-//   return (
-//     <Controller
-//       control={form.control}
-//       name="phone"
-//       render={() => (
-//         <FormItem className={cn("w-full", className)}>
-//           {label && (
-//             <FormLabel className="font-medium text-lg leading-8 my-2 px-2">
-//               {showRequired && <span className="text-error">*</span>}
-//               {t(label)}
-//             </FormLabel>
-//           )}
-
-//           <FormControl>
-//             <div dir="ltr" className="relative">
-//               {loading ? (
-//                 <Skeleton className="w-full h-16 rounded-[12px]" />
-//               ) : (
-//                 <PhoneInput
-//                   enableSearch
-//                   country={defaultCountry}
-//                   disabled={disabled}
-//                   placeholder={t(placeholder)}
-//                   onlyCountries={
-//                     onlyCountries.length > 0 ? onlyCountries : ["sa"]
-//                   }
-//                   buttonClass="hover:bg-[green]"
-//                   containerStyle={{ borderRadius: "12px" }}
-//                   inputStyle={{
-//                     width: "100%",
-//                     borderRadius: "12px",
-//                     height: "64px",
-//                     paddingLeft: "60px",
-//                     borderColor:
-//                       (errors.phone || errors.phone_code) &&
-//                       !form.getValues("phone")
-//                         ? "#ef233c"
-//                         : "#EAEDF0",
-//                   }}
-//                   buttonStyle={{
-//                     marginLeft: "10px",
-//                     height: "40px",
-//                     width: "40px",
-//                     marginTop: "12px",
-//                     borderRadius: "50%",
-//                     border: "none",
-//                   }}
-//                   value={`${dialCode}${phone || ""}`}
-//                   onChange={handlePhoneChange}
-//                   inputProps={{
-//                     ref: inputRef,
-//                     onKeyDown: handleKeyDown,
-//                     onClick: handleClick,
-//                   }}
-//                 />
-//               )}
-//               {(errors.phone || errors.phone_code) &&
-//                 !form.getValues("phone") && (
-//                   <p
-//                     role="alert"
-//                     className="text-error text-sm rtl:text-end"
-//                     style={{ color: "#ef233c" }}
-//                   >
-//                     {errors.phone && t(errors.phone?.message)}
-//                   </p>
-//                 )}
-//             </div>
-//           </FormControl>
-//           <FormMessage />
-//         </FormItem>
-//       )}
-//     />
-//   );
-// };
-
-// export default PhoneNumber;
 //@ts-nocheck
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   FormControl,
-  FormField,
   FormItem,
   FormLabel,
   FormMessage,
@@ -279,21 +41,29 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
 }) => {
   const form = useFormContext();
   const t = useTranslations("LABELS");
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const {
+    setValue,
+    getValues,
     formState: { errors },
   } = form;
-  const values = form.getValues();
-  const phone = values[phone_name] ?? values.phone;
-  const phone_code = values[phone_code_name] ?? values.phone_code;
-  const { setValue } = form;
 
   const [countries, setCountries] = useState<
     { name: string; shortName: string; dialCode: string }[]
   >([]);
+  const { phone_code_name, phone_name, phone_code } = getValues();
+  // const getDialCode = (phoneCode: string): string => {
+  //   return phoneCode
+  //     ? countries?.find((country) => `+${phoneCode}` == country?.dial_code)
+  //         ?.dial_code || ""
+  //     : countries[0].dialCode;
+  // };
   const [loading, setLoading] = useState(false);
-
   const [defaultCountry, setDefaultCountry] = useState<string>(country);
+  // const initialDialCode = getDialCode(getValues("phone_code"));
+  const [dialCode, setDialCode] = useState<string>("");
+  const [phone, setPhone] = useState(``);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -323,13 +93,33 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
 
         setCountries(formattedCountries);
 
-        if (phone_code) {
+        if (
+          getValues(`${phone_code_name ? `${phone_code_name}` : "phone_code"}`)
+        ) {
           const foundCountry = formattedCountries.find(
-            (c: any) => c.dialCode === phone_code
+            (c: any) =>
+              c.dialCode ===
+              getValues(
+                `${phone_code_name ? `${phone_code_name}` : "phone_code"}`
+              )
           );
           if (foundCountry) {
             setDefaultCountry(foundCountry.shortName);
+            setDialCode(`+${foundCountry.dialCode}`);
+            setPhone(
+              `+${foundCountry.dialCode}${
+                getValues(`${phone_name ? `${phone_name}` : "phone"}`) || ""
+              }`
+            );
           }
+        } else {
+          setDefaultCountry(formattedCountries[0]?.shortName);
+          setDialCode(`+${formattedCountries[0]?.dialCode}`);
+          setPhone(
+            `+${formattedCountries[0]?.dialCode}${
+              getValues(`${phone_name ? `${phone_name}` : "phone"}`) || ""
+            }`
+          );
         }
       } catch (error) {
         console.error("Error fetching countries:", error);
@@ -340,32 +130,74 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
 
     fetchCountries();
   }, []);
-
-  const formatPhoneNumber = (
-    phoneCode: string,
-    phoneNumber: string
-  ): string => {
-    if (!phoneCode || !phoneNumber) return "";
-    return `+${phoneCode}${phoneNumber}`;
-  };
-
-  // const handlePhoneChange = (
-  //   value: string,
-  //   country: { dialCode: string; countryCode: string }
-  // ) => {
-  //   const phoneNumber = value.slice(country.dialCode.length).trim();
-  //   setValue("phone", phoneNumber);
-  //   setValue("phone_code", country.dialCode);
+  // const formatPhoneNumber = (
+  //   phoneCode: string,
+  //   phoneNumber: string
+  // ): string => {
+  //   if (!phoneCode || !phoneNumber) return "";
+  //   return `+${phoneCode}${phoneNumber}`;
   // };
+
   const handlePhoneChange = (
     value: string,
     country: { dialCode: string; countryCode: string }
   ) => {
-    const phoneNumber = value.slice(country.dialCode.length).trim();
+    const newDial = `${country.dialCode}`;
+    setDialCode(`+${country.dialCode}`);
 
-    setValue(`${phone_name ?? "phone"}`, phoneNumber);
-    setValue(`${phone_code_name ?? "phone_code"}`, country.dialCode);
+    let currentValue = value;
+    if (!currentValue.startsWith(newDial)) {
+      currentValue = newDial + currentValue.replace(/^\+?\d+/, "");
+    }
+
+    const numberOnly = currentValue.slice(newDial.length).trim();
+    // setPhone(currentValue);
+    setValue(`${phone_name ? `${phone_name}` : "phone"}`, numberOnly);
+    setValue(
+      `${phone_code_name ? `${phone_code_name}` : "phone_code"}`,
+      country.dialCode
+    );
   };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    const input = inputRef.current;
+    if (!input) return;
+
+    const selectionStart = input.selectionStart ?? 0;
+    const selectionEnd = input.selectionEnd ?? 0;
+    const codeLength = dialCode.length;
+
+    const isBackspaceAtCode =
+      e.key === "Backspace" && selectionStart <= codeLength;
+    const isDeleteAtCode = e.key === "Delete" && selectionStart < codeLength;
+    const isSelectingCode =
+      selectionStart < codeLength || selectionEnd < codeLength;
+
+    if (isBackspaceAtCode || isDeleteAtCode || isSelectingCode) {
+      e.preventDefault();
+      setTimeout(() => {
+        input.setSelectionRange(codeLength, codeLength);
+      }, 0);
+    }
+  };
+
+  const handleClick = () => {
+    const input = inputRef.current;
+    if (input) {
+      const cursorPos = input.selectionStart ?? 0;
+      if (cursorPos < dialCode.length) {
+        input.setSelectionRange(dialCode.length, dialCode.length);
+      }
+    }
+  };
+
+  useEffect(() => {
+    // لو القيمة اتمسحت كلها لأي سبب، نرجّع كود الدولة
+    if (!phone.startsWith(dialCode)) {
+      setPhone(dialCode);
+    }
+  }, [phone, dialCode]);
+
   const onlyCountries = countries
     .map((c) => c.shortName.toLowerCase())
     .filter(Boolean);
@@ -373,11 +205,11 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
   return (
     <Controller
       control={form.control}
-      name={`${phone_name ?? "phone"}`}
-      render={({ field }) => (
+      name="phone"
+      render={() => (
         <FormItem className={cn("w-full", className)}>
           {label && (
-            <FormLabel className="font-medium text-lg   leading-6 my-2 px-2">
+            <FormLabel className="font-medium text-lg leading-8 my-2 px-2">
               {showRequired && <span className="text-error">*</span>}
               {t(label)}
             </FormLabel>
@@ -397,20 +229,36 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
                     onlyCountries.length > 0 ? onlyCountries : ["sa"]
                   }
                   buttonClass="hover:bg-[green]"
-                  containerStyle={{
-                    borderRadius: "9999px",
-                  }}
+                  containerStyle={{ borderRadius: "12px" }}
                   inputStyle={{
                     width: "100%",
-                    borderRadius: "9999px",
+                    borderRadius: "12px",
                     height: "64px",
                     paddingLeft: "60px",
                     borderColor:
-                      (errors.phone || errors.phone_code) &&
-                      !errors.phone?.ref.value
+                      (errors[`${phone_name ? `${phone_name}` : "phone"}`] ||
+                        errors[
+                          `${
+                            phone_code_name
+                              ? `${phone_code_name}`
+                              : "phone_code"
+                          }`
+                        ]) &&
+                      !errors[`${phone_name ? `${phone_name}` : "phone"}`]?.ref
+                        .value
                         ? "#ef233c"
                         : "#EAEDF0",
                   }}
+                  // borderColor:
+                  //   phone_name && phone_code_name
+                  //     ? (errors.phone_name || errors.phone_code_name) &&
+                  //       !errors?.phone_name?.ref.value
+                  //       ? "#ef233c"
+                  //       : "#EAEDF0"
+                  //     : (errors.phone || errors.phone_code) &&
+                  //       !errors?.phone?.ref.value
+                  //     ? "#ef233c"
+                  //     : "#EAEDF0",
                   buttonStyle={{
                     marginLeft: "10px",
                     height: "40px",
@@ -419,21 +267,31 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
                     borderRadius: "50%",
                     border: "none",
                   }}
-                  // {...field}
-                  value={formatPhoneNumber(phone_code, phone)}
+                  value={phone}
                   onChange={handlePhoneChange}
-                  // {...props}
+                  inputProps={{
+                    ref: inputRef,
+                    onKeyDown: handleKeyDown,
+                    onClick: handleClick,
+                  }}
                 />
               )}
-              {(errors.phone || errors.phone_code) &&
-                !errors.phone?.ref.value && (
+              {(errors[`${phone_name ? `${phone_name}` : "phone"}`] ||
+                errors[
+                  `${phone_code_name ? `${phone_code_name}` : "phone_code"}`
+                ]) &&
+                !errors[`${phone_name ? `${phone_name}` : "phone"}`]?.ref
+                  .value && (
                   <p
                     role="alert"
-                    style={{ color: "#ef233c " }}
                     className="text-error text-sm rtl:text-end"
+                    style={{ color: "#ef233c" }}
                   >
-                    {/* {throwErrorPhone && t("The phone field must be a number")} */}
-                    {errors.phone && t(errors.phone?.message)}
+                    {errors[`${phone_name ? `${phone_name}` : "phone"}`] &&
+                      t(
+                        errors[`${phone_name ? `${phone_name}` : "phone"}`]
+                          ?.message
+                      )}
                   </p>
                 )}
             </div>
@@ -446,3 +304,215 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
 };
 
 export default PhoneNumber;
+
+// //@ts-nocheck
+// import React, { useEffect, useState } from "react";
+// import {
+//   FormControl,
+//   FormField,
+//   FormItem,
+//   FormLabel,
+//   FormMessage,
+// } from "@/shared/ui/form";
+// import { Controller, useFormContext } from "react-hook-form";
+// import PhoneInput from "react-phone-input-2";
+// import "react-phone-input-2/lib/style.css";
+// import { useTranslations } from "next-intl";
+// import { cn } from "@/utils/helpers";
+// import { CountryPhoneCodes } from "@/public/countries/country-phone-code";
+// import { Skeleton } from "../ui/skeleton";
+// import axiosInstanceGeneralClient from "@/utils/axiosClientGeneral";
+
+// interface PhoneNumberProps {
+//   label?: string;
+//   showRequired?: boolean;
+//   country?: string;
+//   placeholder?: string;
+//   disabled?: boolean;
+//   className?: string;
+//   phone_name?: string;
+//   phone_code_name?: string;
+//   throwErrorPhone?: boolean;
+// }
+
+// const PhoneNumber: React.FC<PhoneNumberProps> = ({
+//   label,
+//   phone_name,
+//   phone_code_name,
+//   showRequired = false,
+//   country = "sa",
+//   placeholder = "Enter phone number",
+//   disabled = false,
+//   className,
+//   throwErrorPhone,
+//   ...props
+// }) => {
+//   const form = useFormContext();
+//   const t = useTranslations("LABELS");
+
+//   const {
+//     formState: { errors },
+//   } = form;
+//   const values = form.getValues();
+//   const phone = values[phone_name] ?? values.phone;
+//   const phone_code = values[phone_code_name] ?? values.phone_code;
+//   const { setValue } = form;
+
+//   const [countries, setCountries] = useState<
+//     { name: string; shortName: string; dialCode: string }[]
+//   >([]);
+//   const [loading, setLoading] = useState(false);
+
+//   const [defaultCountry, setDefaultCountry] = useState<string>(country);
+
+//   useEffect(() => {
+//     const fetchCountries = async () => {
+//       try {
+//         setLoading(true);
+//         const response = await axiosInstanceGeneralClient.get("countries");
+//         const data = await response?.data;
+
+//         const filteredCountries = data?.data?.filter((country: any) =>
+//           CountryPhoneCodes.some(
+//             (item) =>
+//               item.dial_code.replace("+", "") === String(country.phone_code)
+//           )
+//         );
+
+//         const formattedCountries = filteredCountries.map((country: any) => {
+//           const matched = CountryPhoneCodes.find(
+//             (item) =>
+//               item.dial_code.replace("+", "") === String(country.phone_code)
+//           );
+//           return {
+//             name: country.name,
+//             shortName: matched?.code.toLowerCase() || country.short_name,
+//             dialCode: country.phone_code,
+//           };
+//         });
+
+//         setCountries(formattedCountries);
+
+//         if (phone_code) {
+//           const foundCountry = formattedCountries.find(
+//             (c: any) => c.dialCode === phone_code
+//           );
+//           if (foundCountry) {
+//             setDefaultCountry(foundCountry.shortName);
+//           }
+//         }
+//       } catch (error) {
+//         console.error("Error fetching countries:", error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+
+//     fetchCountries();
+//   }, []);
+
+//   const formatPhoneNumber = (
+//     phoneCode: string,
+//     phoneNumber: string
+//   ): string => {
+//     if (!phoneCode || !phoneNumber) return "";
+//     return `+${phoneCode}${phoneNumber}`;
+//   };
+
+//   // const handlePhoneChange = (
+//   //   value: string,
+//   //   country: { dialCode: string; countryCode: string }
+//   // ) => {
+//   //   const phoneNumber = value.slice(country.dialCode.length).trim();
+//   //   setValue("phone", phoneNumber);
+//   //   setValue("phone_code", country.dialCode);
+//   // };
+//   const handlePhoneChange = (
+//     value: string,
+//     country: { dialCode: string; countryCode: string }
+//   ) => {
+//     const phoneNumber = value.slice(country.dialCode.length).trim();
+
+//     setValue(`${phone_name ?? "phone"}`, phoneNumber);
+//     setValue(`${phone_code_name ?? "phone_code"}`, country.dialCode);
+//   };
+//   const onlyCountries = countries
+//     .map((c) => c.shortName.toLowerCase())
+//     .filter(Boolean);
+
+//   return (
+//     <Controller
+//       control={form.control}
+//       name={`${phone_name ?? "phone"}`}
+//       render={({ field }) => (
+//         <FormItem className={cn("w-full", className)}>
+//           {label && (
+//             <FormLabel className="font-medium text-lg   leading-6 my-2 px-2">
+//               {showRequired && <span className="text-error">*</span>}
+//               {t(label)}
+//             </FormLabel>
+//           )}
+
+//           <FormControl>
+//             <div dir="ltr" className="relative">
+//               {loading ? (
+//                 <Skeleton className="w-full h-16 rounded-[12px]" />
+//               ) : (
+//                 <PhoneInput
+//                   enableSearch
+//                   country={countries[0]?.shortName}
+//                   disabled={disabled}
+//                   placeholder={t(placeholder)}
+//                   onlyCountries={
+//                     onlyCountries.length > 0 ? onlyCountries : ["sa"]
+//                   }
+//                   buttonClass="hover:bg-[green]"
+//                   containerStyle={{
+//                     borderRadius: "9999px",
+//                   }}
+//                   inputStyle={{
+//                     width: "100%",
+//                     borderRadius: "9999px",
+//                     height: "64px",
+//                     paddingLeft: "60px",
+//                     borderColor:
+//                       (errors.phone || errors.phone_code) &&
+//                       !errors.phone?.ref.value
+//                         ? "#ef233c"
+//                         : "#EAEDF0",
+//                   }}
+//                   buttonStyle={{
+//                     marginLeft: "10px",
+//                     height: "40px",
+//                     width: "40px",
+//                     marginTop: "12px",
+//                     borderRadius: "50%",
+//                     border: "none",
+//                   }}
+//                   // {...field}
+//                   value={formatPhoneNumber(phone_code, phone)}
+//                   onChange={handlePhoneChange}
+//                   // {...props}
+//                 />
+//               )}
+//               {(errors.phone || errors.phone_code) &&
+//                 !errors.phone?.ref.value && (
+//                   <p
+//                     role="alert"
+//                     style={{ color: "#ef233c " }}
+//                     className="text-error text-sm rtl:text-end"
+//                   >
+//                     {/* {throwErrorPhone && t("The phone field must be a number")} */}
+//                     {errors.phone && t(errors.phone?.message)}
+//                   </p>
+//                 )}
+//             </div>
+//           </FormControl>
+//           <FormMessage />
+//         </FormItem>
+//       )}
+//     />
+//   );
+// };
+
+// export default PhoneNumber;
