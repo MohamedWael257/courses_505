@@ -3,15 +3,16 @@
 "use client";
 import { useTranslations, useLocale } from "next-intl";
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import ProductCard from "@/shared/card/ProductCard";
-import { Tabs } from "antd";
+import { Tabs, TabsProps } from "antd";
+import { Input } from "@/shared/ui/input";
+import { IoSearch } from "react-icons/io5";
+import BooksCard from "@/shared/card/BooksCard";
+import CoursesCard from "@/shared/card/CoursesCard";
 
 type Props = {
   products: any;
-  categories: any;
-  // pagination: any;
-  // currentPage: any;
   defaultType: any;
   refetch: any;
 };
@@ -22,79 +23,99 @@ export interface tabs {
 }
 export default function FavouritsDetails({
   products,
-  // pagination,
   defaultType,
-  // currentPage,
-  categories,
   refetch,
 }: Props) {
-  // const t = useTranslations();
+  const t = useTranslations("LABELS");
   const locale = useLocale();
-  const [active, setActive] = useState(defaultType || "");
   const router = useRouter();
-  // const [filteredItems, setFilteredItems] = useState<any>();
-  const tabs: tabs[] = [];
-  categories.map((ele: any, index: number) =>
-    // tabs.push({
-    //   key: ele?.id,
-    //   label: `(${ele?.product_count}) ${ele?.title}`,
-    //   type: ele?.id,
-    // })
-    tabs.push({
-      id: index,
-      title: `(${ele?.product_count}) ${ele?.title}`,
-      slug: ele?.id,
-    })
-  );
-  // useEffect(() => {
-  //   if (active) {
-  //     const filtered = products.filter(
-  //       (item: any) => item?.category?.id == active
-  //     );
-  //     setFilteredItems(filtered);
-  //   } else {
-  //     setFilteredItems(products);
-  //   }
-  // }, [active, products, defaultType]);
+
+  const [defaultActiveKey, setDefaultActiveKey] = useState(defaultType);
+
+  const items: TabsProps["items"] = [
+    {
+      key: "course",
+      label: "الدورات",
+    },
+    {
+      key: "book",
+      label: "الكتب",
+    },
+    {
+      key: "file",
+      label: "الملفات",
+    },
+  ];
 
   return (
     <>
-      <section className="py-4">
-        <div className="w-full overflow-x-auto whitespace-nowrap mb-8">
-          <div className="inline-flex gap-4 px-2 mb-4">
-            {tabs.map((ele) => (
-              <button
-                key={ele.id}
-                className={`whitespace-nowrap h-fit font-medium leading-6 ${
-                  active == ele.slug
-                    ? "text-primary border-2 border-primary"
-                    : "text-dark border-2 border-subborder"
-                } px-4 py-2 text-sm rounded-xl`}
-                onClick={() => {
-                  if (active == ele.slug) {
-                    setActive("");
-                    router.replace(
-                      `${locale === "ar" ? "" : "/en"}/favourits?category=`,
-                      { scroll: false }
-                    );
-                  } else {
-                    setActive(ele.slug);
-                    router.replace(
-                      `${locale === "ar" ? "" : "/en"}/favourits?category=${
-                        ele.slug
-                      }`,
-                      { scroll: false }
-                    );
-                  }
-                }}
-              >
-                {ele?.title}
-              </button>
-            ))}
-          </div>
+      <section className="py-4 ">
+        <div className="grid lg:grid-cols-[3fr_1fr] items-center gap-6">
+          <Tabs
+            defaultActiveKey={defaultActiveKey}
+            items={items}
+            onChange={(key) => {
+              setDefaultActiveKey(key);
+              router.replace(`/favourits?category=${key}`, { scroll: false });
+            }}
+            className="custom-tabs-wrapper lg:w-1/2"
+          />
+          <Input
+            type="text"
+            searchCustom
+            searchButtonSubmitted
+            className="!ps-12 font-medium min-h-[42px] border border-[#eeee] rounded-full placeholder:text-sm"
+            leftIcon={
+              <IoSearch
+                className="text-[#B0B0B0] me-2 cursor-pointer"
+                size={25}
+              />
+            }
+            // leftIcon={<SearchIcon />}
+            placeholder={t("search")}
+          />
+        </div>
+        <div
+          className={`my-6 grid grid-cols-1 ${
+            defaultActiveKey == "book"
+              ? "lg:grid-cols-2"
+              : "md:grid-cols-2 lg:grid-cols-3"
+          } gap-4`}
+        >
+          {defaultActiveKey == "course" ? (
+            <>
+              {[...Array(3)].map((item, index) => (
+                <CoursesCard
+                  courseData={item}
+                  index={index}
+                  key={`course_${index}`}
+                />
+              ))}
+            </>
+          ) : defaultActiveKey == "book" ? (
+            <>
+              {[...Array(3)].map((item, index) => (
+                <BooksCard
+                  bookData={item}
+                  index={index}
+                  key={`book_${index}`}
+                />
+              ))}
+            </>
+          ) : (
+            <>
+              {[...Array(3)].map((item, index) => (
+                <CoursesCard
+                  courseData={item}
+                  index={index}
+                  key={`course_${index}`}
+                />
+              ))}
+            </>
+          )}
         </div>
 
-        {products && products?.length > 0 && (
+        {/* {products && products?.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
             {products?.map((ele: any, index: number) => {
               return (
@@ -106,17 +127,6 @@ export default function FavouritsDetails({
                 />
               );
             })}
-          </div>
-        )}
-        {/* {products && products.length > 0 && (
-          <div className="py-8">
-            <AppPagination
-              itemsPerPage={pagination?.per_page}
-              totalItems={pagination?.total}
-              totalPage={pagination?.last_page}
-              currentPage={+currentPage}
-              paginate={handlePaggination}
-            />
           </div>
         )} */}
       </section>

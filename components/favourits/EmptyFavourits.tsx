@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 const EmptyFavourits = () => {
   const t = useTranslations("");
   return (
-    <div className="flex items-center justify-center h-[600px]">
+    <div className="flex items-center justify-center h-[400px] bg-white">
       <div>
         {/* Heart Icon */}
         <div className="flex justify-center mb-4">
@@ -21,22 +21,9 @@ const EmptyFavourits = () => {
           </div>
         </div>
 
-        <h2 className="md:text-2xl text-xl   leading-8 text-text font-bold  mb-2 text-center">
+        <h2 className="md:text-2xl text-xl   leading-10 text-darkprimary font-bold  mb-2 text-center w-3/4 mx-auto">
           {t("Text.readyToSaveYourProductsToFavourits")}
         </h2>
-
-        <p className="w-3/4 mx-auto text-center text-secondrydark md:text-xl text-lg font-medium   leading-6 mb-6">
-          {t(
-            "Text.clickOnTheHeartIconToAddYourFavoriteProductsToTheWishlistSuccessfully"
-          )}
-        </p>
-
-        <LocalePath
-          href={"/"}
-          className="text-center w-fit flex mx-auto px-12 py-3 bg-primary text-white font-medium rounded-lg shadow-md hover:bg-orange-600 transition duration-300"
-        >
-          {t("BUTTONS.shopNow")}
-        </LocalePath>
       </div>
     </div>
   );

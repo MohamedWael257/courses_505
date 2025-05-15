@@ -8,32 +8,29 @@ import GeneralClientAxios from "@/shared/AxiosPage/GeneralClientAxios";
 export default function FavouritsIndex({ paths, category }: any) {
   return (
     <>
-      <GeneralClientAxios method="GET" url={`favorites`} params={{ category }}>
+      {/* <GeneralClientAxios method="GET" url={`favorites`} params={{ category }}>
         {(data, refetch) => (
-          <>
-            <div className="bg-greynormal overflow-x-hidden">
-              <div className=" container md:py-10 py-6">
-                <AppBreadCrumbs paths={paths} />
-                {data?.products?.length > 0 ? (
-                  <>
-                    <FavouritsCard refetch={refetch} count={data?.count} />
-                    <FavouritsDetails
-                      refetch={refetch}
-                      products={data?.products}
-                      // pagination={data?.meta}
-                      categories={data?.categories}
-                      // currentPage={page}
-                      defaultType={category}
-                    />
-                  </>
-                ) : (
-                  <EmptyFavourits />
-                )}
-              </div>
-            </div>
-          </>
+          <> */}
+      <div className=" overflow-x-hidden">
+        <div className=" container md:py-10 py-6">
+          <AppBreadCrumbs paths={paths} />
+          {/* {data?.products?.length > 0 ? ( */}
+          {/* <> */}
+          <FavouritsCard />
+          <FavouritsDetails
+            refetch={null}
+            products={[]}
+            defaultType={category}
+          />
+          {/* </> */}
+          {/* ) : ( */}
+          {/* <EmptyFavourits /> */}
+          {/* )} */}
+        </div>
+      </div>
+      {/* </>
         )}
-      </GeneralClientAxios>
+      </GeneralClientAxios> */}
     </>
   );
 }
