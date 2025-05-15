@@ -132,7 +132,7 @@ const OrderSummary: React.FC = () => {
       ) : (
         <div>
           <div className="bg-white shadow-md rounded-xl h-fit p-4">
-            <h2 className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
+            <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
               {t("Text.orderSummary")}
             </h2>
             <div className="mb-4 relative">
@@ -168,7 +168,9 @@ const OrderSummary: React.FC = () => {
             </div>
             <div className="flex justify-between items-center my-5 font-normal text-base   leading-4">
               <div>
-                <span className="text-text">{t("Text.orderItems")} </span>
+                <span className="text-darkprimary">
+                  {t("Text.orderItems")}{" "}
+                </span>
                 <span className="text-secondrydark">
                   ({cartData?.length} {t("Text.orderItem")})
                 </span>
@@ -176,13 +178,17 @@ const OrderSummary: React.FC = () => {
               <span className="text-secondrydark">70.00 {t("Text.SR")}</span>
             </div>
             <div className="flex justify-between items-center my-5 font-normal text-base   leading-4">
-              <span className="text-text">{t("Text.orderShipping")}</span>
+              <span className="text-darkprimary">
+                {t("Text.orderShipping")}
+              </span>
               <span className="font-semibold text-success">
                 {t("Text.free")}
               </span>
             </div>
             <div className="flex justify-between items-center my-5  font-normal text-base   leading-4">
-              <span className="text-text">{t("Text.orderDiscount")}</span>
+              <span className="text-darkprimary">
+                {t("Text.orderDiscount")}
+              </span>
               <span className="font-semibold text-success">
                 20.00 {t("Text.SR")}
               </span>
@@ -190,7 +196,7 @@ const OrderSummary: React.FC = () => {
             <div className="h-0.5 bg-greynormal my-2"></div>
             <div className="flex justify-between items-center my-5  font-normal text-base   leading-4">
               <div>
-                <span className="font-bold text-text">
+                <span className="font-bold text-darkprimary">
                   {t("Text.orderTotal")}
                 </span>
                 <span className="font-bold text-secondrydark">

@@ -8,14 +8,25 @@ type Props = {
 export default function ChooseUS({ data }: Props) {
   return (
     <div className="container lg:py-16">
-      <h2 className="font-medium text-xl leading-7 text-center text-error bg-error/[0.15] px-5 p-3 rounded-2xl w-fit mx-auto">
+      <h2
+        data-aos="zoom-in"
+        data-aos-duration="100"
+        className="font-medium text-xl leading-7 text-center text-error bg-error/[0.15] px-5 p-3 rounded-2xl w-fit mx-auto"
+      >
         لماذا تختارنا؟
       </h2>
-      <p className="lg:text-4xl md:text-2xl text-lg font-medium leading-8 text-dark text-center my-5">
+      <p
+        data-aos="zoom-in"
+        data-aos-duration="200"
+        className="lg:text-4xl md:text-2xl text-lg font-medium leading-8 text-darkprimary text-center my-5"
+      >
         نقدم تجربة تعلم فريدة
       </p>
       <div className="grid lg:grid-cols-2 gap-5">
-        <div className="grid grid-cols-[auto_1fr] gap-4 bg-[#B8F0F3] p-6 pt-10 rounded-2xl h-52">
+        <div
+          data-aos="flip-left"
+          className="grid grid-cols-[auto_1fr] gap-4 bg-[#B8F0F3] p-6 pt-10 rounded-2xl h-52"
+        >
           <svg
             width="88"
             height="88"
@@ -38,7 +49,10 @@ export default function ChooseUS({ data }: Props) {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-[auto_1fr] gap-4 bg-[#FFD1C2] p-6 pt-10 rounded-2xl h-52">
+        <div
+          data-aos="flip-right"
+          className="grid grid-cols-[auto_1fr] gap-4 bg-[#FFD1C2] p-6 pt-10 rounded-2xl h-52"
+        >
           <svg
             width="88"
             height="88"
@@ -62,7 +76,10 @@ export default function ChooseUS({ data }: Props) {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-[auto_1fr] gap-4 bg-[#4F008C] p-6 pt-10 rounded-2xl h-52 text-white">
+        <div
+          data-aos="flip-left"
+          className="grid grid-cols-[auto_1fr] gap-4 bg-[#4F008C] p-6 pt-10 rounded-2xl h-52 text-white"
+        >
           <svg
             width="88"
             height="88"
@@ -83,7 +100,10 @@ export default function ChooseUS({ data }: Props) {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-[auto_1fr] gap-4 bg-[#FFE87F] p-6 pt-10 rounded-2xl h-52">
+        <div
+          data-aos="flip-right"
+          className="grid grid-cols-[auto_1fr] gap-4 bg-[#FFE87F] p-6 pt-10 rounded-2xl h-52"
+        >
           <svg
             width="87"
             height="87"

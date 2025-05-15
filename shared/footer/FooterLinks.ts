@@ -30,16 +30,6 @@ export const MainLinks: FooterLink[] = [
     path: "/galary",
     id: "1",
   },
-  {
-    name: "projects",
-    path: "/projects",
-    id: "1",
-  },
-  {
-    name: "locations",
-    path: "/our-locations",
-    id: "1",
-  },
 ];
 export const QuickLinks: FooterLink[] = [
   {

@@ -7,7 +7,7 @@ export default function OrderCancelReason({}: Props) {
   const t = useTranslations("");
   return (
     <div className="bg-white p-4 rounded-lg mb-4">
-      <h2 className="text-xl font-bold mb-4 text-start text-text   leading-8">
+      <h2 className="text-xl font-bold mb-4 text-start text-darkprimary   leading-8">
         {t("Text.orderCancelReason")}
       </h2>
 

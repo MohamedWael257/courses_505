@@ -9,7 +9,7 @@ export default function RelatedCourses({ courses }: Props) {
     <section className="container py-16">
       <div className="flex gap-4 items-center mb-6">
         <div className=" flex-1" data-aos="fade-right">
-          <h2 className="capitalize text-text font-bold lg:text-3xl text-xl text-start lg:leading-[50px]   leading-8">
+          <h2 className="capitalize text-darkprimary font-bold lg:text-3xl text-xl text-start lg:leading-[50px]   leading-8">
             دورات أخري
           </h2>
         </div>

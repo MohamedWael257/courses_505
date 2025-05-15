@@ -113,14 +113,14 @@ const ChangePassword: React.FC<VerifyCodeProps> = ({
                   name="current_password"
                   label="old_password"
                   placeholder="old_password"
-                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-[12px] border-none pe-10"
+                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-full border-none pe-10"
                 />
                 <PasswordController
                   // @ts-ignore
                   name="password"
                   label="new_password"
                   placeholder="new_password"
-                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-[12px] border-none pe-10"
+                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-full border-none pe-10"
                 />
 
                 <PasswordController
@@ -128,7 +128,7 @@ const ChangePassword: React.FC<VerifyCodeProps> = ({
                   name="password_confirmation"
                   label="confirm_new_password"
                   placeholder="confirm_new_password"
-                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-[12px] border-none pe-10"
+                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-full border-none pe-10"
                 />
               </div>
 
@@ -139,7 +139,7 @@ const ChangePassword: React.FC<VerifyCodeProps> = ({
                   loader={LoadingComplete}
                   disabled={LoadingComplete}
                   button
-                  className="!w-full  !h-[56px] !rounded-[12px] "
+                  className="!w-full  !h-[56px] !rounded-full "
                 />
               </div>
             </form>

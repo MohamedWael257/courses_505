@@ -22,20 +22,13 @@ export default function CourseDetialsTop({ data }: Props) {
       <div className=" flex justify-start relative container md:py-10 py-6">
         <div className="h-fit lg:w-1/2">
           <AppBreadCrumbs
-            icon={
-              <>
-                <CgFormatSlash
-                  className={`${locale == "ar" ? "" : "rotate-180"}`}
-                  size={25}
-                />
-              </>
-            }
+            icon
             // TranslateTitle
             stopTranslate
             paths={paths}
           />
           <div className="flex justify-start items-center gap-2 my-3">
-            <p className="w-fit text-base font-medium leading-4 text-start text-text bg-text/30 p-2 px-4 rounded-full">
+            <p className="w-fit text-base font-medium leading-4 text-start text-darkprimary bg-text/30 p-2 px-4 rounded-full">
               غير أكاديمي
             </p>
             <p className="w-fit text-base font-medium leading-4 text-start text-primary bg-secprimary p-2 px-4  rounded-full">
@@ -51,7 +44,7 @@ export default function CourseDetialsTop({ data }: Props) {
           >
             أساسيات العمل الحر: خطواتك الأولى نحو دخل مستقل
           </h2>
-          <p className="my-4  text-start  font-normal text-base  leading-8 text-darkprimary ">
+          <p className="my-4  text-start  font-normal text-base  leading-8 text-darkprimaryprimary ">
             هل تفكر في دخول عالم العمل الحر ولا تعرف من أين تبدأ؟ في هذا الكورس
             العملي، ستتعلّم كيفية تحديد مهاراتك، إنشاء ملف تعريفي احترافي،
             التسويق لنفسك عبر المنصات المختلفة، وإدارة مشاريعك بفعالية.

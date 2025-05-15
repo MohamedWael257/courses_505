@@ -210,7 +210,7 @@ const VerifyCodeEmail: React.FC = () => {
                   button
                   loader={false}
                   disabled={false}
-                  className="!w-full  !h-[56px] !rounded-[12px] "
+                  className="!w-full  !h-[56px] !rounded-full "
                 />
               </div>
             </div>

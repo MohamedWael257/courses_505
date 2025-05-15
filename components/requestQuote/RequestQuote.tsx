@@ -130,10 +130,10 @@ export default function RequestQuote() {
         <div className="containerr lg:px-16 px-4 !mb-24 mt-12">
           <div className="grid lg:grid-cols-2 lg:gap-20 gap-8 mt-8">
             <div>
-              <h2 className=" text-2xl text-dark font-bold !leading-[56px] text-start mb-4">
+              <h2 className=" text-2xl text-darkprimary font-bold !leading-[56px] text-start mb-4">
                 هل لديك طلب خاص؟{" "}
               </h2>
-              <p className=" text-lg text-darkprimary font-medium !leading-[30px] text-start ">
+              <p className=" text-lg text-darkprimaryprimary font-medium !leading-[30px] text-start ">
                 املأ البيانات المطلوبة لتحديد نوع الملف، محتواه، وصيغة التسليم
                 المناسبة لك. فريقنا سيقوم بمراجعة طلبك والبدء في تنفيذه بدقة
                 واحترافية.{" "}
@@ -146,7 +146,7 @@ export default function RequestQuote() {
                       className="mx-4 text-error border-[1px] border-error/[.15] rounded-full p-2"
                     />
                     <div>
-                      <p className=" text-base text-dark font-normal leading-6 text-start">
+                      <p className=" text-base text-darkprimary font-normal leading-6 text-start">
                         {setting?.location}
                       </p>
                     </div>
@@ -165,7 +165,7 @@ export default function RequestQuote() {
                       className="mx-4 text-error border-[1px] border-error/[.15] rounded-full p-2"
                     />
                     <div>
-                      <p className=" text-base text-text font-normal leading-6 text-start">
+                      <p className=" text-base text-darkprimary font-normal leading-6 text-start">
                         {ele?.phone} {"  "} {ele?.phone_code} {" + "}
                       </p>
                     </div>
@@ -183,7 +183,7 @@ export default function RequestQuote() {
                       className="mx-4 text-error border-[1px] border-error/[.15] rounded-full p-2"
                     />
                     <div>
-                      <p className=" text-base text-text font-normal leading-6 text-start">
+                      <p className=" text-base text-darkprimary font-normal leading-6 text-start">
                         {ele}
                       </p>
                     </div>

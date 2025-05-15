@@ -34,7 +34,7 @@ const HeaderNavItems = ({
 
   return (
     <div
-      className={`text-text font-semibold lg:h-fit w-full py-5 ${
+      className={`text-darkprimary font-semibold lg:h-fit w-full py-5 ${
         className ? className : ""
       }`}
     >
@@ -43,13 +43,13 @@ const HeaderNavItems = ({
           NavItems?.map((el, index: number) => {
             const isActive =
               activeLink ===
-              cleanPath(`${locale == "ar" ? "" : "/en"}/${el.path}`);
+              cleanPath(`${locale == "ar" ? "" : "/en"}${el.path}`);
 
             return (
               <LocalePath
                 className={`${
                   isActive ? "text-primary font-bold" : ""
-                } text-base hover:text-primary cursor-pointer font-medium   leading-5 text-center text-dark lg:inline-block hidden`}
+                } text-base hover:text-primary cursor-pointer font-medium   leading-5 text-center text-darkprimary lg:inline-block hidden`}
                 href={`${el.path}`}
                 key={`header_link_${index}`}
               >
@@ -87,7 +87,7 @@ const HeaderNavItems = ({
                       cleanPath(`${locale == "ar" ? "" : "/en"}/${el.path}`)
                         ? "text-primary font-bold"
                         : ""
-                    } text-lg cursor-pointer font-medium   leading-5 text-start border-b-2 py-5 border-b-greynormal text-dark`}
+                    } text-lg cursor-pointer font-medium   leading-5 text-start border-b-2 py-5 border-b-greynormal text-darkprimary`}
                     href={`${el.path}`}
                     key={`header_link_${index}`}
                     onClick={() => setOpen(false)}

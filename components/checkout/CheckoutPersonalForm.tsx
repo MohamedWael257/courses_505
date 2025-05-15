@@ -86,7 +86,7 @@ export default function CheckoutPersonalForm({}: Props) {
       // data-aos="flip-left"
       className="border border-secprimary bg-white p-4 rounded-2xl"
     >
-      <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
+      <h2 className="capitalize text-darkprimaryprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
         {t("LABELS.address")}
       </h2>
       <div className="flex flex-col gap-4">
@@ -94,13 +94,13 @@ export default function CheckoutPersonalForm({}: Props) {
           <FormInput
             name="full_name"
             label="fullname"
-            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
             placeholder="fullname"
           />
           <FormInput
             name="email"
             label="email"
-            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
             placeholder="email"
           />
         </div>

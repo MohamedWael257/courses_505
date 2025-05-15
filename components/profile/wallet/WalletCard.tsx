@@ -189,35 +189,35 @@ export default function WalletCard({ wallet, refetch }: Props) {
                           <FormInput
                             name="bank_name"
                             label="bank_name"
-                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="bank_name"
                             // leftIcon={<Email />}
                           />
                           <FormInput
                             name="bank_number"
                             label="bank_number"
-                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="bank_number"
                             // leftIcon={<Email />}
                           />
                           <FormInput
                             name="iban_number"
                             label="iban_number"
-                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="iban_number"
                             // leftIcon={<Email />}
                           />
                           <FormInput
                             name="amount"
                             label="amount"
-                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="amount"
                             // leftIcon={<Email />}
                           />
                           <FormTextarea
                             name="reason"
                             label="reason"
-                            className="h-[100px] placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-xl border border-subborder px-4  pe-10"
+                            className="md:h-[125px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#2d2d2db2] rounded-xl px-2 pe-5"
                             placeholder="reason"
                             // leftIcon={<Email />}
                           />

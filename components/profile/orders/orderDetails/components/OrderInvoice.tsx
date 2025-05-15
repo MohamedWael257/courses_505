@@ -49,7 +49,7 @@ export default function OrderInvoice({ invoice }: Props) {
       </div>
       {invoice?.commission > 0 && (
         <div className="flex gap-2 items-center justify-between mb-3 border-b-[1px] border-secondrydark pb-4">
-          <span className="text-text">{t("Text.orderTax")}</span>
+          <span className="text-darkprimary">{t("Text.orderTax")}</span>
           <span className="font-semibold text-success">
             {invoice?.commission} {"  "}
             {invoice?.commissionType == "value" ? t("SR") : `%`}
@@ -70,7 +70,7 @@ export default function OrderInvoice({ invoice }: Props) {
 
       <div className="flex gap-2 items-center justify-between mb-3">
         {t("Text.totalhavetax")}
-        <p className="text-lg text-text font-bold">
+        <p className="text-lg text-darkprimary font-bold">
           {/* {(
             +invoice?.sub_total +
             +(invoice?.shipping_cost ?? 0) +
@@ -79,7 +79,7 @@ export default function OrderInvoice({ invoice }: Props) {
           ).toFixed(2)}{" "}
           {"  "} {t("Text.SR")} */}
           {invoice?.grand_total} {"  "} {t("Text.SR")}
-      </p>
+        </p>
       </div>
     </div>
   );

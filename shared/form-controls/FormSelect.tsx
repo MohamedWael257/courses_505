@@ -35,7 +35,7 @@ const FormSelect: React.FC<FormSelectProps> = ({
     control: (provided: any) => ({
       ...provided,
       width: "100%",
-      minHeight: "56px",
+      minHeight: "64px",
       backgroundColor: "#ffffff",
       borderColor:
         errors[name] && errors[name]?.message
@@ -59,7 +59,7 @@ const FormSelect: React.FC<FormSelectProps> = ({
     control: (provided: any) => ({
       ...provided,
       width: "100%",
-      minHeight: "56px",
+      minHeight: "64px",
       backgroundColor: "#ffffff",
       borderColor: "#FCFCFB",
       borderRadius: "9999px",

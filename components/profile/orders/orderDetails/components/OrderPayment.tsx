@@ -30,7 +30,7 @@ export default function OrderPayment({ payment_method }: Props) {
           className="w-6 h-6 object-contain"
         />
         <div>
-          <p className="text-lg text-dark font-medium mb-2">
+          <p className="text-lg text-darkprimary font-medium mb-2">
             {t(`status.${payment_method}`)}
           </p>
         </div>

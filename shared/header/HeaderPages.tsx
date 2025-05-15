@@ -12,6 +12,7 @@ export default function HeaderPages({
   totalPrice,
   productCount,
   mainLoader,
+  favCount,
 }: any) {
   const [isClient, setIsClient] = useState(false);
   const t = useTranslations("Text");
@@ -47,7 +48,7 @@ export default function HeaderPages({
       </div>
       <div className="relative">
         <p className="bg-error/90 text-[10px] p-[6px] text-white w-3 h-3 grid place-content-center rounded-full absolute -top-[4px] -start-0 shadow-card-shadow">
-          {productCount}
+          {favCount}
         </p>
         <LocalePath href="/favourits">
           <Heart className="size-6" />
@@ -55,7 +56,7 @@ export default function HeaderPages({
       </div>
 
       <LocalePath href="/notifications" className="relative">
-        <p className="bg-error/90 w-2 h-2 rounded-full absolute top-3 right-[14px]"></p>
+        <p className="bg-error/90 w-2 h-2 rounded-full absolute top-[-2px] start-[2px]"></p>
         <Notificaation className=" size-6" />
       </LocalePath>
 

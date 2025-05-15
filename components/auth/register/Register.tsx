@@ -242,14 +242,14 @@ const Register: React.FC = () => {
               <FormInput
                 name="full_name"
                 label="fullname"
-                className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                 placeholder="fullname"
               />
 
               <FormInput
                 name="email"
                 label="email"
-                className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                 placeholder="email"
               />
               <PhoneNumber
@@ -261,7 +261,7 @@ const Register: React.FC = () => {
               <FormInputDate
                 name="birthday"
                 label={"date_of_birth"}
-                className="h-14 !w-full  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                className="h-16 !w-full  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                 placeholder={"date_of_birth"}
                 showRequired
                 rightIcon={
@@ -295,7 +295,7 @@ const Register: React.FC = () => {
                 name="password"
                 label="password"
                 placeholder="password"
-                className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
               />
 
               <PasswordController
@@ -303,12 +303,12 @@ const Register: React.FC = () => {
                 name="password_confirmation"
                 label="password_confirmation"
                 placeholder="password_confirmation"
-                className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
               />
               {/* <FormCheckbox
                 name="agree"
                 label="agree"
-                className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
               /> */}
             </div>
 
@@ -319,7 +319,7 @@ const Register: React.FC = () => {
                 loader={false}
                 disabled={false}
                 button
-                className=" !w-full !h-[56px] !rounded-[12px]  !mt-[20px]"
+                className=" !w-full !h-[56px] !rounded-full  !mt-[20px]"
               />
             </div>
           </form>

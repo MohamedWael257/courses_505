@@ -90,7 +90,7 @@ export default function CouponsForm({ refetch, setOpen }: Props) {
                   throwErrorCodeMessage={throwErrorCodeMessage}
                   name="code"
                   label="code"
-                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
+                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
                   placeholder="code"
                 />
 
@@ -101,7 +101,7 @@ export default function CouponsForm({ refetch, setOpen }: Props) {
                     loader={LoadingComplete}
                     disabled={LoadingComplete}
                     button
-                    className="!w-full  !h-[56px] !rounded-[12px] "
+                    className="!w-full  !h-[56px] !rounded-full "
                   />
                 </div>
               </form>

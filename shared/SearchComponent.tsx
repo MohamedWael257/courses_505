@@ -255,7 +255,7 @@
 //                 type="text"
 //                 searchCustom
 //                 searchButtonSubmitted
-//                 className="h-full w-full min-h-[62px] border-[#F5F5FA] bg-[#F4F4F4] focus:border-none search-input rounded-[12px] disabled:!cursor-pointer disabled:!opacity-1 "
+//                 className="h-full w-full min-h-[62px] border-[#F5F5FA] bg-[#F4F4F4] focus:border-none search-input rounded-full disabled:!cursor-pointer disabled:!opacity-1 "
 //                 rightIcon={
 //                   <IoSearch
 //                     onClick={() => {
@@ -405,11 +405,11 @@ const SearchComponent = () => {
                 />
               </div>
               <div className="flex flex-col gap-3">
-                <p className="text-base font-medium leading-6 line-clamp-1 w-[200px] text-start text-text">
+                <p className="text-base font-medium leading-6 line-clamp-1 w-[200px] text-start text-darkprimary">
                   {item?.name}
                 </p>
                 <div className="flex gap-2">
-                  <p className="text-base text-text font-semibold leading-5">
+                  <p className="text-base text-darkprimary font-semibold leading-5">
                     {item?.price_after_discount > 0
                       ? item?.price_after_discount
                       : item?.price}{" "}

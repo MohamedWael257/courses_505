@@ -21,7 +21,7 @@ export default function CoursesRequest({}: Props) {
           >
             اطلب ملفًا احترافيًا يناسب احتياجك
           </h2>
-          <p className="my-4  text-center  font-medium text-base  leading-8 text-darkprimary  mx-auto">
+          <p className="my-4  text-center  font-medium text-base  leading-8 text-darkprimaryprimary  mx-auto">
             وفّر وقتك وجهدك عبر طلب ملف مصمّم خصيصًا لك. سواء كنت بحاجة إلى
             نموذج عمل، جدول احترافي، أو عرض تقديمي، فريقنا جاهز لتنفيذه بدقة
             وتسليمه لك في أسرع وقت ممكن.

@@ -172,7 +172,7 @@
       @apply h-[135%] inset-auto ms-[7px] after:bg-platinum after:h-[150%] after:-mt-[2.3rem] after:w-[2px] #{!important};
     }
     .ant-steps-item-title {
-      @apply font-bold !text-text text-xs sm:text-sm   leading-none mb-3 #{!important};
+      @apply font-bold !text-darkprimary text-xs sm:text-sm   leading-none mb-3 #{!important};
     }
     .ant-steps-item-description {
       @apply font-semibold !text-secondrydark text-xs sm:text-sm   leading-none  mb-3  #{!important};
@@ -206,7 +206,7 @@
   .ant-tabs-nav {
     .ant-tabs-ink-bar,
     &::before {
-      // @apply hidden;
+      @apply bg-error;
     }
   }
   .ant-tabs-nav-list {

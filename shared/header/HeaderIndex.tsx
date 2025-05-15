@@ -34,6 +34,10 @@ export default function HeaderIndex({ settings }: any) {
   const { totalPrice, productCount, mainLoader } = useSelector(
     (state: RootState) => state.CartConfig
   );
+  const { allFavItems } = useSelector(
+    (state: RootState) => state.FavouritsConfig
+  );
+  const favCount = allFavItems?.length;
   // const { storedValues } = useSelector(
   //   (state: RootState) => state.ForgetConfig
   // );
@@ -96,6 +100,7 @@ export default function HeaderIndex({ settings }: any) {
             totalPrice={totalPrice}
             productCount={productCount}
             mainLoader={mainLoader}
+            favCount={favCount}
           />
         </nav>
       </header>

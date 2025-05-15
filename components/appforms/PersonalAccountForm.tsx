@@ -144,19 +144,19 @@ export default function PersonalAccountForm({
       <Form {...form}>
         <form className="pt-2" onSubmit={form.handleSubmit(handleSubmit)}>
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl leading-6 text-start font-medium text-darkprimary my-3">
+            <h2 className="text-2xl leading-6 text-start font-medium text-darkprimaryprimary my-3">
               معلومات شخصية
             </h2>
             <FormInput
               name="full_name"
               label={"fullname"}
-              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
               placeholder={"fullname"}
             />
             <FormInput
               name="email"
               label={"email"}
-              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
               placeholder={"email"}
             />
 

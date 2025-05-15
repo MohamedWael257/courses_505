@@ -22,7 +22,7 @@ const EmptyCart = () => {
           </div>
         </div>
 
-        <h2 className="md:text-2xl text-xl   leading-8 text-dark font-bold  mb-2 text-center">
+        <h2 className="md:text-2xl text-xl   leading-8 text-darkprimary font-bold  mb-2 text-center">
           {t("emptyCart")}
         </h2>
         <p className=" mx-auto lg:w-1/2  text-[#6A6A6A] text-center text-base font-medium  leading-8 text- mb-6">

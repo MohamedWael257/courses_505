@@ -44,7 +44,7 @@ export default function CartCard({
             className="w-[150px] h-[100px] object-cover rounded-2xl"
           />
           <div className="flex flex-col gap-3">
-            <p className="text-lg font-medium leading-8 text-start text-darkprimary">
+            <p className="text-lg font-medium leading-8 text-start text-darkprimaryprimary">
               كيفية بناء علامتك التجارية الدولية في مجال العمل الحر
             </p>
             {index < 2 && (

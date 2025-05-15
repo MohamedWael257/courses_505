@@ -28,10 +28,10 @@ export default function GiftCard({
       >
         <div className="flex gap-3 items-center">
           <div className="text-start">
-            <p className="text-lg text-text font-semibold   leading-7">
+            <p className="text-lg text-darkprimary font-semibold   leading-7">
               {gift.title}
             </p>
-            <p className="text-base  text-text font-normal   leading-5">
+            <p className="text-base  text-darkprimary font-normal   leading-5">
               {t("Text.point", {
                 count: gift?.price ?? 0,
               })}

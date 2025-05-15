@@ -69,7 +69,7 @@ export default function CourseDetialsData({ data }: Props) {
           className="custom-tabs-wrapper"
         />
         <div id="Tab-1" className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
+          <h2 className="text-darkprimaryprimary font-medium text-2xl text-start leading-8">
             عن الدورة
           </h2>
           <p className="text-secondrytext font-normal text-sm leading-8 text-start">
@@ -81,8 +81,8 @@ export default function CourseDetialsData({ data }: Props) {
             الحالي.
           </p>
         </div>
-        <div id="Tab-1" className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
+        <div id="Tab-2" className="flex flex-col gap-5">
+          <h2 className="text-darkprimaryprimary font-medium text-2xl text-start leading-8">
             الأهداف
           </h2>
           <ul className="list-disc">
@@ -103,8 +103,8 @@ export default function CourseDetialsData({ data }: Props) {
             </li>
           </ul>
         </div>
-        <div id="Tab-2" className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
+        <div id="Tab-3" className="flex flex-col gap-5">
+          <h2 className="text-darkprimaryprimary font-medium text-2xl text-start leading-8">
             محتوي الدورة
           </h2>
           <p className="text-secondrytext font-normal text-sm leading-8 text-start">
@@ -123,7 +123,7 @@ export default function CourseDetialsData({ data }: Props) {
               >
                 <AccordionTrigger
                   showIcon
-                  className=" w-full  font-medium text-start   leading-6 text-base text-darkprimary"
+                  className=" w-full  font-medium text-start   leading-6 text-base text-darkprimaryprimary"
                 >
                   الفصل الأول: الانطلاقة نحو العمل الحر
                 </AccordionTrigger>
@@ -202,15 +202,15 @@ export default function CourseDetialsData({ data }: Props) {
             </SharedAccordion>
           ))}
         </div>
-        <div id="Tab-3" className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
+        <div id="Tab-4" className="flex flex-col gap-5">
+          <h2 className="text-darkprimaryprimary font-medium text-2xl text-start leading-8">
             المواعيد المتاحة{" "}
           </h2>
           <div className="grid gap-6">
             {[...Array(3)].map((item, index) => (
               <div className="p-4 rounded-2xl border border-greynormal">
                 <div className="flex justify-between items-center">
-                  <h2 className="font-medium text-lg text-darkprimary leading-7 text-start">
+                  <h2 className="font-medium text-lg text-darkprimaryprimary leading-7 text-start">
                     المجموعة الأولي
                   </h2>
                   <p className="text-base font-normal leading-6 text-start text-error bg-error/[0.15] p-3 rounded-full">
@@ -259,8 +259,8 @@ export default function CourseDetialsData({ data }: Props) {
             ))}
           </div>
         </div>
-        <div id="Tab-4" className="flex flex-col gap-5">
-          <h2 className="text-darkprimary font-medium text-2xl text-start leading-8">
+        <div id="Tab-5" className="flex flex-col gap-5">
+          <h2 className="text-darkprimaryprimary font-medium text-2xl text-start leading-8">
             عن المدرب
           </h2>
           <div className="bg-greynormal p-4  px-8 rounded-2xl mt-3">
@@ -272,11 +272,11 @@ export default function CourseDetialsData({ data }: Props) {
                 className="w-12 h-12 object-cover rounded-full"
                 alt="hero"
               />
-              <span className="text-darkprimary font-medium text-base  leading-5 text-start">
+              <span className="text-darkprimaryprimary font-medium text-base  leading-5 text-start">
                 محمد وائل
               </span>
             </div>
-            <p className="my-4 text-darkprimary font-medium text-base leading-8 text-start">
+            <p className="my-4 text-darkprimaryprimary font-medium text-base leading-8 text-start">
               متخصص في ريادة الأعمال والعمل الحر، عمل كـ Freelancer على منصات
               عالمية ومحلية، وقد ساعد مئات المبتدئين على بدء رحلتهم وتحقيق أول
               دخل مستقل.

@@ -38,7 +38,7 @@ Props) {
       {/* Order */}
       <div>
         <div className="border border-secprimary bg-white shadow-md rounded-2xl h-fit p-4 grid gap-4 ">
-          <h2 className="text-base font-medium  leading-5 text-start text-darkprimary ">
+          <h2 className="text-base font-medium  leading-5 text-start text-darkprimaryprimary ">
             {t("Text.orderProducts", { count: 4 })}
           </h2>
           {/* <div className="w-full overflow-x-auto whitespace-nowrap mb-8"> */}
@@ -66,11 +66,11 @@ Props) {
                     <p className="text-base font-normal   leading-4 text-start text-secondrydark">
                       {ele?.product?.vendor?.username}
                     </p>
-                    <h2 className="text-sm font-normal   leading-5 text-start text-text ">
+                    <h2 className="text-sm font-normal   leading-5 text-start text-darkprimary ">
                       {ele?.product?.name}
                     </h2>
                    
-                    <p className=" font-bold text-base    leading-5 text-start text-text">
+                    <p className=" font-bold text-base    leading-5 text-start text-darkprimary">
                       {ele?.product?.price}
                       {"  "} {t("SR")}
                     </p>
@@ -96,7 +96,7 @@ Props) {
                     2
                   </p>
                 </div>
-                <h2 className="text-sm font-normal  leading-6 line-clamp-2 text-start text-text ">
+                <h2 className="text-sm font-normal  leading-6 line-clamp-2 text-start text-darkprimary ">
                   كيفية بناء علامتك التجارية الدولية في مجال العمل الحر{" "}
                 </h2>
               </div>

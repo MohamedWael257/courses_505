@@ -34,7 +34,7 @@ export default function FooterIndex({ settings }: any) {
     }, {});
   return (
     <>
-      <footer className=" relative z-[9] mt-auto h-fit w-full p-8 text-dark  overflow-hidden max-lg:pb-20">
+      <footer className=" relative z-[9] mt-auto h-fit w-full p-8 text-darkprimary  overflow-hidden max-lg:pb-20">
         <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-[1.5fr_1fr_1fr_1fr] gap-5 container">
           <div className="logo">
             <ImageWithFallback
@@ -72,9 +72,9 @@ export default function FooterIndex({ settings }: any) {
               return ( */}
             <li
               // key={index}
-              className="my-4 font-normal text-darkprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
+              className="my-4 font-normal text-darkprimaryprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
             >
-              <FaPhoneAlt className="text-darkprimary mx-2" size={25} />
+              <FaPhoneAlt className="text-darkprimaryprimary mx-2" size={25} />
               {/* {ele?.phone} {"  "} {ele?.phone_code} {" + "} */}
               966966966 966+
             </li>
@@ -84,9 +84,12 @@ export default function FooterIndex({ settings }: any) {
             {/* return ( */}
             <li
               // key={index}
-              className="my-4 font-normal text-darkprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
+              className="my-4 font-normal text-darkprimaryprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
             >
-              <MdOutlineEmail className="text-darkprimary mx-2" size={25} />
+              <MdOutlineEmail
+                className="text-darkprimaryprimary mx-2"
+                size={25}
+              />
               {/* {ele} */}
               info@allimak.com
             </li>
@@ -143,7 +146,7 @@ export default function FooterIndex({ settings }: any) {
                 {t("terms")}
               </LocalePath>
             </div>
-            <p className=" text-sm font-normal   leading-6 text-start text-dark">
+            <p className=" text-sm font-normal   leading-6 text-start text-darkprimary">
               {t("roles")}
             </p>
           </div>

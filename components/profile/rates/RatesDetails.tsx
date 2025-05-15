@@ -74,7 +74,7 @@ export default function RatesDetails({
                   : "bg-secprimary border-secondrydark"
               } p-4`}
             >
-              <h2 className="text-text xl:text-xl md:text-lg text-base   leading-8 mb-6 font-medium">
+              <h2 className="text-darkprimary xl:text-xl md:text-lg text-base   leading-8 mb-6 font-medium">
                 {t(`Text.${ele?.type}_type`)}
               </h2>
               <div className="grid grid-cols-[auto_1fr] items-center gap-3 mb-2 ">
@@ -99,7 +99,7 @@ export default function RatesDetails({
                       </h3>
                     </LocalePath> */}
                     <div className="flex flex-col gap-2">
-                      <h2 className="text-lg font-medium   leading-5 text-start text-text ">
+                      <h2 className="text-lg font-medium   leading-5 text-start text-darkprimary ">
                         {ele?.rateable?.username}
                       </h2>
                       <p
@@ -120,7 +120,7 @@ export default function RatesDetails({
                         {ele?.rateable?.brand?.name}
                       </p>
                       <div className="flex flex-col gap-2">
-                        <h2 className="text-lg font-medium   leading-5 text-start text-text ">
+                        <h2 className="text-lg font-medium   leading-5 text-start text-darkprimary ">
                           {ele?.rateable?.name}
                         </h2>
                         <div
@@ -135,7 +135,7 @@ export default function RatesDetails({
                     </div>
                     <div className="flex flex-col gap-2 my-2">
                       <div className="flex  gap-2">
-                        <span className=" font-bold text-lg    leading-5 text-start text-text">
+                        <span className=" font-bold text-lg    leading-5 text-start text-darkprimary">
                           {ele?.rateable?.price_after_discount
                             ? ele?.rateable?.price_after_discount
                             : ele?.rateable?.price}

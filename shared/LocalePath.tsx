@@ -12,6 +12,8 @@ type props = {
   scroll?: boolean;
   onClick?: () => void;
   isActive?: boolean;
+  dataAos?: string;
+  dataAosDuration?: string;
 };
 
 export default function LocalePath({
@@ -21,6 +23,8 @@ export default function LocalePath({
   onClick,
   scroll,
   isActive = false,
+  dataAos,
+  dataAosDuration,
 }: PropsWithChildren<props>) {
   const locale = useLocale();
   // const pathname = usePathname();
@@ -38,6 +42,8 @@ export default function LocalePath({
       // className={className}
       href={`${locale === "en" ? `/${locale}${href}` : `${href}`}`}
       scroll={scroll}
+      data-aos={dataAos}
+      data-aos-duration={dataAosDuration}
     >
       {children}
     </Link>

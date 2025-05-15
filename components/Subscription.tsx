@@ -39,12 +39,12 @@ export default function Subscription({}: Props) {
       <div className="lg:h-[450px] h-[60vh] lg:w-[30%]  mx-auto text-center grid justify-celnter items-center relative">
         <div className="relative z-40 ">
           <h2
-            className={`my-4  text-darkprimary font-medium text-4xl !leading-[55px] px-5 w-fit`}
+            className={`my-4  text-darkprimaryprimary font-medium text-4xl !leading-[55px] px-5 w-fit`}
           >
             اشترك واحصل علي آخر التحديثات
           </h2>
 
-          <p className="my-4 text-darkprimary font-normal text-lg text-center  leading-8">
+          <p className="my-4 text-darkprimaryprimary font-normal text-lg text-center  leading-8">
             اشترك ليصلك أهم الدورات، الكتب والقوالب وكل ما هو جديد
           </p>
 

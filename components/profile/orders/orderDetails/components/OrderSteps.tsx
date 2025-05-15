@@ -30,7 +30,7 @@ export default function OrderSteps({ steps, status }: Props) {
   cancelSteps.shift();
   return (
     <div className="bg-white p-4 rounded-lg mb-4">
-      <h2 className="text-xl font-bold mb-4 text-start text-text">
+      <h2 className="text-xl font-bold mb-4 text-start text-darkprimary">
         {t("Text.follow_your_order")}
       </h2>
 
@@ -103,7 +103,7 @@ export default function OrderSteps({ steps, status }: Props) {
               )}
             </div>
             <div className="flex-1 pl-4">
-              <h3 className="text-start text-lg font-medium text-text">
+              <h3 className="text-start text-lg font-medium text-darkprimary">
                 {step.title}
               </h3>
               <p className="text-start font-normal text-sm text-secondrydark">
@@ -164,7 +164,7 @@ export default function OrderSteps({ steps, status }: Props) {
             )}
           </div>
           <div className="flex-1 pl-4">
-            <h3 className="text-start text-lg font-medium text-text">
+            <h3 className="text-start text-lg font-medium text-darkprimary">
               {step.title}
             </h3>
             <p className="text-start font-normal text-sm text-secondrydark">

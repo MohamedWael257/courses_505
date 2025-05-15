@@ -128,7 +128,7 @@
 //           <LocationIcon className="size-6" />
 //           <div className="flex flex-col items-start font-bold text-secondrytext">
 //             {t("Text.deliver_to")}
-//             <LocationText className="line-clamp-1 text-dark" />
+//             <LocationText className="line-clamp-1 text-darkprimary" />
 //             {/* <MdKeyboardArrowDown size={25} /> */}
 //           </div>
 //         </div>
@@ -372,7 +372,7 @@
 //     <LocationIcon className="size-6" />
 //     <div className="flex flex-col items-start font-bold text-secondrytext">
 //       {t("Text.deliver_to")}
-//       <LocationText className="line-clamp-1 text-dark" />
+//       <LocationText className="line-clamp-1 text-darkprimary" />
 //       {/* <MdKeyboardArrowDown size={25} /> */}
 //     </div>
 //   </div>
@@ -555,7 +555,7 @@ const MobileNav = ({
           <LocationIcon className="size-6" />
           <div className="flex flex-col items-start font-bold text-secondrytext">
             {t("Text.deliver_to")}
-            {/* <LocationText className="line-clamp-1 text-dark" /> */}
+            {/* <LocationText className="line-clamp-1 text-darkprimary" /> */}
             {/* <MdKeyboardArrowDown size={25} /> */}
           </div>
         </div>

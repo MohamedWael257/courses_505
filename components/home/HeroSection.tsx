@@ -23,10 +23,12 @@ function HeroSection({ slider }: Props) {
 
   return (
     <>
-      <div className="bg-secprimary relative">
+      <div className="bg-secprimary relative overflow-hidden">
         <div className="lg:h-[90vh] h-[75vh] xl:w-[60%] w-3/4 mx-auto text-center relative lg:pt-16 pt-8 container">
           <div className="relative z-40">
             <h2
+              data-aos="fade-up"
+              data-aos-duration="100"
               className={` ${
                 locale === "ar"
                   ? "lg:text-6xl md:text-4xl text-2xl md:!leading-[84px] !leading-8"
@@ -42,12 +44,20 @@ function HeroSection({ slider }: Props) {
                 ))}
               <span className="text-error">{words.slice(-2).join(" ")}</span>{" "}
             </h2>
-            <p className="my-4  text-center  font-normal text-xl  leading-10 text-primary lg:w-[80%] mx-auto">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="200"
+              className="my-4  text-center  font-normal lg:text-xl md:text-lg text-base  leading-10 text-darkprimaryprimary lg:w-[80%] mx-auto"
+            >
               ابدأ رحلتك التعليمية الآن مع منصتنا التي تجمع لك أفضل الدورات
               المباشرة والمسجلة، وفرصة الوصول إلى مكتبة ضخمة من الكتب والملفات
               الرقمية، مع نظام محفظة ذكي وبرنامج إحالة يكافئك على نمو مجتمعنا
             </p>
-            <div className="flex items-center justify-center gap-4 my-4">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="300"
+              className="flex items-center justify-center gap-4 my-4"
+            >
               <LocalePath
                 href="/courses"
                 className="text-base  font-normal leading-5  bg-primary text-white  hover:bg-white  hover:text-primary border border-primary p-4 px-8 rounded-full transition-colors"
@@ -71,12 +81,20 @@ function HeroSection({ slider }: Props) {
           />
         </div>
         <div className="absolute bottom-0 left-0 w-full h-52 z-0 hidden lg:flex justify-evenly items-center">
-          <div className="flex items-center">
+          <div
+            data-aos="fade-left"
+            data-aos-duration="600"
+            className="flex items-center"
+          >
             <HalfCircleLeft />
             <Circle />
           </div>
-          <Square />
-          <div className="flex items-center">
+          <Square data-aos="fade-up" data-aos-duration="600" />
+          <div
+            data-aos="fade-right"
+            data-aos-duration="600"
+            className="flex items-center"
+          >
             <Circle className={"*:fill-[#FF5F7E]"} />
             <HalfCircleRight />
           </div>

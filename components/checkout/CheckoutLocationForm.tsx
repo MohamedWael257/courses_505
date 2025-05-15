@@ -90,7 +90,7 @@ export default function CheckoutLocationForm({}: Props) {
       // data-aos="flip-left"
       className="border border-secprimary bg-white p-4 rounded-2xl"
     >
-      <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
+      <h2 className="capitalize text-darkprimaryprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
         معلومات الشحن
       </h2>
       <div className="flex flex-col gap-4">
@@ -131,7 +131,7 @@ export default function CheckoutLocationForm({}: Props) {
           <FormInput
             name="location_name"
             label="location_name"
-            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
             placeholder="location_name"
           />
         </div>
@@ -139,13 +139,13 @@ export default function CheckoutLocationForm({}: Props) {
           <FormInput
             name="location_number"
             label="location_number"
-            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
             placeholder="location_number"
           />
           <FormInput
             name="room_number"
             label="room_number"
-            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
             placeholder="room_number"
           />
         </div>{" "}
@@ -153,13 +153,13 @@ export default function CheckoutLocationForm({}: Props) {
           <FormInput
             name="location_discription"
             label="location_discription"
-            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
             placeholder="location_discription"
           />
           <FormInput
             name="location_email"
             label="location_email"
-            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
             placeholder="location_email"
           />
         </div>

@@ -31,7 +31,7 @@ export default function DeletFavouritsButton({ refetch }: any) {
     <>
       <button
         onClick={deleteItem}
-        className=" w-fit flex items-center gap-2 p-4 rounded-2xl  font-semibold text-base   leading-5 text-center whitespace-nowrap text-dark border-[1px] border-subborder  transition-colors  mt-4 sm:mt-0"
+        className=" w-fit flex items-center gap-2 p-4 rounded-2xl  font-semibold text-base   leading-5 text-center whitespace-nowrap text-darkprimary border-[1px] border-subborder  transition-colors  mt-4 sm:mt-0"
         //   data-aos="fade-left"
       >
         <Delete color={"#3E3E3E"} className="size-6" />

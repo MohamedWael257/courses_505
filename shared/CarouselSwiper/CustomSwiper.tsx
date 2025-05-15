@@ -121,12 +121,12 @@ export default function CustomSwiper({ data, link }: Props) {
                 />
               )}
               {ele.desc && (
-                <p className=" font-medium text-xl   leading-8 text-start ps-4 text-dark">
+                <p className=" font-medium text-xl   leading-8 text-start ps-4 text-darkprimary">
                   {ele.desc}
                 </p>
               )}
               {ele.title && (
-                <p className=" font-medium text-xl   leading-8 text-start ps-4 text-dark">
+                <p className=" font-medium text-xl   leading-8 text-start ps-4 text-darkprimary">
                   {ele.title}
                 </p>
               )}

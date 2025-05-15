@@ -308,12 +308,12 @@
   @apply ltr:!pr-6 rtl:!pl-6;
 }
 .swal2-title.custom-title-class {
-  @apply text-dark font-bold text-2xl   leading-10 text-center;
+  @apply text-darkprimary font-bold text-2xl   leading-10 text-center;
 }
 .swal2-icon.swal2-warning.swal2-icon-show {
   display: none !important;
 }
 /* Custom styles for SweetAlert2 close button */
 .swal2-close {
-  @apply h-12 w-12 bg-[#d9d9d9] text-dark p-3 rounded-lg;
+  @apply h-12 w-12 bg-[#d9d9d9] text-darkprimary p-3 rounded-lg;
 }

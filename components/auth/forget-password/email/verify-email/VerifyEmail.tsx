@@ -105,7 +105,7 @@ export default function VerifyEmail() {
               <FormInput
                 name="email"
                 label="email"
-                className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
+                className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
                 placeholder="email"
                 // leftIcon={<Email />}
               />
@@ -118,7 +118,7 @@ export default function VerifyEmail() {
                 loader={false}
                 disabled={false}
                 button
-                className=" !w-full !h-[56px] !rounded-[12px]  !mt-[20px]"
+                className=" !w-full !h-[56px] !rounded-full  !mt-[20px]"
               />
             </div>
           </form>

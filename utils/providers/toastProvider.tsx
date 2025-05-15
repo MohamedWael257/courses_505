@@ -24,7 +24,7 @@ export default function ToastProvider({ children }: ToastProviderProps) {
       <ToastContainer
         toastClassName={(context) =>
           contextClass[context?.type || "default"] +
-          " relative flex p-1 text-text min-h-10 rounded-lg  justify-between bg-white overflow-hidden cursor-pointer"
+          " relative flex p-1 text-darkprimary min-h-10 rounded-lg  justify-between bg-white overflow-hidden cursor-pointer"
         }
         bodyClassName={() =>
           "text-sm  font-meduim  flex items-center flex-wrap rounded-lg py-5 px-4"

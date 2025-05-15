@@ -51,7 +51,7 @@ const SideMenu = ({
           )}
 
           <button
-            className="hl-10 wk-10 bg-[#d9d9d9] text-dark p-[8px_15px] rounded-lg text-lg font-normal flkex justify-end absolute top-6 end-4 z-40"
+            className="hl-10 wk-10 bg-[#d9d9d9] text-darkprimary p-[8px_15px] rounded-lg text-lg font-normal flkex justify-end absolute top-6 end-4 z-40"
             type="button"
             onClick={closeMeun}
           >

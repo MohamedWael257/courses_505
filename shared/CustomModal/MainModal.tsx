@@ -67,7 +67,7 @@ export default function MainModal({
             // type="button"
             onClick={close}
           >
-            <X className="h-12 w-12  bg-[#d9d9d9] text-dark p-3 rounded-lg" />
+            <X className="h-16 w-12  bg-[#d9d9d9] text-darkprimary p-3 rounded-lg" />
             {/* <span className="sr-only">Close</span> */}
             {/* <TimesIcon className=" text-white" /> */}
           </button>

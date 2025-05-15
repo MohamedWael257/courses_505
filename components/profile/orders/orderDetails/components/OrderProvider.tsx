@@ -37,7 +37,7 @@ export default function OrderProvider({
             <p className="2xl:text-lg md:text-base text-sm text-secondrydark font-medium mb-2">
               {t("Text.vendor")}
             </p>
-            <p className="2xl:text-2xl md:text-lg text-base text-dark font-medium mb-2 text-start">
+            <p className="2xl:text-2xl md:text-lg text-base text-darkprimary font-medium mb-2 text-start">
               {vendor?.username}
             </p>
           </div>

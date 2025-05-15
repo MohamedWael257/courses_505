@@ -15,7 +15,7 @@ export default function Discover({ Discover, hidden = false }: any) {
         {!hidden && (
           <div className="flex gap-4 items-center mb-4">
             <div className="flex-1" data-aos="fade-right">
-              <h2 className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
+              <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
                 {t("multidiscover")}
               </h2>
             </div>
@@ -41,14 +41,14 @@ export default function Discover({ Discover, hidden = false }: any) {
                 data-aos="zoom-in"
               >
                 <div className="col-span-1 grid grid-cols-2 gap-6 justify-betwwen items-center p-4 rounded-xl border-[1px] border-[#F3F3F3] bg-[linear-gradient(161.9deg,rgba(255,255,255,0.4)_26.42%,rgba(215,174,234,0.068)_97.97%)]">
-                  <h2 className="text-sm md:text-xl font-semibold md:leading-7 text-start text-text ">
+                  <h2 className="text-sm md:text-xl font-semibold md:leading-7 text-start text-darkprimary ">
                     {item?.title}
                   </h2>
                   <ImageWithFallback
                     src={item?.image?.media}
                     width={1790}
                     height={900}
-                    className="w-[200px] md:h-[100px] h-[70px] object-coverr "
+                    className="w-[200px] md:h-[125px] h-[70px] object-coverr "
                     alt="hero"
                   />
                 </div>

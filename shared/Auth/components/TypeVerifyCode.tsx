@@ -92,12 +92,13 @@ const TypeVerifyCode: React.FC<TypeVerifyCodeProps> = ({ dialogOpen }) => {
                       ? "border-primary"
                       : "border-greynormal"
                   }`}
+                  onClick={() => setValue("type", "phone")}
                 >
                   <label htmlFor="phone">
                     <div className="flex gap-3 items-center">
                       <FaWhatsapp
                         size={40}
-                        className="p-2 bg-secprimary rounded-xl text-dark"
+                        className="p-2 bg-secprimary rounded-xl text-darkprimary"
                       />
                       <div className="flex flex-col gap-2">
                         <p className="text-[#A8A8A8] text-[14px]">
@@ -115,12 +116,13 @@ const TypeVerifyCode: React.FC<TypeVerifyCodeProps> = ({ dialogOpen }) => {
                       ? "border-primary"
                       : "border-greynormal"
                   }`}
+                  onClick={() => setValue("type", "email")}
                 >
                   <label htmlFor="email">
                     <div className="flex gap-3 items-center">
                       <AiOutlineMail
                         size={40}
-                        className="p-2 bg-secprimary rounded-xl text-dark"
+                        className="p-2 bg-secprimary rounded-xl text-darkprimary"
                       />
                       <div className="flex flex-col gap-2">
                         <p className="text-[#684b4b] text-[14px]">
@@ -140,7 +142,7 @@ const TypeVerifyCode: React.FC<TypeVerifyCodeProps> = ({ dialogOpen }) => {
                   disabled={false}
                   loader={false}
                   button
-                  className=" !w-full !h-[56px] !rounded-[12px]  !mt-[20px]"
+                  className=" !w-full !h-[56px] !rounded-full  !mt-[20px]"
                 />
               </div>
             </form>

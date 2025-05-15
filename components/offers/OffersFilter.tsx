@@ -237,7 +237,7 @@ Props) {
           <AccordionTrigger
             iconColor="#000000"
             iconWidth="6"
-            className="text-lg font-medium   leading-7 text-start text-text"
+            className="text-lg font-medium   leading-7 text-start text-darkprimary"
           >
             {title}
           </AccordionTrigger>
@@ -279,7 +279,7 @@ Props) {
       className="p-4 rounded-xl bg-greynormal border border-secprimary 2xl:col-span-1 xl:col-span-1 h-fit"
     >
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-medium   leading-7 text-start text-darkprimary">
+        <h2 className="text-xl font-medium   leading-7 text-start text-darkprimaryprimary">
           {t("Text.filter")}
         </h2>
         <button
@@ -331,7 +331,7 @@ Props) {
           <AccordionTrigger
             iconColor="#000000"
             iconWidth="6"
-            className="text-lg font-medium   leading-7 text-start text-text"
+            className="text-lg font-medium   leading-7 text-start text-darkprimary"
           >
             {t("Text.price")}
           </AccordionTrigger>
@@ -355,7 +355,7 @@ Props) {
             />
             <div className="flex item-center mt-4 gap-3">
               <div>
-                <p className="text-text text-base ms-2 mb-1 inline-block   leading-6 text-start font-medium">
+                <p className="text-darkprimary text-base ms-2 mb-1 inline-block   leading-6 text-start font-medium">
                   {t("Text.from")}
                 </p>
                 <InputNumber
@@ -375,7 +375,7 @@ Props) {
               </div>
 
               <div>
-                <p className="text-text text-base ms-2 mb-1 inline-block   leading-6 text-start font-medium">
+                <p className="text-darkprimary text-base ms-2 mb-1 inline-block   leading-6 text-start font-medium">
                   {t("Text.to")}
                 </p>
                 {/* <div className="border border-greynormal  p-2 rounded-lg flex justify-between items-center"> */}
@@ -420,7 +420,7 @@ Props) {
             <AccordionTrigger
               iconColor="#000000"
               iconWidth="6"
-              className="text-lg font-medium   leading-7 text-start text-text"
+              className="text-lg font-medium   leading-7 text-start text-darkprimary"
             >
               {t("Text.rating")}
             </AccordionTrigger>

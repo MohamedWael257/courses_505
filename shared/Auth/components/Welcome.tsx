@@ -135,7 +135,7 @@ const Welcome: React.FC<VerifyCodeProps> = ({ dialogOpen, isDialogOpen }) => {
                     className="h-[48px] w-[80px] object-contain "
                     priority
                   />
-                  <p className="text-text text-base   leading-6">
+                  <p className="text-darkprimary text-base   leading-6">
                     {t("Text.welcome")}
                   </p>
                 </div>
@@ -149,17 +149,17 @@ const Welcome: React.FC<VerifyCodeProps> = ({ dialogOpen, isDialogOpen }) => {
                 />
               </div>
               <div className="flex flex-col gap-2 p-4">
-                <h2 className="text-text font-bold text-xl   leading-7">
+                <h2 className="text-darkprimary font-bold text-xl   leading-7">
                   {t("Text.intro")}
                 </h2>
-                <p className="text-text text-base   leading-6">
+                <p className="text-darkprimary text-base   leading-6">
                   {termsData?.title ?? t("Text.welcomeDesc")}
                 </p>
                 <br />
-                <h2 className="text-text font-bold text-xl   leading-7">
+                <h2 className="text-darkprimary font-bold text-xl   leading-7">
                   {t("Text.intro2")}
                 </h2>
-                <p className="text-text text-base   leading-6">
+                <p className="text-darkprimary text-base   leading-6">
                   {termsData?.desc ?? t("Text.welcomeDesc2")}
                 </p>
                 <div className="!pt-4 w-full h-max ">
@@ -173,7 +173,7 @@ const Welcome: React.FC<VerifyCodeProps> = ({ dialogOpen, isDialogOpen }) => {
                     button
                     loader={false}
                     disabled={false}
-                    className="!w-full  !h-[56px] !rounded-[12px] "
+                    className="!w-full  !h-[56px] !rounded-full "
                   />
                 </div>
               </div>

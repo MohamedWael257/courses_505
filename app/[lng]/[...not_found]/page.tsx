@@ -20,7 +20,7 @@ export default function NotFound() {
         <h2 className="text-center font-bold text-2xl my-4  ">
           {t("page not found")}
         </h2>
-        <h2 className="text-center font-bold text-2xl my-4 text-textgrey">
+        <h2 className="text-center font-bold text-2xl my-4 text-darkprimarygrey">
           {t("something went wrong")}
         </h2>
         <div className="flex justify-center mt-5 bg-primary text-white px-16 py-4 rounded-xl">

@@ -161,7 +161,7 @@ export default function AddressesDetials({
     <>
       <div className="bg-greynormal p-6 rounded-2xl border border-secprimary">
         <div className="flex gap-4 items-center my-6">
-          <h2 className="flex-1 text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
+          <h2 className="flex-1 text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
             {t("Text.addressesTitle")}
           </h2>
           <button

@@ -61,7 +61,7 @@ export default function OrderShippingDetail({
           )}
           <div>
             <div>
-              <span className="text-lg text-text font-medium mb-2">
+              <span className="text-lg text-darkprimary font-medium mb-2">
                 {shippingDetails?.shipping_type == "normal"
                   ? t("Text.normalShipping")
                   : t("Text.quickShipping")}
@@ -82,10 +82,10 @@ export default function OrderShippingDetail({
           <div className="flex gap-2 items-center ">
             icon
             <div>
-              <p className="text-lg text-dark font-medium mb-2">
+              <p className="text-lg text-darkprimary font-medium mb-2">
                 {t("Text.shippingDate")}
               </p>
-              <p className="text-lg text-dark font-medium mb-2">
+              <p className="text-lg text-darkprimary font-medium mb-2">
                 {t("Text.shippingDateDesc")}
               </p>
             </div>

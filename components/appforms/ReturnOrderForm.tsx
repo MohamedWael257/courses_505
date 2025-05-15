@@ -208,7 +208,7 @@ const ReturnOrderForm: React.FC<ReturnOrderFormProps> = ({
                 <FormTextarea
                   name="reason"
                   label={"reason"}
-                  className="md:h-[150px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base"
+                  className="md:h-[125px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#2d2d2db2] rounded-xl px-2 pe-5"
                   placeholder={"reason"}
                 />
                 {nationalImageLoading ? (
@@ -302,7 +302,7 @@ const ReturnOrderForm: React.FC<ReturnOrderFormProps> = ({
                   loader={false}
                   disabled={false}
                   button
-                  className=" !w-full !h-[56px] !rounded-[12px]  !mt-[20px]"
+                  className=" !w-full !h-[56px] !rounded-full  !mt-[20px]"
                 />
               </div>
             </form>

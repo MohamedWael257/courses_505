@@ -143,7 +143,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
                   loader={LoadingComplete}
                   disabled={LoadingComplete}
                   button
-                  className=" !w-full !h-[56px] !rounded-[12px]  !mt-[20px]"
+                  className=" !w-full !h-[56px] !rounded-full  !mt-[20px]"
                 />
               </div>
             </form>

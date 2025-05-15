@@ -186,7 +186,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
           ) : (
             <div className="flex flex-col gap-5">
               <div className="flex justify-between items-center">
-                <h2 className="text-2xl leading-6 text-start font-medium text-darkprimary">
+                <h2 className="text-2xl leading-6 text-start font-medium text-darkprimaryprimary">
                   معلومات شخصية
                 </h2>
                 <button
@@ -230,7 +230,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                     <p className="text-sm font-medium text-start leading-5 text-[#656D72] my-3">
                       الاسم
                     </p>
-                    <p className="text-darkprimary font-normal text-base leading-5 text-start">
+                    <p className="text-darkprimaryprimary font-normal text-base leading-5 text-start">
                       محمد وائل
                     </p>
                   </div>
@@ -238,7 +238,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                     <p className="text-sm font-medium text-start leading-5 text-[#656D72] my-3">
                       البريد الإلكتروني
                     </p>
-                    <p className="text-darkprimary font-normal text-base leading-5 text-start">
+                    <p className="text-darkprimaryprimary font-normal text-base leading-5 text-start">
                       ahmed16@gmail.com
                     </p>
                   </div>
@@ -246,7 +246,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                     <p className="text-sm font-medium text-start leading-5 text-[#656D72] my-3">
                       رقم الهاتف
                     </p>
-                    <p className="text-darkprimary font-normal text-base leading-5 text-start">
+                    <p className="text-darkprimaryprimary font-normal text-base leading-5 text-start">
                       +966 123456789
                     </p>
                   </div>
@@ -313,7 +313,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                     <p className="text-sm font-medium text-start leading-5 text-[#656D72] my-3">
                       الاسم
                     </p>
-                    <p className="text-darkprimary font-normal text-base leading-5 text-start">
+                    <p className="text-darkprimaryprimary font-normal text-base leading-5 text-start">
                       محمد وائل
                     </p>
                   </div>
@@ -321,7 +321,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                     <p className="text-sm font-medium text-start leading-5 text-[#656D72] my-3">
                       البريد الإلكتروني
                     </p>
-                    <p className="text-darkprimary font-normal text-base leading-5 text-start">
+                    <p className="text-darkprimaryprimary font-normal text-base leading-5 text-start">
                       ahmed16@gmail.com
                     </p>
                   </div>
@@ -329,7 +329,7 @@ export default function PersonalAccountDetails({ profile, refetch }: Props) {
                     <p className="text-sm font-medium text-start leading-5 text-[#656D72] my-3">
                       رقم الهاتف
                     </p>
-                    <p className="text-darkprimary font-normal text-base leading-5 text-start">
+                    <p className="text-darkprimaryprimary font-normal text-base leading-5 text-start">
                       +966 123456789
                     </p>
                   </div>

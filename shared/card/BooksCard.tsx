@@ -40,13 +40,13 @@ export default function BooksCard({
   });
   return (
     <div
-      // data-aos="zoom-in"
+      data-aos="zoom-in"
       className={`${
         className ? className : ""
       } col-span-1 bg-greynormal rounded-2xl p-5 relative overflow-hidden flex  gap-5`}
       key={`offer_${index}`}
     >
-      <LocalePath href={`/books/${bookData?.slug}`}>
+      <LocalePath href={`/books/${bookData?.id}`}>
         <div
           className={`relative bg-white  rounded-2xl p-4 ${
             border ? border : ""
@@ -65,7 +65,7 @@ export default function BooksCard({
           />
           <div
             style={{ boxShadow: "0px 0px 4px 2px #CACACA" }}
-            className="absolute bottom-3 start-0 bg-white text-dark px-3 py-2 rounded-full text-sm font-medium flex gap-1 items-center"
+            className="absolute bottom-3 start-0 bg-white text-darkprimary px-3 py-2 rounded-full text-sm font-medium flex gap-1 items-center"
           >
             <TiStar color="#FF8861" size={25} />
             {bookData?.rate.toFixed(1) || "4.5"}
@@ -85,10 +85,10 @@ export default function BooksCard({
         <p className="text-base font-medium leading-4 text-start text-error">
           {bookData?.brand?.name || "كتاب ورقي"}
         </p>
-        <p className="text-lg font-medium  leading-7 text-start text-text  line-clamp-2">
+        <p className="text-lg font-medium  leading-7 text-start text-darkprimary  line-clamp-2">
           الوحش الذي يسكنك يمكن أن يكون لطيفاً
         </p>
-        <p className="w-fit text-base font-medium leading-4 text-start text-text bg-text/30 p-2 px-4 rounded-full">
+        <p className="w-fit text-base font-medium leading-4 text-start text-darkprimary bg-text/30 p-2 px-4 rounded-full">
           ملف
         </p>
         <div className="flex  gap-2 my-4">

@@ -31,7 +31,7 @@ Props) {
   return (
     <>
       <div className="bg-white p-4 rounded-lg mb-4">
-        <h2 className="text-lg text-text font-bold mb-4 text-start">
+        <h2 className="text-lg text-darkprimary font-bold mb-4 text-start">
           {t("Text.products", { count: `${products?.length}` })}
         </h2>
 
@@ -57,14 +57,14 @@ Props) {
                   <p className="text-base font-normal   leading-4 text-start text-secondrydark">
                     {vendor?.username}
                   </p>
-                  <p className="text-lg font-medium   leading-6 line-clamp-1 text-start text-text">
+                  <p className="text-lg font-medium   leading-6 line-clamp-1 text-start text-darkprimary">
                     {ele?.brand?.name}
                   </p>
                   <p className="text-base font-normal    leading-4 text-start text-secondrydark">
                     {ele?.name}
                   </p>
                   <div className="flex gap-2">
-                    <p className="text-lg text-text font-semibold   leading-5">
+                    <p className="text-lg text-darkprimary font-semibold   leading-5">
                       {ele?.price_after_discount > 0
                         ? ele?.price_after_discount
                         : ele?.unit_price}{" "}

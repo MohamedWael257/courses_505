@@ -101,7 +101,7 @@ export default function OrdersDetails({
     <>
       <div className="sm:flex gap-4 items-center ">
         <div className=" flex-1 mb-3">
-          <h2 className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
+          <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
             {t("Text.ordersDetailsTitle", { count: orders.length })}
           </h2>
           <h2 className="text-secondrydark  text-base font-medium   leading-7 text-start">
@@ -133,7 +133,7 @@ export default function OrdersDetails({
               className={` h-fit mt-3   font-medium   leading-6 grid place-content-center ${
                 active == ele?.slug
                   ? " text-primary border-2 border-primary "
-                  : " text-dark border-2 border-subborder "
+                  : " text-darkprimary border-2 border-subborder "
               }  px-6 py-4 text-sm rounded-xl`}
               onClick={() => {
                 setActive(ele?.slug);
@@ -157,7 +157,7 @@ export default function OrdersDetails({
           orders?.map((ele: any, index: number) => {
             return (
               <div key={index} className="p-4 rounded-xl bg-white">
-                <h2 className="text-text  text-lg font-medium   leading-7 text-start mb-3">
+                <h2 className="text-darkprimary  text-lg font-medium   leading-7 text-start mb-3">
                   {t("Text.orderId", { count: " " })}
                   <span className="text-base font-medium   leading-6 text-secondrydark">
                     {ele?.uuid}
@@ -184,7 +184,7 @@ export default function OrdersDetails({
                     <p className="text-sm text-secondrydark font-normal">
                       {ele?.vendor?.username}
                     </p>
-                    <p className="text-base font-medium text-text">
+                    <p className="text-base font-medium text-darkprimary">
                       {ele?.item?.brand?.name}
                     </p>
                     <p className="text-sm text-secondrydark font-normal">
@@ -197,7 +197,7 @@ export default function OrdersDetails({
                         >
                           {t(`status.${ele?.status}`)}
                         </span>
-                        <p className="text-sm text-text ">
+                        <p className="text-sm text-darkprimary ">
                           {ele?.status == "pending"
                             ? ele?.created_at
                             : ele[`${ele?.status}_at`]}
@@ -212,7 +212,7 @@ export default function OrdersDetails({
                         data-aos="fade-left"
                       >
                         {ele?.item?.quantity > 0 && (
-                          <button className="mx-2 text-lg font-medium  text-text">
+                          <button className="mx-2 text-lg font-medium  text-darkprimary">
                             +{ele?.item?.quantity}
                           </button>
                         )}

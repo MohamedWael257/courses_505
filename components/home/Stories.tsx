@@ -26,7 +26,7 @@ export default function Stories({ stories }: Props) {
       <h2 className="font-medium text-xl leading-7 text-center text-error bg-error/[.15] px-5 p-3 rounded-2xl w-fit mx-auto">
         قصص نجاح
       </h2>
-      <p className="lg:text-4xl md:text-2xl text-lg font-medium leading-8 text-dark text-center my-5">
+      <p className="lg:text-4xl md:text-2xl text-lg font-medium leading-8 text-darkprimary text-center my-5">
         تجارب مُلهمة تستحق أن تُروى
       </p>
       <div className="relative h-fit w-full overflow-hidden">
@@ -52,9 +52,11 @@ export default function Stories({ stories }: Props) {
           className="hero-slider "
           extraSettings={{
             centeredSlides: true,
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
+            },
           }}
-          // activeIndex={activeIndex}
-          // setActiveIndex={setActiveIndex}
         >
           {[...Array(6)].map((item, index) => (
             <div className="bg-greynormal p-6 rounded-2xl w-full cursor-default  relative z-[9999] ">
@@ -68,7 +70,7 @@ export default function Stories({ stories }: Props) {
                   value={3}
                 />
               </div>
-              <p className="my-4 text-darkprimary font-normal text-base leading-8 text-start">
+              <p className="my-4 text-darkprimaryprimary font-normal text-base leading-8 text-start">
                 بدأت رحلتي مع المنصة بدورة تحليل بيانات، ومع كل فيديو كنت بحس
                 إني باتطور فعلاً. الملفات الجاهزة اللي اشتريتها وفّرت عليّ وقت
                 ومجهود
@@ -86,7 +88,7 @@ export default function Stories({ stories }: Props) {
                   // }}
                 />
                 <div className="flex flex-col gap-2">
-                  <span className="text-darkprimary font-medium text-base  leading-5 text-start">
+                  <span className="text-darkprimaryprimary font-medium text-base  leading-5 text-start">
                     محمد وائل
                   </span>
                   <span className="text-secondrytext font-medium text-base  leading-5 text-start">

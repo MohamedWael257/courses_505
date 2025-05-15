@@ -144,7 +144,7 @@ const ChatInput = ({ refetch }: any) => {
                         disabled={uploading}
                         button
                         onClick={handleSendClick}
-                        className=" !w-full !h-[56px] !rounded-[12px]  !mt-[20px]"
+                        className=" !w-full !h-[56px] !rounded-full  !mt-[20px]"
                       />
                     </div>
                     {uploading && (
@@ -178,7 +178,7 @@ const ChatInput = ({ refetch }: any) => {
 
           <label htmlFor="file">
             <MdPhotoCameraBack
-              className="cursor-pointer text-text bg-white rounded-full p-2"
+              className="cursor-pointer text-darkprimary bg-white rounded-full p-2"
               size={45}
             />
           </label>

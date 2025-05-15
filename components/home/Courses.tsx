@@ -15,15 +15,15 @@ export default function Courses({ courses }: any) {
     <>
       <section className="container py-16">
         <div className="flex gap-4 items-center mb-6">
-          <div className=" flex-1" data-aos="fade-right">
-            <h2 className="capitalize text-text font-bold lg:text-3xl text-xl text-start lg:leading-[50px]   leading-8">
+          <div className=" flex-1" data-aos="fade-left">
+            <h2 className="capitalize text-darkprimary font-bold lg:text-3xl text-xl text-start lg:leading-[50px]   leading-8">
               الدورات الأكثر رواجاً
             </h2>
           </div>
           <LocalePath
             className=" w-fit border p-3 border-primary rounded-full gap-2   font-semibold text-sm   leading-5 text-center whitespace-nowrap text-primary  transition-colors "
             href="/"
-            data-aos="fade-left"
+            dataAos="fade-right"
           >
             المزيد من الدورات
           </LocalePath>

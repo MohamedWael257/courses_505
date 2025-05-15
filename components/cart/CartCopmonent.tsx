@@ -327,7 +327,7 @@ export default function CartCopmonent({ code }: { code: string }) {
         // data-aos="fade-right"
         >
           <div className="bg-greynormal shadow-md rounded-2xl h-fit p-4 border border-secprimary">
-            <h2 className="capitalize text-darkprimary font-medium lg:text-xl text-lg text-start lg:leading-[50px]   leading-8">
+            <h2 className="capitalize text-darkprimaryprimary font-medium lg:text-xl text-lg text-start lg:leading-[50px]   leading-8">
               {t("Text.orderSummary")}
             </h2>
 
@@ -417,25 +417,25 @@ export default function CartCopmonent({ code }: { code: string }) {
             )}
             <div className="flex justify-between items-center my-5 font-normal text-base   leading-4">
               <div>
-                <span className="text-darkprimary">المبلغ الإجمالي</span>
+                <span className="text-darkprimaryprimary">المبلغ الإجمالي</span>
               </div>
-              <span className="flex items-center gap-2 text-darkprimary">
+              <span className="flex items-center gap-2 text-darkprimaryprimary">
                 500
                 <RS className="*:fill-darkprimary" />
               </span>
             </div>
             <div className="flex justify-between items-center my-5 font-normal text-base   leading-4">
               <div>
-                <span className="text-darkprimary">الشحن</span>
+                <span className="text-darkprimaryprimary">الشحن</span>
               </div>
-              <span className="flex items-center gap-2 text-darkprimary">
+              <span className="flex items-center gap-2 text-darkprimaryprimary">
                 20
                 <RS className="*:fill-darkprimary" />
               </span>
             </div>
             {/* {data?.discount > 0 && ( */}
             <div className="flex justify-between items-center my-5  font-normal text-base   leading-4">
-              <span className="text-darkprimary">
+              <span className="text-darkprimaryprimary">
                 {t("Text.orderDiscount")}
               </span>
               <span className="flex items-center gap-2 text-success">
@@ -447,9 +447,11 @@ export default function CartCopmonent({ code }: { code: string }) {
             <div className="h-0.5 bg-subborder my-2"></div>
             <div className="flex justify-between items-center my-5  font-normal text-base   leading-4">
               <div>
-                <span className="text-darkprimary">{t("Text.orderTotal")}</span>
+                <span className="text-darkprimaryprimary">
+                  {t("Text.orderTotal")}
+                </span>
               </div>
-              <span className="flex items-center gap-2 text-darkprimary">
+              <span className="flex items-center gap-2 text-darkprimaryprimary">
                 500 <RS className="*:fill-darkprimary" />
               </span>
             </div>

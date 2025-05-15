@@ -18,7 +18,7 @@ const EmptyNotifications = () => {
           />
         </div>
 
-        <h2 className="md:text-2xl text-xl   leading-8 text-text font-bold  mb-2 text-center">
+        <h2 className="md:text-2xl text-xl   leading-8 text-darkprimary font-bold  mb-2 text-center">
           {t("Text.noNotifications")}
         </h2>
       </div>

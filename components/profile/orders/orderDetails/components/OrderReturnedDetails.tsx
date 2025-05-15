@@ -11,7 +11,7 @@ export default function OrderReturnedDetails({ returnDetails }: Props) {
   return (
     <>
       <div className="bg-white p-4 rounded-lg mb-4">
-        <h2 className="text-lg text-text font-bold mb-4 text-start">
+        <h2 className="text-lg text-darkprimary font-bold mb-4 text-start">
           {t("Text.OrderReturnTitle")}
         </h2>
         <p className="text-base font-medium   leading-6 text-secondrydark">

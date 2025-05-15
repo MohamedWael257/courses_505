@@ -404,7 +404,7 @@ export default function ChatsIndex() {
                             />
                           </div>
                           <p
-                            className={`text-[12px] text-text font-medium  my-auto mx-3`}
+                            className={`text-[12px] text-darkprimary font-medium  my-auto mx-3`}
                           >
                             {formatTime(msg?.created_at)}
                           </p>
@@ -420,12 +420,14 @@ export default function ChatsIndex() {
                             className={`py-3 px-4  break-words ${
                               msg?.user_type == "client"
                                 ? "bg-primary text-white rounded-2xl rounded-br-none"
-                                : "bg-secprimary text-text  rounded-2xl rounded-bl-none"
+                                : "bg-secprimary text-darkprimary  rounded-2xl rounded-bl-none"
                             }`}
                           >
                             {msg?.message}
                           </p>
-                          <p className={`text-[12px] text-text font-medium `}>
+                          <p
+                            className={`text-[12px] text-darkprimary font-medium `}
+                          >
                             {formatTime(msg?.created_at)}
                           </p>
                         </div>
@@ -485,7 +487,7 @@ export default function ChatsIndex() {
 
                 <label htmlFor="file">
                   <MdPhotoCameraBack
-                    className="cursor-pointer text-text bg-white rounded-full p-2"
+                    className="cursor-pointer text-darkprimary bg-white rounded-full p-2"
                     size={45}
                   />
                 </label>

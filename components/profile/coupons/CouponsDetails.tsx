@@ -37,7 +37,7 @@ Props) {
                 className={` h-fit mt-3 font-medium   leading-6 grid place-content-center  bg-white ${
                   active == ele?.slug
                     ? " text-primary border-2 border-primary "
-                    : " text-dark border-2 border-subborder "
+                    : " text-darkprimary border-2 border-subborder "
                 }  px-6 py-4 text-sm rounded-xl`}
                 onClick={() => {
                   setActive(ele?.slug);

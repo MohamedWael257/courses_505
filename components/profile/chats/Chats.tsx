@@ -121,13 +121,13 @@ export default function Chats({ chats, isLoading = false }: Props) {
                           className={`py-3 px-4  ${
                             chat.user_type == "client"
                               ? "bg-primary text-white rounded-2xl rounded-br-none"
-                              : "bg-secprimary text-text  rounded-2xl rounded-bl-none"
+                              : "bg-secprimary text-darkprimary  rounded-2xl rounded-bl-none"
                           }`}
                         >
                           {chat.message}
                         </p>
                         {chat.created_at && (
-                          <p className={`text-[11px] text-text`}>
+                          <p className={`text-[11px] text-darkprimary`}>
                             {format(chat.created_at, "HH:mm")}
                           </p>
                         )}

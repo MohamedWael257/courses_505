@@ -23,7 +23,7 @@ export default function CheckoutPaymentForm({
       //  data-aos="flip-left"
       className="border border-secprimary bg-white p-4 rounded-2xl"
     >
-      <h2 className=" text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
+      <h2 className=" text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
         {t("Text.paymentType")}
       </h2>
       <div className="bg-white shadow-md rounded-xl h-fit p-4">
@@ -41,6 +41,7 @@ export default function CheckoutPaymentForm({
                 ? "border-primary"
                 : "border-greynormal"
             }`}
+            onClick={() => setValue("payment_method", "cash")}
           >
             <label htmlFor={t("Text.paymentUponReceipt")}>
               <div className="grid grid-cols-[auto_1fr] gap-2 items-center">
@@ -62,6 +63,7 @@ export default function CheckoutPaymentForm({
                 ? "border-primary"
                 : "border-greynormal"
             }`}
+            onClick={() => setValue("payment_method", "wallet")}
           >
             <label htmlFor={t("Text.paymentViaWallet")}>
               <div className="grid grid-cols-[auto_1fr] gap-2 items-center">
@@ -83,6 +85,7 @@ export default function CheckoutPaymentForm({
                 ? "border-primary"
                 : "border-greynormal"
             }`}
+            onClick={() => setValue("payment_method", "card")}
           >
             <label htmlFor={t("Text.Payment by card")}>
               <div className="grid grid-cols-[auto_1fr] gap-2 items-center">
@@ -104,7 +107,8 @@ export default function CheckoutPaymentForm({
                 ? "border-primary"
                 : "border-greynormal"
             }`}
-          >
+            onClick={() => setValue("payment_method", "visa")}
+              >
             <label htmlFor={t("Text.paymentUponReceipt")}>
               <div className="grid grid-cols-[auto_1fr] gap-2 items-center">
                 <ImageWithFallback
@@ -125,6 +129,7 @@ export default function CheckoutPaymentForm({
                 ? "border-primary"
                 : "border-greynormal"
             }`}
+            onClick={() => setValue("payment_method", "paypal")}
           >
             <label htmlFor={t("Text.paymentViaWallet")}>
               <div className="grid grid-cols-[auto_1fr] gap-2 items-center">
@@ -146,6 +151,7 @@ export default function CheckoutPaymentForm({
                 ? "border-primary"
                 : "border-greynormal"
             }`}
+            onClick={() => setValue("payment_method", "mada")}
           >
             <label htmlFor={t("Text.Payment by card")}>
               <div className="grid grid-cols-[auto_1fr] gap-2 items-center">

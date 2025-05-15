@@ -30,7 +30,7 @@ export default function PointsDetails({ transactions, defaultType }: Props) {
               className={` h-fit mt-3 font-medium   leading-6 grid place-content-center  bg-white ${
                 active == ele?.slug
                   ? " text-primary border-2 border-primary "
-                  : " text-dark border-2 border-subborder "
+                  : " text-darkprimary border-2 border-subborder "
               }  px-6 py-4 text-sm rounded-xl`}
               onClick={() => {
                 setActive(ele?.slug);
@@ -74,10 +74,10 @@ export default function PointsDetails({ transactions, defaultType }: Props) {
                     )}
                   </button>
                   <div className="text-start">
-                    <p className="text-lg text-text font-semibold   leading-7">
+                    <p className="text-lg text-darkprimary font-semibold   leading-7">
                       {transaction.title}
                     </p>
-                    <p className="text-base  text-text font-normal   leading-5">
+                    <p className="text-base  text-darkprimary font-normal   leading-5">
                       {transaction.created_at}
                     </p>
                   </div>

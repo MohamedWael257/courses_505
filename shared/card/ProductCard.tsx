@@ -314,7 +314,7 @@ const ProductCard = ({ productData, index, refetch }: any) => {
           {productData?.brand?.name}
         </p>
         <div className="flex flex-col gap-2">
-          <h2 className="text-lg font-medium  leading-6 text-start text-text  line-clamp-1">
+          <h2 className="text-lg font-medium  leading-6 text-start text-darkprimary  line-clamp-1">
             {productData?.name}
           </h2>
           <div
@@ -327,7 +327,7 @@ const ProductCard = ({ productData, index, refetch }: any) => {
       </div>
       <div className="flex flex-col gap-2 my-2">
         <div className="flex  gap-2">
-          <span className=" font-bold text-lg  leading-5 text-start text-text">
+          <span className=" font-bold text-lg  leading-5 text-start text-darkprimary">
             {productData?.price_after_discount > 0
               ? productData?.price_after_discount
               : productData?.price}{" "}

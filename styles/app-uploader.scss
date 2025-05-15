@@ -1,4 +1,8 @@
 .image-uploader {
+  .ant-upload-list.ant-upload-list-picture-card
+    .ant-upload-list-item-container {
+    @apply rounded-2xl #{!important};
+  }
   .ant-upload-list-item-container,
   .ant-upload-select {
     @apply w-full h-[125px] bg-white #{!important};
@@ -9,6 +13,10 @@
 }
 
 .file-uploader {
+  .ant-upload-list.ant-upload-list-picture-card
+    .ant-upload-list-item-container {
+    @apply rounded-2xl #{!important};
+  }
   .ant-upload-list-item-container,
   .ant-upload-select {
     @apply w-full h-[125px] bg-white #{!important};

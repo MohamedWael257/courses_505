@@ -48,7 +48,7 @@ const MobileSheet: React.FC<MobileSheetProps> = ({
   };
 
   const cleanedPathname = cleanPath(pathname);
- 
+
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger className="flex gap-4 items-center border-b-secondrydark">
@@ -106,7 +106,7 @@ const MobileSheet: React.FC<MobileSheetProps> = ({
                                       "text-[16px] font-semibold",
                                       {
                                         "text-primary": isActive,
-                                        "text-dark": !isActive,
+                                        "text-darkprimary": !isActive,
                                       }
                                     )}
                                   >

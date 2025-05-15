@@ -10,6 +10,7 @@ import {
 } from "@/shared/ui/breadcrumb";
 import { useLocale, useTranslations } from "next-intl";
 import { RiArrowLeftSLine } from "react-icons/ri";
+import { CgFormatSlash } from "react-icons/cg";
 
 interface BreadCrumbsProps {
   paths: Array<{ name: string | undefined; href?: string }>;
@@ -43,7 +44,7 @@ const AppBreadCrumbs: React.FC<BreadCrumbsProps> = ({
                     className={`text-[#666666] text-[16px] ${
                       paths.length == 1 ? "text-center" : ""
                     }`}
-                    href={`${locale == "ar" ? "" : "/en"}/${path.href}`}
+                    href={`${locale == "ar" ? "" : "/en"}${path.href}`}
                   >
                     {stopTranslate && index > 0 ? path.name : t(path.name)}
                   </BreadcrumbLink>
@@ -60,7 +61,10 @@ const AppBreadCrumbs: React.FC<BreadCrumbsProps> = ({
               {index < paths.length - 1 && (
                 <p className="text-[#666666] font-bold text-[16px]">
                   {icon ? (
-                    <>{icon}</>
+                    <CgFormatSlash
+                      className={`${locale == "ar" ? "" : "rotate-180"}`}
+                      size={25}
+                    />
                   ) : (
                     <RiArrowLeftSLine
                       className={`${locale == "ar" ? "" : "rotate-180"}`}

@@ -175,7 +175,7 @@ export default function QuestionsForm({ setOpen, refetch }: Props) {
                 <FormTextarea
                   name="content"
                   label="provide-questionier"
-                  className="md:h-[150px] resize-none w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base"
+                  className="md:h-[125px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#2d2d2db2] rounded-xl px-2 pe-5"
                   placeholder="provide-questionier"
                   // showRequired
                 />
@@ -268,7 +268,7 @@ export default function QuestionsForm({ setOpen, refetch }: Props) {
                     loader={LoadingComplete}
                     disabled={LoadingComplete}
                     button
-                    className="!h-[56px] !rounded-[12px] "
+                    className="!h-[56px] !rounded-full "
                   />
                 </div>
               </form>

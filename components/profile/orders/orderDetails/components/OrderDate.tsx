@@ -11,7 +11,7 @@ export default function OrderDate({ status, orderId, orderDate }: Props) {
   return (
     <>
       <div className="bg-white p-4 rounded-lg mb-4">
-        <h2 className="text-text  text-lg font-medium   leading-7 text-start mb-3">
+        <h2 className="text-darkprimary  text-lg font-medium   leading-7 text-start mb-3">
           {t("Text.orderId", { count: " " })}
           <span className="text-base font-medium   leading-6 text-secondrydark">
             {orderId}
@@ -63,7 +63,7 @@ export default function OrderDate({ status, orderId, orderDate }: Props) {
           )}
 
           <div>
-            <h2 className="  text-lg text-text font-medium   leading-7 text-start mb-2">
+            <h2 className="  text-lg text-darkprimary font-medium   leading-7 text-start mb-2">
               {/* {t("Text.orderDate")} */}
               {t(`status.${status}_at`)}
             </h2>

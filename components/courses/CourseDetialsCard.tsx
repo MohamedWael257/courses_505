@@ -134,7 +134,7 @@ export default function CourseDetialsCard({ course }: Props) {
           className="w-full h-[250px] object-cover rounded-xl"
           alt="hero"
         />
-        {/* <div className="absolute bottom-3 start-0 bg-white text-dark px-3 py-2 rounded-full text-sm font-medium flex gap-1 items-center">
+        {/* <div className="absolute bottom-3 start-0 bg-white text-darkprimary px-3 py-2 rounded-full text-sm font-medium flex gap-1 items-center">
           <span className="text-secondrydark">(30)</span>
         </div> */}
       </div>
@@ -332,7 +332,7 @@ export default function CourseDetialsCard({ course }: Props) {
       >
         شراء الآن
       </button>
-      <div className="w-full bg-secsuccess text-darksuccess grid justify-center gap-2 p-4 rounded-2xl">
+      <div className="w-full bg-secsuccess text-darkprimarysuccess grid justify-center gap-2 p-4 rounded-2xl">
         <p className="text-sm font-medium leading-6 text-center">يبدأ من</p>
         <p className="text-sm font-medium leading-6 text-center flex gap-2">
           <svg

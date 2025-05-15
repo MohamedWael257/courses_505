@@ -44,7 +44,7 @@ const config: Config = {
       greynormal: "#F7F7F7",
       secgreynormal: "#FFF5EB",
       footer: "#1E1E1E",
-      error: "#EF233C",
+      error: "#FF375E",
       sub: "#818C92",
       transparent: "transparent",
       current: "currentColor",

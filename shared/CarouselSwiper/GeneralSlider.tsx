@@ -57,6 +57,7 @@ const GeneralSlider: React.FC<GeneralSliderProps> = ({
   spaceBetween = 0,
   breakpoints,
 }) => {
+  console.log("🚀 ~ extraSettings:", extraSettings);
   const swiperRef = useRef<any | null>(null);
   const options: any = {
     spaceBetween: `${spaceBetween}`,
@@ -68,12 +69,10 @@ const GeneralSlider: React.FC<GeneralSliderProps> = ({
     },
   };
 
-  // const [activeIndex, setactiveIndex] = useState(0);
   const handleSlideChange = (swiper: any) => {
     if (onSwiperSlideChange) {
-      onSwiperSlideChange(swiper.activeIndex || 0);
+      onSwiperSlideChange(swiper.realIndex || 0);
     }
-    // setactiveIndex(swiper.activeIndex);
   };
   return (
     <div
@@ -111,15 +110,21 @@ const GeneralSlider: React.FC<GeneralSliderProps> = ({
         breakpoints={breakpoints}
       >
         {React.Children?.map(children, (child, index) => (
-          <SwiperSlide
-            // style={{
-            //   transform: `scale(${activeIndex == index ? 1.1 : 1})`,
-            //   transition: "transform 0.3s ease",
-            // }}
-            className={slideClass}
-            key={index}
-          >
-            {child}
+          <SwiperSlide className={slideClass} key={index}>
+            {({ isActive }) => (
+              <div
+                style={{
+                  transform: `scale(${
+                    isActive && extraSettings?.centeredSlides ? 1.1 : 1
+                  })`,
+                  transition: "transform 0.3s ease",
+                  width: "100%",
+                  height: "100%",
+                }}
+              >
+                {child}
+              </div>
+            )}
           </SwiperSlide>
         ))}
       </Swiper>

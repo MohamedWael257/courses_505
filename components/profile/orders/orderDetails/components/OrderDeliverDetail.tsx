@@ -13,13 +13,13 @@ export default function OrderDeliverDetail({ deliverDetails }: Props) {
   const t = useTranslations("");
   return (
     <div className="bg-white p-4 rounded-lg mb-4">
-      <h2 className="text-xl text-text font-bold mb-4 text-start">
+      <h2 className="text-xl text-darkprimary font-bold mb-4 text-start">
         {t("Text.deliverDetailsTitle")}
       </h2>
-      <p className="text-lg  text-text font-bold mb-4 text-start">
+      <p className="text-lg  text-darkprimary font-bold mb-4 text-start">
         {deliverDetails?.client?.name}
       </p>
-      <div className="flex  text-text gap-2 items-center">
+      <div className="flex  text-darkprimary gap-2 items-center">
         <ImageWithFallback
           src={deliverDetails?.client?.country?.image || flag_ar}
           width={1000}

@@ -12,17 +12,12 @@ type Props = {
   refetch: any;
 };
 
-export default function WalletDetails({
-  transactions,
-  refetch,
-}: Props) {
+export default function WalletDetails({ transactions, refetch }: Props) {
   const locale = useLocale();
   const t = useTranslations();
 
-
   return (
     <>
-   
       <div className="p-4 bg-white rounded-lg shadow">
         {transactions?.length > 0 ? (
           <>
@@ -51,10 +46,10 @@ export default function WalletDetails({
                       </button>
 
                       <div className="text-start">
-                        <p className="text-lg text-text font-medium   leading-7">
+                        <p className="text-lg text-darkprimary font-medium   leading-7">
                           {transaction.amount}
                         </p>
-                        <p className="text-base  text-text font-normal   leading-5">
+                        <p className="text-base  text-darkprimary font-normal   leading-5">
                           {transaction.created_at}
                         </p>
                       </div>

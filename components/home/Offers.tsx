@@ -14,7 +14,7 @@ export default function Offers({ offers }: any) {
         <section className="container py-10">
           <div className="flex gap-4 items-center mb-4">
             <div className="flex-1" data-aos="fade-right">
-              <h2 className="capitalize text-text font-bold lg:text-2xl md:text-xl text-lg text-start lg:leading-[50px]   leading-8">
+              <h2 className="capitalize text-darkprimary font-bold lg:text-2xl md:text-xl text-lg text-start lg:leading-[50px]   leading-8">
                 {t("offers")}
               </h2>
             </div>

@@ -129,7 +129,7 @@ export default function GiftsDetails({
   return (
     <>
       <div className="p-4 bg-white rounded-lg shadow">
-        <h2 className="capitalize text-text font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-2">
+        <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-2">
           {t("Text.giftsDetailsTitle")}
         </h2>
         <ScrollArea

@@ -20,7 +20,7 @@ export default function Custom400() {
         />
         {/* <div className="error_section"> */}
 
-        <h2 className="text-center lg:w-[40%] w-3/4 mx-auto font-bold text-2xl my-4 text-textgrey">
+        <h2 className="text-center lg:w-[40%] w-3/4 mx-auto font-bold text-2xl my-4 text-darkprimarygrey">
           {t(
             "Access to the page or resource you were trying to access is blocked"
           )}

@@ -7,7 +7,7 @@ export default function FavouritsCard() {
   return (
     <div className="flex gap-4 items-center pt-6 mb-4">
       <div className=" flex-1">
-        <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
+        <h2 className="capitalize text-darkprimaryprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8">
           {t("favourtis")}
         </h2>
       </div>

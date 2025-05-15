@@ -11,7 +11,7 @@ export default function ChatHeader({}: Props) {
       <div className="flex flex-start items-center gap-3 ">
         <div className="w-14 h-14 rounded-full bg-greynormal  "></div>
         <div className="flex flex-col gap-2">
-          <p className="text-xl text-text font-bold text-start   leading-5 ">
+          <p className="text-xl text-darkprimary font-bold text-start   leading-5 ">
             Doom-دووم
           </p>
           <p className="text-base   leading-6 text-start text-secondrydark">

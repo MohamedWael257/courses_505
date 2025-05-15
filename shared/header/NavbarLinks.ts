@@ -19,6 +19,6 @@ export const NavItems: NavLink[] = [
   },
   {
     name: "contactus",
-    path: "/contact-us",
+    path: "/contact",
   },
 ];

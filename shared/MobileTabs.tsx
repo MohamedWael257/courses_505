@@ -33,14 +33,14 @@ const MobileTabs = () => {
     (state: RootState) => state.CartConfig
   );
   const countClass = `border-white text-white border-[2px] border-solid size-4 md:size-5 text-[10px] md:text-sm bg-primary grid place-content-center rounded-full absolute -top-1.5 right-0.5`;
-  const className = `*:fill-[#9e9e9e] size-6`;
+  const className = `*:fill-darkprimary size-6`;
   const pathname = usePathname();
 
   const normalizedPathname = pathname.replace(/^\/en/, "");
 
   return (
     <div
-      className="bg-white text-[#9e9e9e ] font-semibold text-sm  w-full 
+      className="bg-white text-darkprimary font-semibold text-sm  w-full 
             shadow-[0px_-9px_24px_0px_#CECEF129] z-[999] fixed bottom-0 p-6 flex items-center justify-between gap-2 lg:hidden "
     >
       <LocalePath
@@ -48,7 +48,7 @@ const MobileTabs = () => {
         href="/"
         className="mobile-tab"
       >
-        <HomeIcon className="size-6 *:stroke-[#9E9E9E] home-icon" />
+        <HomeIcon className="size-6 *:stroke-darkprimary home-icon" />
         <span>{t("NAV.home")}</span>
       </LocalePath>
       <LocalePath
@@ -59,7 +59,7 @@ const MobileTabs = () => {
         className="relative mobile-tab"
       >
         <div className={countClass}>{productCount}</div>
-        <CartIcon className={className} />
+        <Cart4 className={className} />
         <span>{t("NAV.cart")}</span>
       </LocalePath>
 
@@ -71,73 +71,40 @@ const MobileTabs = () => {
         href="/favourits"
         className="mobile-tab"
       >
-        <Heart className="size-6 *:stroke-[#9E9E9E] home-icon" />
+        <Heart className="size-6 *:stroke-darkprimary home-icon" />
         <span>{t("NAV.favourits")}</span>
-      </LocalePath>
-      <LocalePath
-        // isActive={
-        //   `/${normalizedPathname}` == `/compare` ||
-        //   normalizedPathname == "/compare"
-        // }
-        href="/compare"
-        className="mobile-tab"
-      >
-        <Spinner
-          className={`size-6  home-icon ${
-            `/${normalizedPathname}` == `/compare` ||
-            normalizedPathname == "/compare"
-              ? "*:stroke-primary"
-              : "*:stroke-[#9E9E9E]"
-          }`}
-        />
-        <span
-          className={` ${
-            `/${normalizedPathname}` == `/compare` ||
-            normalizedPathname == "/compare"
-              ? "text-primary"
-              : ""
-          }`}
-        >
-          {t("NAV.compare")}
-        </span>
       </LocalePath>
 
       {/* <LocalePath href="/notifications" className="relative mobile-tab">
         <p className="bg-error/90 w-2 h-2 rounded-full absolute top-3 start-[14px]"></p>
-        <Notificaation className="size-6 *:stroke-[#9E9E9E] home-icon" />
+        <Notificaation className="size-6 *:stroke-darkprimary home-icon" />
         <span>{t("NAV.notifications")}</span>
       </LocalePath> */}
       {/* <LoginBtnProvide isTab /> */}
-      {isClient && (
+      {/* {isClient && (
         <>
           {memoizedSession ? (
             <LocalePath
-              isActive={
-                `/${normalizedPathname}` == `/profile/addresses` ||
-                normalizedPathname == "/profile/addresses"
-              }
+              isActive={normalizedPathname.includes("profile")}
               href="/profile/addresses"
               className="mobile-tab"
             >
-              <Person className="size-6" />
+              <Person className="size-6 *:fill-darkprimary" />
               <span>{t("NAV.myAccount")}</span>
             </LocalePath>
-          ) : (
+          ) : ( */}
             <LocalePath
-              isActive={
-                `/${normalizedPathname}` == `/auth/login` ||
-                normalizedPathname == "/auth/login"
-              }
+              isActive={normalizedPathname.includes("auth")}
               href="/auth/login"
               className="mobile-tab"
             >
-              <Person className="size-6" />
+              <Person className="size-6 *:fill-darkprimary" />
               {t("NAV.myAccount")}
               {/* <MdKeyboardArrowDown size={25} /> */}
             </LocalePath>
-          )}
+          {/* )}
         </>
-      )}
+      )} */}
     </div>
   );
 };

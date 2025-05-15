@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AddToFav, RemoveFromFav } from "@/store/favourtis";
 import { AppDispatch, RootState } from "@/store/store";
 import { addItem } from "@/store/cartStore.slice";
-import {  Cart5, Heart, RS, Share, Spinner } from "@/shared/Icons";
+import { Cart5, Heart, RS, Share, Spinner } from "@/shared/Icons";
 import ShowAlertMixin from "@/shared/ShowAlertMixin";
 import QuantityControl from "./components/QuantityControl";
 import AppBreadCrumbs from "@/shared/Breadcrumbs/AppBreadCrumbs";
@@ -126,8 +126,8 @@ export default function BooksDetails({ book }: { book: any }) {
     book?.discount ?? ""
   );
   const [discount_Type, setDiscount_Type] = useState(book?.discount_type ?? "");
-  const [rate, setRate] = useState(book?.rate.toFixed(1) ?? 0);
-  const [count, setCount] = useState(book?.stock || 0);
+  const [rate, setRate] = useState(book?.rate.toFixed(1) ?? 5);
+  const [count, setCount] = useState(book?.stock || 10);
   const [initialCount, setInitialCount] = useState(1);
 
   const form = useForm<MyFormValues>({
@@ -145,13 +145,13 @@ export default function BooksDetails({ book }: { book: any }) {
       // formData.append("book_detail_id", selectedbookId);
       // const response = await axiosInstance.post("/cart", formData);
 
-      dispatch(
-        addItem({
-          id: selectedbookId,
-          product: book,
-          quantity: values?.quantity,
-        })
-      );
+      // dispatch(
+      //   addItem({
+      //     id: selectedbookId,
+      //     product: book,
+      //     quantity: values?.quantity,
+      //   })
+      // );
       // dispatch(getAllCartItems());
       ShowAlertMixin({
         type: 15,
@@ -161,7 +161,7 @@ export default function BooksDetails({ book }: { book: any }) {
       // setTimeout(() => {
       //   setIsOpen(true);
       // }, 800);
-      // form.reset();
+      form.reset();
       setInitialCount(1);
       // setActiveSizeQuantity(0);
     } catch (err: any) {
@@ -192,7 +192,7 @@ export default function BooksDetails({ book }: { book: any }) {
       />
       {/* Title and Desc  */}
       <div className="flex flex-col gap-3 my-3">
-        <p className="text-darkprimary text-3xl text-start font-semibold leading-[45px]">
+        <p className="text-darkprimaryprimary text-3xl text-start font-semibold leading-[45px]">
           الوحش الذي يسكنك يمكن أن يكون لطيفاً
         </p>
         <div className="font-normal text-secondrydark leading-6 ">
@@ -224,7 +224,7 @@ export default function BooksDetails({ book }: { book: any }) {
       <div className="mt-6 flex gap-2 items-center">
         <TiStar color="#FF8861" size={25} />
         <div className="   text-lg font-semibold flex gap-1 items-center">
-          {book?.rate.toFixed(1) || "4.5"}
+          {rate.toFixed(1)}
           <span className="text-secondrydark">(30)</span>
         </div>
       </div>
@@ -235,13 +235,13 @@ export default function BooksDetails({ book }: { book: any }) {
           <span
             className={`flex items-center font-bold text-lg    leading-5 text-start text-primary`}
           >
-            500 <RS />
+            {price_after_discount > 0 ? price_after_discount : price} <RS />
           </span>
-          <>
+          {price_after_discount > 0 && (
             <span className="flex items-center text-base font-bold   leading-5 text-start text-secondrydark line-through">
-              500 <RS className="*:fill-secondrydark" />
+              {price} <RS className="*:fill-secondrydark" />
             </span>
-          </>
+          )}
         </div>
       </div>
 

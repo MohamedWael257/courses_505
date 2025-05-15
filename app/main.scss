@@ -130,11 +130,11 @@ body.swal2-toast-shown .swal2-container.toast {
 .mobile-tab {
   @apply flex flex-col items-center gap-1;
   &.active-link {
-    @apply text-primary #{!important};
+    @apply text-secprimary #{!important};
     svg {
-      @apply *:stroke-primary #{!important};
+      @apply *:stroke-secprimary #{!important};
       &.home-icon {
-        @apply *:fill-primary #{!important};
+        @apply *:fill-secprimary #{!important};
       }
     }
   }
@@ -225,7 +225,7 @@ input[type="radio"] {
     @apply mb-3;
 
     label {
-      @apply text-text text-lg font-semibold block mb-2  transition duration-300 ease-in-out;
+      @apply text-darkprimary text-lg font-semibold block mb-2  transition duration-300 ease-in-out;
     }
     .phone_input {
       label {
@@ -236,7 +236,7 @@ input[type="radio"] {
     input,
     textarea,
     .baseSelect {
-      @apply block border  py-4 px-5 focus:outline-none disabled:bg-[#ebebeb] placeholder:text-text-light rounded-[10px]  focus:shadow-none focus:border-primary border-line w-full caret-primary bg-white;
+      @apply block border  py-4 px-5 focus:outline-none disabled:bg-[#ebebeb] placeholder:text-darkprimary rounded-[10px]  focus:shadow-none focus:border-primary border-line w-full caret-primary bg-white;
       transition: border 0.3s ease-in-out;
 
       &.otp-input {
@@ -269,7 +269,7 @@ input[type="radio"] {
     }
     &.icon {
       i {
-        @apply absolute top-1/2 -translate-y-1/2 text-xl text-text-light;
+        @apply absolute top-1/2 -translate-y-1/2 text-xl text-darkprimary;
         inset-inline-start: 1rem;
       }
       input {

@@ -85,7 +85,7 @@ export default function Contact({ settings }: { settings: any }) {
       <div className="containerr lg:px-16 px-4 !mb-24 mt-12">
         <div className="grid lg:grid-cols-2 lg:gap-20 gap-8 mt-8">
           <div>
-            <p className=" text-lg text-darkprimary font-medium !leading-[30px] text-start ">
+            <p className=" text-lg text-darkprimaryprimary font-medium !leading-[30px] text-start ">
               نسعد بالتواصل معكم لتقديم أفضل الحلول والخدمات التي تلبي
               احتياجاتكم. فريقنا على أتم الاستعداد للإجابة على استفساراتكم
               وتقديم الدعم .
@@ -98,7 +98,7 @@ export default function Contact({ settings }: { settings: any }) {
                     className="mx-4 text-error border-[1px] border-error/[.15] rounded-full p-2"
                   />
                   <div>
-                    <p className=" text-base text-dark font-normal leading-6 text-start">
+                    <p className=" text-base text-darkprimary font-normal leading-6 text-start">
                       {setting?.location}
                     </p>
                   </div>
@@ -117,7 +117,7 @@ export default function Contact({ settings }: { settings: any }) {
                     className="mx-4 text-error border-[1px] border-error/[.15] rounded-full p-2"
                   />
                   <div>
-                    <p className=" text-base text-text font-normal leading-6 text-start">
+                    <p className=" text-base text-darkprimary font-normal leading-6 text-start">
                       {ele?.phone} {"  "} {ele?.phone_code} {" + "}
                     </p>
                   </div>
@@ -135,7 +135,7 @@ export default function Contact({ settings }: { settings: any }) {
                     className="mx-4 text-error border-[1px] border-error/[.15] rounded-full p-2"
                   />
                   <div>
-                    <p className=" text-base text-text font-normal leading-6 text-start">
+                    <p className=" text-base text-darkprimary font-normal leading-6 text-start">
                       {ele}
                     </p>
                   </div>
@@ -170,10 +170,10 @@ export default function Contact({ settings }: { settings: any }) {
                 <FormTextarea
                   name="message"
                   label="message"
-                  className="md:h-[200px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#2d2d2db2] rounded-2xl"
+                  className="md:h-[125px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#2d2d2db2] rounded-xl px-2 pe-5"
                   placeholder="message"
                 />
-                <div className="!pt-4">
+                <div className="!pt-2">
                   <CustomBtn
                     title={t("BUTTONS.confirm")}
                     buttonType="submit"

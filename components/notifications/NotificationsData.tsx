@@ -119,7 +119,7 @@ const NotificationsData = ({
       <div className="max-w-[632px] mx-auto ">
         {/* Header */}
         <div className="flex justify-between items-center mb-6">
-          <h1 className="text-2xl font-bold text-text   leading-6 text-start">
+          <h1 className="text-2xl font-bold text-darkprimary   leading-6 text-start">
             {t("Text.notifications")}
           </h1>
 
@@ -150,10 +150,10 @@ const NotificationsData = ({
                   <Notificaation className="size-8" />
                   {/* Details */}
                   <div>
-                    <h2 className="font-medium text-text">
+                    <h2 className="font-medium text-darkprimary">
                       {notification?.title}
                     </h2>
-                    <h2 className="font-medium text-text">
+                    <h2 className="font-medium text-darkprimary">
                       {notification?.body}
                     </h2>
 

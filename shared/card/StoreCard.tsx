@@ -135,7 +135,7 @@ export default function StoreCard({ data, index, refetch, type }: Props) {
     >
       {/* <div className="flex justify-center items-center relative w-full h-[246px] mt-2"> */}
       {/* <LocalePath href={`/${type}s/${data?.slug}`}> */}
-      <LocalePath href={`/${type}s/1`}>
+      <LocalePath href={`/${type}s/${data?.id}`}>
         <div className="relative">
           <ImageWithFallback
             src={course}
@@ -150,7 +150,7 @@ export default function StoreCard({ data, index, refetch, type }: Props) {
             //   mixBlendMode: "multiply",
             // }}
           />
-          <div className="absolute bottom-3 start-0 bg-white text-dark px-3 py-2 rounded-full text-sm font-medium flex gap-1 items-center">
+          <div className="absolute bottom-3 start-0 bg-white text-darkprimary px-3 py-2 rounded-full text-sm font-medium flex gap-1 items-center">
             <TiStar color="#FF8861" size={25} />
             {data?.rate.toFixed(1) || "4.5"}
             <span className="text-secondrydark">(30)</span>
@@ -174,12 +174,12 @@ export default function StoreCard({ data, index, refetch, type }: Props) {
             <p className="text-base font-medium leading-4 text-start text-error">
               {data?.brand?.name || "المهارات المهنية والأعمال"}
             </p>
-            <div className="text-lg font-medium  leading-7 text-start text-text  line-clamp-2">
+            <div className="text-lg font-medium  leading-7 text-start text-darkprimary  line-clamp-2">
               <p>كيفية بناء علامتك التجارية الدولية في مجال العمل الحر</p>
             </div>
           </div>
           <div className="flex justify-start items-center gap-2 my-3">
-            <p className="w-fit text-base font-medium leading-4 text-start text-text bg-text/30 p-2 px-4 rounded-full">
+            <p className="w-fit text-base font-medium leading-4 text-start text-darkprimary bg-text/30 p-2 px-4 rounded-full">
               غير أكاديمي
             </p>
             <p className="w-fit text-base font-medium leading-4 text-start text-primary bg-secprimary p-2 px-4  rounded-full">
@@ -193,10 +193,10 @@ export default function StoreCard({ data, index, refetch, type }: Props) {
             <p className="text-base font-medium leading-4 text-start text-error">
               كتاب ورقي
             </p>
-            <p className="text-lg font-medium  leading-7 text-start text-text  line-clamp-2">
+            <p className="text-lg font-medium  leading-7 text-start text-darkprimary  line-clamp-2">
               الوحش الذي يسكنك يمكن أن يكون لطيفاً
             </p>
-            <p className="w-fit text-base font-medium leading-4 text-start text-text bg-text/30 p-2 px-4 rounded-full">
+            <p className="w-fit text-base font-medium leading-4 text-start text-darkprimary bg-text/30 p-2 px-4 rounded-full">
               ملف
             </p>
             <div className="flex  gap-2 my-4">

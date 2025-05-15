@@ -161,7 +161,7 @@ export default function QuestionsForm() {
           <FormInput
             name="full_name"
             label={t("fullname")}
-            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
+            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
             placeholder={t("fullname")}
             showRequired
           />
@@ -170,7 +170,7 @@ export default function QuestionsForm() {
           <FormInput
             name="email"
             label={t("email")}
-            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-[12px] border border-subborder pe-10"
+            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
             placeholder={t("email")}
             showRequired
           />
@@ -187,7 +187,7 @@ export default function QuestionsForm() {
           <FormTextarea
             name="content"
             label={"message"}
-            className="md:h-[200px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base"
+            className="md:h-[125px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#2d2d2db2] rounded-xl px-2 pe-5"
             placeholder={"message"}
             showRequired
           />
