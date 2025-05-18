@@ -223,7 +223,7 @@ export default function CheckoutCopmonent({ code }: Props) {
         <> */}
       <br />
       <AppBreadCrumbs paths={paths} title={data?.title} />
-      <h2 className=" text-darkprimaryprimary font-medium lg:text-xl text-base text-start  leading-4 my-4">
+      <h2 className=" text-darkprimary font-medium lg:text-xl text-base text-start  leading-4 my-4">
         {t("Text.order")}
       </h2>
 

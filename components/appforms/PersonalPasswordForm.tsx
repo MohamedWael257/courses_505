@@ -90,7 +90,7 @@ export default function PersonalPasswordForm({
       <Form {...form}>
         <form className="pt-2" onSubmit={form.handleSubmit(handleSubmit)}>
           <div className="flex flex-col gap-2">
-            <h2 className="text-2xl leading-6 text-start font-medium text-darkprimaryprimary my-3">
+            <h2 className="text-2xl leading-6 text-start font-medium text-darkprimary my-3">
               تغيير كلمة المرور
             </h2>
             <PasswordController

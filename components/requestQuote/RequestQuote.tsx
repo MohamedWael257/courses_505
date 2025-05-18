@@ -133,7 +133,7 @@ export default function RequestQuote() {
               <h2 className=" text-2xl text-darkprimary font-bold !leading-[56px] text-start mb-4">
                 هل لديك طلب خاص؟{" "}
               </h2>
-              <p className=" text-lg text-darkprimaryprimary font-medium !leading-[30px] text-start ">
+              <p className=" text-lg text-darkprimary font-medium !leading-[30px] text-start ">
                 املأ البيانات المطلوبة لتحديد نوع الملف، محتواه، وصيغة التسليم
                 المناسبة لك. فريقنا سيقوم بمراجعة طلبك والبدء في تنفيذه بدقة
                 واحترافية.{" "}

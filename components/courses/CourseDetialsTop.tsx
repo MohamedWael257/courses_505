@@ -44,7 +44,7 @@ export default function CourseDetialsTop({ data }: Props) {
           >
             أساسيات العمل الحر: خطواتك الأولى نحو دخل مستقل
           </h2>
-          <p className="my-4  text-start  font-normal text-base  leading-8 text-darkprimaryprimary ">
+          <p className="my-4  text-start  font-normal text-base  leading-8 text-darkprimary ">
             هل تفكر في دخول عالم العمل الحر ولا تعرف من أين تبدأ؟ في هذا الكورس
             العملي، ستتعلّم كيفية تحديد مهاراتك، إنشاء ملف تعريفي احترافي،
             التسويق لنفسك عبر المنصات المختلفة، وإدارة مشاريعك بفعالية.

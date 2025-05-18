@@ -25,32 +25,7 @@
 @import "../styles/app-uploader.scss";
 @import "../styles/react-quill.scss";
 
-// .custom-tabs-wrapper {
-//   .ant-tabs-nav {
-//     .ant-tabs-ink-bar,
-//     &::before {
-//       @apply hidden;
-//     }
-//   }
-//   .ant-tabs-nav-list {
-//     @apply flex items-center pb-4 p-0 text-center w-fit gap-3 lg:gap-6 overflow-x-auto;
-//     // &::-webkit-scrollbar {
-//     //   height: 5px; /* Set scrollbar height */
-//     // }
-//     .ant-tabs-tab {
-//       @apply flex items-center justify-center border border-solid lg:min-w-[175px]  hover:text-primary focus:text-primary rounded-xl border-platinum m-0;
-//       .ant-tabs-tab-btn {
-//         @apply px-1.5 text-sm font-semibold;
-//       }
-//       &.ant-tabs-tab-active {
-//         @apply border-primary;
-//         .ant-tabs-tab-btn {
-//           @apply text-primary;
-//         }
-//       }
-//     }
-//   }
-// }
+
 ::-webkit-scrollbar {
   @apply w-2;
 }
@@ -69,11 +44,14 @@ img {
 
 body {
   @apply has-[.main-modal]:overflow-hidden relative;
+  @apply has-[.main-dialog]:overflow-hidden relative;
+  @apply has-[.createApp-Modal]:overflow-hidden relative;
 }
 body:after {
   content: "";
   @apply has-[.main-dialog]:absolute top-0 left-0 w-full h-full z-[999] bg-[#0000007a];
   @apply has-[.main-modal]:absolute top-0 left-0 w-full h-full z-[999] bg-[#0000007a];
+  @apply has-[.createApp-Modal]:absolute top-0 left-0 w-full h-full z-[999] bg-[#0000007a];
 }
 
 .react-datepicker-wrapper {

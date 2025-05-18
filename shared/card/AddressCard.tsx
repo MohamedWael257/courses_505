@@ -50,7 +50,7 @@ export default function AddressCard({
       className={` bg-white  p-4 rounded-2xl flex flex-col gap-2 `}
     >
       <div className="flex justify-between items-center">
-        <p className="text-darkprimaryprimary text-lg leading-6 text-start font-medium ">
+        <p className="text-darkprimary text-lg leading-6 text-start font-medium ">
           أحمد محمد عبده
         </p>
         <div className="flex items-center gap-2">

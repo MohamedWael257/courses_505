@@ -47,7 +47,7 @@ function HeroSection({ slider }: Props) {
             <p
               data-aos="fade-up"
               data-aos-duration="200"
-              className="my-4  text-center  font-normal lg:text-xl md:text-lg text-base  leading-10 text-darkprimaryprimary lg:w-[80%] mx-auto"
+              className="my-4  text-center  font-normal lg:text-xl md:text-lg text-base  leading-10 text-darkprimary lg:w-[80%] mx-auto"
             >
               ابدأ رحلتك التعليمية الآن مع منصتنا التي تجمع لك أفضل الدورات
               المباشرة والمسجلة، وفرصة الوصول إلى مكتبة ضخمة من الكتب والملفات

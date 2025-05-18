@@ -149,7 +149,7 @@ export default function JoinUS() {
             <h2 className=" text-2xl text-darkprimary font-bold !leading-[56px] text-start mb-4">
               انضم لنا كمدرب{" "}
             </h2>
-            <p className=" text-lg text-darkprimaryprimary font-medium !leading-[30px] text-start ">
+            <p className=" text-lg text-darkprimary font-medium !leading-[30px] text-start ">
               انضم إلى فريقنا من المدرّبين المتميزين وساهم في إحداث فرق حقيقي في
               حياة المتعلّمين من خلال مشاركة معرفتك وخبراتك العملية، عبر منصة
               توفر لك الأدوات والدعم اللازم لتقديم محتوى احترافي يليق بك.

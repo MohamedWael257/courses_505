@@ -279,7 +279,7 @@ Props) {
       className="p-4 rounded-xl bg-greynormal border border-secprimary 2xl:col-span-1 xl:col-span-1 h-fit"
     >
       <div className="flex justify-between items-center">
-        <h2 className="text-xl font-medium   leading-7 text-start text-darkprimaryprimary">
+        <h2 className="text-xl font-medium   leading-7 text-start text-darkprimary">
           {t("Text.filter")}
         </h2>
         <button

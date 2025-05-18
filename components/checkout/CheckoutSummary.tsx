@@ -62,34 +62,32 @@ export default function CheckoutSummary({
     <div className="bg-greynormal shadow-md rounded-xl h-fit p-4 border border-secprimary">
       <h2
         // data-aos="fade-right"
-        className="capitalize text-darkprimaryprimary font-bold lg:text-2xl text-xl text-start  leading-6"
+        className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start  leading-6"
       >
         {t("Text.orderSummary")}
       </h2>
       <div className="bg-greynormal shadow-md rounded-xl h-fit p-4">
         <div className="flex justify-between items-center my-5 font-normal text-base   leading-4">
           <div>
-            <span className="text-darkprimaryprimary">المبلغ الإجمالي</span>
+            <span className="text-darkprimary">المبلغ الإجمالي</span>
           </div>
-          <span className="flex items-center gap-2 text-darkprimaryprimary">
+          <span className="flex items-center gap-2 text-darkprimary">
             500
             <RS className="*:fill-darkprimary" />
           </span>
         </div>
         <div className="flex justify-between items-center my-5 font-normal text-base   leading-4">
           <div>
-            <span className="text-darkprimaryprimary">الشحن</span>
+            <span className="text-darkprimary">الشحن</span>
           </div>
-          <span className="flex items-center gap-2 text-darkprimaryprimary">
+          <span className="flex items-center gap-2 text-darkprimary">
             20
             <RS className="*:fill-darkprimary" />
           </span>
         </div>
         {/* {data?.discount > 0 && ( */}
         <div className="flex justify-between items-center my-5  font-normal text-base   leading-4">
-          <span className="text-darkprimaryprimary">
-            {t("Text.orderDiscount")}
-          </span>
+          <span className="text-darkprimary">{t("Text.orderDiscount")}</span>
           <span className="flex items-center gap-2 text-success">
             -10
             <RS className="*:fill-success" />
@@ -100,11 +98,9 @@ export default function CheckoutSummary({
         <div className="h-0.5 bg-subborder my-2"></div>
         <div className="flex justify-between items-center my-5  font-normal text-base   leading-4">
           <div>
-            <span className="text-darkprimaryprimary">
-              {t("Text.orderTotal")}
-            </span>
+            <span className="text-darkprimary">{t("Text.orderTotal")}</span>
           </div>
-          <span className="flex items-center gap-2 text-darkprimaryprimary">
+          <span className="flex items-center gap-2 text-darkprimary">
             500 <RS className="*:fill-darkprimary" />
           </span>
         </div>

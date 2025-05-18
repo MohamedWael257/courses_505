@@ -21,7 +21,7 @@ const EmptyFavourits = () => {
           </div>
         </div>
 
-        <h2 className="md:text-2xl text-xl   leading-10 text-darkprimaryprimary font-bold  mb-2 text-center w-3/4 mx-auto">
+        <h2 className="md:text-2xl text-xl   leading-10 text-darkprimary font-bold  mb-2 text-center w-3/4 mx-auto">
           {t("Text.readyToSaveYourProductsToFavourits")}
         </h2>
       </div>

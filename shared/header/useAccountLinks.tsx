@@ -43,7 +43,7 @@ const useAccountLinks = () => {
     },
     {
       name: t("downloads"),
-      path: "/profile/downloads?filter=",
+      path: "/profile/downloads",
       icon: <Downloads className="size-10" color={"#3E3E3E"} />,
 
       activeIcon: <Downloads className="size-10" color={"#4F008C"} />,

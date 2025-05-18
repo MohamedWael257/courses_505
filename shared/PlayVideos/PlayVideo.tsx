@@ -1,15 +1,13 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Teleport from '../Teleport/Teleport';
-import MainModal from '../CustomModal/MainModal';
-import { useTranslations } from 'next-intl';
-import PlayVideos from './PlayVideos';
-import Image from 'next/image';
+import React, { useState } from "react";
+import Teleport from "../Teleport/Teleport";
+import PlayVideos from "./PlayVideos";
+import Image from "next/image";
+import AppModal from "../CustomModal/AppModal";
 
 const PlayVideo = ({ src }: any) => {
   const [openModal, setOpenModal] = useState(false);
-  const t = useTranslations();
   return (
     <>
       <Image
@@ -23,13 +21,13 @@ const PlayVideo = ({ src }: any) => {
       />
       {openModal && (
         <Teleport to="body">
-          <MainModal
-            presist={true}
-            closeBtn={true}
-            close={() => setOpenModal(false)}
+          <AppModal
+            onCancel={() => setOpenModal(false)}
+            isModalVisible={openModal}
+            centered
           >
             <PlayVideos src={src} />
-          </MainModal>
+          </AppModal>
         </Teleport>
       )}
     </>

@@ -69,17 +69,18 @@ export default function HeaderIndex({ settings }: any) {
     pathname?.endsWith("books") ||
     pathname?.endsWith("faqs") ||
     pathname?.endsWith("contact-us") ||
-    pathname?.includes("courses") ||
+    (pathname?.includes("courses") && !pathname?.includes("profile")) ||
     pathname?.endsWith("terms") ||
     pathname?.endsWith("en") ||
     pathname == "/";
 
+  const isAuth = pathname?.includes("auth");
   return (
     <>
       <header
         className={` z-50 w-full shadow-sm  relative top-0 left-0 h-fit ${
           isRedLogo ? "bg-secprimary" : "bg-white"
-        }`}
+        } ${isAuth ? "hidden" : "inline-block"}`}
       >
         <nav className="relative z-10 w-full py-4 container lg:flex hidden justify-between fklex-wrap items-center gap-8">
           <div className="flex items-center gap-10">

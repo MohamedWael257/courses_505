@@ -192,7 +192,7 @@ export default function BooksDetails({ book }: { book: any }) {
       />
       {/* Title and Desc  */}
       <div className="flex flex-col gap-3 my-3">
-        <p className="text-darkprimaryprimary text-3xl text-start font-semibold leading-[45px]">
+        <p className="text-darkprimary text-3xl text-start font-semibold leading-[45px]">
           الوحش الذي يسكنك يمكن أن يكون لطيفاً
         </p>
         <div className="font-normal text-secondrydark leading-6 ">

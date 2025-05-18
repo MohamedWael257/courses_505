@@ -72,9 +72,9 @@ export default function FooterIndex({ settings }: any) {
               return ( */}
             <li
               // key={index}
-              className="my-4 font-normal text-darkprimaryprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
+              className="my-4 font-normal text-darkprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
             >
-              <FaPhoneAlt className="text-darkprimaryprimary mx-2" size={25} />
+              <FaPhoneAlt className="text-darkprimary mx-2" size={25} />
               {/* {ele?.phone} {"  "} {ele?.phone_code} {" + "} */}
               966966966 966+
             </li>
@@ -84,12 +84,9 @@ export default function FooterIndex({ settings }: any) {
             {/* return ( */}
             <li
               // key={index}
-              className="my-4 font-normal text-darkprimaryprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
+              className="my-4 font-normal text-darkprimary grid grid-cols-[auto_1fr] gap-4 items-center cursor-pointer"
             >
-              <MdOutlineEmail
-                className="text-darkprimaryprimary mx-2"
-                size={25}
-              />
+              <MdOutlineEmail className="text-darkprimary mx-2" size={25} />
               {/* {ele} */}
               info@allimak.com
             </li>

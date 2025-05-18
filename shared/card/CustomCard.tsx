@@ -40,7 +40,7 @@ export default function CustomCard({
           >
             {title}
           </h2>
-          <p className="my-4  text-center  font-normal text-xl  leading-10 text-darkprimaryprimary lg:w-[80%] mx-auto">
+          <p className="my-4  text-center  font-normal text-xl  leading-10 text-darkprimary lg:w-[80%] mx-auto">
             {description}
           </p>
         </div>

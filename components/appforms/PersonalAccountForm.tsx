@@ -144,7 +144,7 @@ export default function PersonalAccountForm({
       <Form {...form}>
         <form className="pt-2" onSubmit={form.handleSubmit(handleSubmit)}>
           <div className="flex flex-col gap-4">
-            <h2 className="text-2xl leading-6 text-start font-medium text-darkprimaryprimary my-3">
+            <h2 className="text-2xl leading-6 text-start font-medium text-darkprimary my-3">
               معلومات شخصية
             </h2>
             <FormInput

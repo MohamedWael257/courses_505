@@ -85,7 +85,7 @@ export default function Contact({ settings }: { settings: any }) {
       <div className="containerr lg:px-16 px-4 !mb-24 mt-12">
         <div className="grid lg:grid-cols-2 lg:gap-20 gap-8 mt-8">
           <div>
-            <p className=" text-lg text-darkprimaryprimary font-medium !leading-[30px] text-start ">
+            <p className=" text-lg text-darkprimary font-medium !leading-[30px] text-start ">
               نسعد بالتواصل معكم لتقديم أفضل الحلول والخدمات التي تلبي
               احتياجاتكم. فريقنا على أتم الاستعداد للإجابة على استفساراتكم
               وتقديم الدعم .

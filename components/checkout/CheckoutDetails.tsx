@@ -38,7 +38,7 @@ Props) {
       {/* Order */}
       <div>
         <div className="border border-secprimary bg-white shadow-md rounded-2xl h-fit p-4 grid gap-4 ">
-          <h2 className="text-base font-medium  leading-5 text-start text-darkprimaryprimary ">
+          <h2 className="text-base font-medium  leading-5 text-start text-darkprimary ">
             {t("Text.orderProducts", { count: 4 })}
           </h2>
           {/* <div className="w-full overflow-x-auto whitespace-nowrap mb-8"> */}

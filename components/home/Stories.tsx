@@ -70,7 +70,7 @@ export default function Stories({ stories }: Props) {
                   value={3}
                 />
               </div>
-              <p className="my-4 text-darkprimaryprimary font-normal text-base leading-8 text-start">
+              <p className="my-4 text-darkprimary font-normal text-base leading-8 text-start">
                 بدأت رحلتي مع المنصة بدورة تحليل بيانات، ومع كل فيديو كنت بحس
                 إني باتطور فعلاً. الملفات الجاهزة اللي اشتريتها وفّرت عليّ وقت
                 ومجهود
@@ -88,7 +88,7 @@ export default function Stories({ stories }: Props) {
                   // }}
                 />
                 <div className="flex flex-col gap-2">
-                  <span className="text-darkprimaryprimary font-medium text-base  leading-5 text-start">
+                  <span className="text-darkprimary font-medium text-base  leading-5 text-start">
                     محمد وائل
                   </span>
                   <span className="text-secondrytext font-medium text-base  leading-5 text-start">

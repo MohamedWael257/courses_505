@@ -86,7 +86,7 @@ export default function CheckoutPersonalForm({}: Props) {
       // data-aos="flip-left"
       className="border border-secprimary bg-white p-4 rounded-2xl"
     >
-      <h2 className="capitalize text-darkprimaryprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
+      <h2 className="capitalize text-darkprimary font-bold lg:text-2xl text-xl text-start lg:leading-[50px]   leading-8 mb-4">
         {t("LABELS.address")}
       </h2>
       <div className="flex flex-col gap-4">
