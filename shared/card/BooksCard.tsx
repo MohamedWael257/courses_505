@@ -9,6 +9,8 @@ import ImageWithFallback from "../ImageWithFallback";
 import book from "@/assets/test.jpg";
 import { Cart5, Heart, RS } from "../Icons";
 import CustomBtn from "../buttons/CustomBtn";
+import { AddToFav, RemoveFromFav } from "@/store/favourtis";
+import ShowAlertMixin from "../ShowAlertMixin";
 
 interface Props {
   bookData: any;
@@ -38,6 +40,92 @@ export default function BooksCard({
       return false;
     }
   });
+  const handleFavouriteToggle = async (id: string): Promise<void> => {
+    if (isFavouriteState) {
+      try {
+        // const { data } = await axiosInstance.delete(`favorites/${id}`);
+        // if (data?.status === "success") {
+        // await dispatch(getAllFavItems());
+        dispatch(RemoveFromFav({ id: id }));
+
+        //   ShowAlertMixin({
+        //     type: 15,
+        //     icon: "success",
+        //     title: data?.message,
+        //   });
+        //   // setIsFavouriteState(false);
+        //   if (refetch) {
+        //     refetch();
+        //   }
+        // }
+      } catch (error: any) {
+        ShowAlertMixin({
+          type: 15,
+          icon: "error",
+          title: error?.response?.data?.message,
+        });
+      }
+    } else {
+      try {
+        // const { data } = await axiosInstance.post(`favorites`, {
+        //   product_id: id,
+        // });
+        // if (data?.status === "success") {
+        // await dispatch(getAllFavItems());
+        dispatch(AddToFav({ id: id }));
+        //   ShowAlertMixin({
+        //     type: 15,
+        //     icon: "success",
+        //     title: data?.message,
+        //   });
+        //   // setIsFavouriteState(true);
+        //   if (refetch) {
+        //     refetch();
+        //   }
+        // }
+      } catch (error: any) {
+        ShowAlertMixin({
+          type: 15,
+          icon: "success",
+          title: error?.response?.data?.message,
+        });
+      }
+    }
+  };
+  const handleaddToCart = async (bookData: any) => {
+    ShowAlertMixin({
+      type: 15,
+      icon: "success",
+      title: "success",
+    });
+    // const formData = new FormData();
+    // formData.append("quantity", "1");
+    // formData.append("product_detail_id", productData?.default_detail);
+    // await axiosInstance
+    //   .post("cart", formData)
+    // .then((res: any) => {
+    // ShowAlertMixin({
+    //   type: 15,
+    //   icon: "success",
+    //   title: res?.data?.message,
+    // });
+    // dispatch(
+    //   addItem({
+    //     id: productData?.default_detail,
+    //     product: productData,
+    //     quantity: 1,
+    //   })
+    // );
+    // dispatch(getAllCartItems());
+    // })
+    // .catch((err: any) => {
+    //   ShowAlertMixin({
+    //     type: 15,
+    //     icon: "error",
+    //     title: err.response.data.message,
+    //   });
+    // });
+  };
   return (
     <div
       data-aos="zoom-in"
@@ -75,6 +163,7 @@ export default function BooksCard({
       </LocalePath>
       <div className="absolute top-6 end-7 text-2xl font-bold flex gap-3">
         <Heart
+          onClick={() => handleFavouriteToggle(bookData?.id)}
           color={isFavouriteState ? "#4F008C " : ""}
           className={`border-2 size-10 border-greynormal p-2 rounded-full cursor-pointer ${
             isFavouriteState ? "bg-secprimary" : "bg-white"
@@ -102,6 +191,9 @@ export default function BooksCard({
           </span>
         </div>
         <CustomBtn
+          onClick={() => {
+            handleaddToCart(bookData);
+          }}
           title={"اضف الي السلة"}
           buttonType="button"
           loader={false}

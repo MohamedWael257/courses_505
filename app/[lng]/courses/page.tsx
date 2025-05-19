@@ -3,6 +3,7 @@ import React from "react";
 import OffersProductDetails from "@/components/offers/OffersProductDetails";
 import CoursesTop from "@/components/courses/CoursesTop";
 import CustomCard from "@/shared/card/CustomCard";
+import Subscription from "@/components/Subscription";
 
 interface Props {
   searchParams: {
@@ -69,6 +70,7 @@ export default function pages({ searchParams }: Props) {
           />
         </div>
       </div>
+      <Subscription />
     </div>
   );
 }

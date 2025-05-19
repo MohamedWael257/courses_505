@@ -158,11 +158,10 @@ export default function BooksDetails({ book }: { book: any }) {
         icon: "success",
         title: "success",
       });
-      // setTimeout(() => {
-      //   setIsOpen(true);
-      // }, 800);
-      form.reset();
-      setInitialCount(1);
+      setTimeout(() => {
+        form.reset();
+        setInitialCount(1);
+      }, 300);
       // setActiveSizeQuantity(0);
     } catch (err: any) {
       ShowAlertMixin({

@@ -100,7 +100,7 @@ export default function CoursesCard({
     }
   };
 
-  const handleaddToCart = async (productData: any) => {
+  const handleaddToCart = async (courseData: any) => {
     ShowAlertMixin({
       type: 15,
       icon: "success",
@@ -108,7 +108,7 @@ export default function CoursesCard({
     });
     // const formData = new FormData();
     // formData.append("quantity", "1");
-    // formData.append("product_detail_id", productData?.default_detail);
+    // formData.append("product_detail_id", courseData?.default_detail);
     // await axiosInstance
     //   .post("cart", formData)
     // .then((res: any) => {
@@ -119,8 +119,8 @@ export default function CoursesCard({
     // });
     // dispatch(
     //   addItem({
-    //     id: productData?.default_detail,
-    //     product: productData,
+    //     id: courseData?.default_detail,
+    //     product: courseData,
     //     quantity: 1,
     //   })
     // );
