@@ -153,7 +153,7 @@ export default function CoursesIndex({
                 </div>
               </div>
               <LocalePath
-                href={`/courses/${item?.id}`}
+                href={`/profile/courses/${item?.id}`}
                 className="text-center w-fit flex items-center justify-end gap-2 mx-auto px-5 py-3 bg-primary text-white font-medium rounded-full text-base shadow-md hover:bg-orange-600 transition duration-300"
               >
                 اذهب إلي الدورة

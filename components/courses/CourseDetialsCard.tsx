@@ -24,6 +24,8 @@ import { FaPlay } from "react-icons/fa";
 import Teleport from "@/shared/Teleport/Teleport";
 import AppModal from "@/shared/CustomModal/AppModal";
 import PlayVideos from "@/shared/PlayVideos/PlayVideos";
+import LocalePath from "@/shared/LocalePath";
+import ArrowLeftIcon from "@/assets/icons/ArrowLeft";
 
 type Props = {
   course: any;
@@ -201,18 +203,30 @@ export default function CourseDetialsCard({ course }: Props) {
           </div>
         </div>
         <div className="mt-8 flex items-center  gap-5">
-          <CustomBtn
-            onClick={() => {
-              handleaddToCart(course);
-            }}
-            title={t("BUTTONS.Add to cart")}
-            buttonType="button"
-            loader={addToCartLoading}
-            disabled={addToCartLoading}
-            button
-            className=" !w-full !h-[56px] !rounded-full  !mt-[20px] !font-medium text-sm"
-            rightIcon={<Cart5 className="size-6" />}
-          />
+          {course?.in_role ? (
+            <LocalePath
+              href={`/profile/courses/${course?.id}`}
+              className="text-base flex items-center gap-2 font-normal leading-5 w-full bg-white text-primary  hover:bg-primary  hover:text-white border border-primary p-4 px-8 rounded-full transition-colors"
+            >
+              اذهب إلي الدورة
+              <ArrowLeftIcon
+                className={` ${locale === "ar" ? "" : "rotate-180"}`}
+              />
+            </LocalePath>
+          ) : (
+            <CustomBtn
+              onClick={() => {
+                handleaddToCart(course);
+              }}
+              title={t("BUTTONS.Add to cart")}
+              buttonType="button"
+              loader={addToCartLoading}
+              disabled={addToCartLoading}
+              button
+              className=" !w-full !h-[56px] !rounded-full  !mt-[20px] !font-medium text-sm"
+              rightIcon={<Cart5 className="size-6" />}
+            />
+          )}
           <button
             type="button"
             className={`${
