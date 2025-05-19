@@ -9,7 +9,7 @@ import { Tabs, TabsProps } from "antd";
 import { useLocale } from "next-intl";
 import { usePathname, useRouter } from "next/navigation";
 import { Progress } from "@/shared/ui/progress";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import { RiArrowLeftSLine } from "react-icons/ri";
 import { AuthStage } from "@/components/Header";
@@ -100,16 +100,16 @@ export default function CoursesIndex({
                   <h2 className="text-lg font-medium text-start text-darkprimary   leading-6 break-words">
                     كيفية بناء علامتك التجارية الدولية في مجال العمل الحر{" "}
                   </h2>
-                  {/* <div className="text-base font-medium text-start text-secondrydark   leading-6 flex items-center gap-2">
-                  <Progress
-                    value={40}
-                    bg="#03A853"
-                    className="w-full !max-h-[6px]"
-                  />
-                  <p className="text-base font-medium text-start text-secondrydark   leading-6">
-                    25/30
-                  </p>
-                </div> */}
+                  <div className="text-base font-medium text-start text-secondrydark   leading-6 flex items-center gap-2">
+                    <Progress
+                      value={40}
+                      bg="#03A853"
+                      className="w-full !max-h-[6px]"
+                    />
+                    <p className="text-base font-medium text-start text-secondrydark   leading-6">
+                      25/30
+                    </p>
+                  </div>
                   <div className="text-base font-medium text-start text-secondrydark   leading-6 flex items-center gap-5">
                     <p className="text-base font-medium text-start text-secondrydark   leading-6">
                       25/25 درس مكتمل
@@ -137,6 +137,17 @@ export default function CoursesIndex({
                           size={20}
                         />
                       </button>
+                    </div>
+                  </div>
+                  <div className="text-base font-medium text-start text-secondrydark   leading-6 flex items-center gap-5">
+                    <p className="text-base font-medium text-start text-secondrydark   leading-6">
+                      25/25 درس مكتمل
+                    </p>
+                    <div className="grid grid-cols-[auto_1fr] gap-2 items-center">
+                      <FaStar size={20} className={`text-[#DC8151] `} />
+                      <p className="text-base font-medium text-start leading-6">
+                        4.0
+                      </p>
                     </div>
                   </div>
                 </div>
