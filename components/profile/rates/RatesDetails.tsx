@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { Rate } from "antd";
 import AppPagination from "@/shared/Pagination/AppPagination";
+import { updateURLParams } from "@/utils/helpers";
 
 type Props = {
   rates: any;
@@ -30,22 +31,9 @@ export default function RatesDetails({
   const router = useRouter();
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement | null>(null);
-  const updateURLParams = (params: { [key: string]: string | null }) => {
-    const newSearchParams = new URLSearchParams(window.location.search);
-    Object.entries(params).forEach(([key, value]) => {
-      if (value === null) {
-        newSearchParams.delete(key);
-      } else {
-        newSearchParams.set(key, value);
-      }
-    });
-    router.replace(`${pathname}?${newSearchParams.toString()}`, {
-      scroll: false,
-    });
-  };
 
   const handlePaggination = (selectedPage: any) => {
-    updateURLParams({ page: selectedPage });
+    updateURLParams({ page: selectedPage }, router, pathname);
     setTimeout(() => {
       if (containerRef.current) {
         containerRef.current.scrollIntoView({

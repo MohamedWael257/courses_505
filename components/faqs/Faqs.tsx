@@ -9,6 +9,7 @@ import {
 } from "@/shared/ui/accordion";
 import AppPagination from "@/shared/Pagination/AppPagination";
 import { usePathname, useRouter } from "next/navigation";
+import { updateURLParams } from "@/utils/helpers";
 type Props = {
   faqs: {
     question: string;
@@ -22,23 +23,11 @@ export default function Faqs({ faqs, current_page, paggination }: Props) {
   const t = useTranslations("");
   const router = useRouter();
   const pathname = usePathname();
-  const updateURLParams = (params: { [key: string]: string | null }) => {
-    const newSearchParams = new URLSearchParams(window.location.search);
-    Object.entries(params).forEach(([key, value]) => {
-      if (value === null) {
-        newSearchParams.delete(key);
-      } else {
-        newSearchParams.set(key, value);
-      }
-    });
-    router.replace(`${pathname}?${newSearchParams.toString()}`, {
-      scroll: false,
-    });
-  };
+
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const handlePaggination = (selectedPage: any) => {
-    updateURLParams({ page: selectedPage });
+    updateURLParams({ page: selectedPage }, router, pathname);
     setTimeout(() => {
       if (containerRef.current) {
         containerRef.current.scrollIntoView({
@@ -47,12 +36,6 @@ export default function Faqs({ faqs, current_page, paggination }: Props) {
         });
       }
     }, 300);
-    // setTimeout(() => {
-    //   window.scrollTo({
-    //     top: 0,
-    //     behavior: "smooth", // for smooth scrolling
-    //   });
-    // }, 500);
   };
   return (
     <div className=" container md:py-10 py-6">

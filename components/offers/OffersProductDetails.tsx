@@ -6,6 +6,7 @@ import SortFilterElement from "./SortFilterElement";
 import { usePathname, useRouter } from "next/navigation";
 import AppPagination from "@/shared/Pagination/AppPagination";
 import StoreCard from "@/shared/card/StoreCard";
+import { updateURLParams } from "@/utils/helpers";
 type Props = {
   data: any;
   paggination?: any;
@@ -24,21 +25,8 @@ export default function OffersProductDetails({
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const updateURLParams = (params: { [key: string]: string | null }) => {
-    const newSearchParams = new URLSearchParams(window.location.search);
-    Object.entries(params).forEach(([key, value]) => {
-      if (value === null) {
-        newSearchParams.delete(key);
-      } else {
-        newSearchParams.set(key, value);
-      }
-    });
-    router.replace(`${pathname}?${newSearchParams.toString()}`, {
-      scroll: false,
-    });
-  };
   const handlePaggination = (selectedPage: any) => {
-    updateURLParams({ page: selectedPage });
+    updateURLParams({ page: selectedPage }, router, pathname);
     setTimeout(() => {
       if (containerRef.current) {
         containerRef.current.scrollIntoView({

@@ -12,6 +12,7 @@ import { InputNumber, Slider } from "antd";
 import { Checkbox } from "@/shared/ui/checkbox";
 import { usePathname, useRouter } from "next/navigation";
 import Cookies from "js-cookie";
+import { updateURLParams } from "@/utils/helpers";
 type Category = {
   id: number;
   slug: string;
@@ -132,34 +133,26 @@ Props) {
   const minRate = 1;
   const maxRate = 5;
 
-  const updateURLParams = (params: { [key: string]: string | null }) => {
-    const newSearchParams = new URLSearchParams(window.location.search);
-    Object.entries(params).forEach(([key, value]) => {
-      if (value === null) {
-        newSearchParams.delete(key);
-      } else {
-        newSearchParams.set(key, value);
-      }
-      newSearchParams.delete("page");
-    });
-    router.replace(`${pathname}?${newSearchParams.toString()}`, {
-      scroll: false,
-    });
-
-    // window.history.pushState(null, "", `?${newSearchParams.toString()}`);
-  };
-
   const handleApplyPriceFilter = () => {
-    updateURLParams({
-      minPrice: minValue.toString(),
-      maxPrice: maxValue.toString(),
-    });
+    updateURLParams(
+      {
+        minPrice: minValue.toString(),
+        maxPrice: maxValue.toString(),
+      },
+      router,
+      pathname,
+      true
+    );
   };
-
   const handleApplyRateFilter = (newRate: number) => {
-    updateURLParams({
-      rating: newRate.toString(),
-    });
+    updateURLParams(
+      {
+        rating: newRate.toString(),
+      },
+      router,
+      pathname,
+      true
+    );
   };
 
   const toggleSelection = (
@@ -206,19 +199,23 @@ Props) {
     setSelectedtypes([]);
     setSelectedtrainers([]);
     setSelectedsections([]);
-
     setRate(1);
 
-    updateURLParams({
-      minPrice: null,
-      maxPrice: null,
-      levels: null,
-      types: null,
-      sections: null,
-      trainers: null,
-      rating: null,
-      page: null,
-    });
+    updateURLParams(
+      {
+        minPrice: null,
+        maxPrice: null,
+        levels: null,
+        types: null,
+        sections: null,
+        trainers: null,
+        rating: null,
+        page: null,
+      },
+      router,
+      pathname,
+      true
+    );
   };
 
   const renderFilterSection = (

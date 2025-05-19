@@ -5,6 +5,9 @@ import { twMerge } from "tailwind-merge";
 import { CountryPhoneCodes } from "../public/countries/country-phone-code";
 import Cookies from "js-cookie";
 import { AppDispatch } from "@/store/store";
+import axiosInstance from "./axiosClient";
+import { updateUser } from "@/store/auth.slice";
+import ShowAlertMixin from "@/shared/ShowAlertMixin";
 
 interface LocationProps {
   dispatch: AppDispatch;
@@ -90,5 +93,46 @@ export const handleLocationFetch = ({
   } else {
     const location = JSON.parse(clientLocation);
     dispatch(setLocation({ ...location, isLoading: false }));
+  }
+};
+
+export const updateURLParams = (
+  params: { [key: string]: string | null },
+  router: any,
+  pathname: any,
+  page?: boolean,
+  refetch?: any
+) => {
+  const newSearchParams = new URLSearchParams(window.location.search);
+  Object.entries(params).forEach(([key, value]) => {
+    if (value === null) {
+      newSearchParams.delete(key);
+    } else {
+      newSearchParams.set(key, value);
+    }
+    if (page) {
+      newSearchParams.delete("page");
+    }
+    if (refetch) {
+      refetch();
+    }
+  });
+  router.replace(`${pathname}?${newSearchParams.toString()}`, {
+    scroll: false,
+  });
+};
+
+export const UpdateProfile = async (dispatch: AppDispatch) => {
+  try {
+    const response = await axiosInstance.get("/profile");
+
+    dispatch(updateUser(response.data.data));
+  } catch (error: any) {
+    ShowAlertMixin({
+      type: 15,
+      icon: "error",
+      title: error?.response?.data?.message,
+    });
+  } finally {
   }
 };

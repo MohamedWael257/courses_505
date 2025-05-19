@@ -39,6 +39,7 @@ export type AuthStage =
   | "productrate"
   | "providerrate"
   | "shippingrate"
+  | "courserate"
   | "Questionier";
 export default async function Header({  settings }: any) {
   return (

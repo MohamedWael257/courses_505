@@ -13,6 +13,7 @@ import AppPagination from "@/shared/Pagination/AppPagination";
 import UseSession from "@/store/UseSession";
 import { SessionType } from "@/components/Header";
 import { useSocketContext } from "@/utils/providers/SocketProvider";
+import { updateURLParams } from "@/utils/helpers";
 type Props = {
   orders: any;
   defaultType: any;
@@ -46,22 +47,8 @@ export default function OrdersDetails({
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const updateURLParams = (params: { [key: string]: string | null }) => {
-    const newSearchParams = new URLSearchParams(window.location.search);
-    Object.entries(params).forEach(([key, value]) => {
-      if (value === null) {
-        newSearchParams.delete(key);
-      } else {
-        newSearchParams.set(key, value);
-      }
-    });
-    router.replace(`${pathname}?${newSearchParams.toString()}`, {
-      scroll: false,
-    });
-  };
-
   const handlePaggination = (selectedPage: any) => {
-    updateURLParams({ page: selectedPage });
+    updateURLParams({ page: selectedPage }, router, pathname);
     setTimeout(() => {
       if (containerRef.current) {
         containerRef.current.scrollIntoView({

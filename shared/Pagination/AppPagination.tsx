@@ -90,7 +90,7 @@ const AppPagination = ({
               //@ts-ignore
               label={t("previous")}
               onClick={() => paginate(currentPage === 1 ? 1 : currentPage - 1)}
-              className={`min-h-[50px] bg-white border-[rgba(210, 53, 52, 0.10)] border-solid border-[1px] hover:cursor-pointer ${
+              className={`min-h-[50px] rounded-full bg-white border-[rgba(210, 53, 52, 0.10)] border-solid border-[1px] hover:cursor-pointer ${
                 currentPage === 1 &&
                 "!cursor-not-allowed !text-primary !border-primary"
               }`}
@@ -106,7 +106,7 @@ const AppPagination = ({
                     pageNumber === currentPage
                       ? "!bg-primary !text-[#ffffff] !pointer-events-none"
                       : "bg-white border-[#F1F1FF] border-solid border-[1px]"
-                  } rounded-lg min-h-[50px]   text-[#BCBCBC] font-[Din-Next-bold,sans-serif] w-[50px] hover:bg-white hover:text-primaryLight hover:border-primaryLight hover:cursor-pointer`}
+                  } rounded-full min-h-[50px]   text-[#BCBCBC] font-[Din-Next-bold,sans-serif] w-[50px] hover:bg-white hover:text-primaryLight hover:border-primaryLight hover:cursor-pointer`}
                 >
                   {pageNumber}
                 </PaginationLink>
@@ -125,7 +125,7 @@ const AppPagination = ({
               }
               // @ts-ignore
               label={t("next")}
-              className={`min-h-[50px] bg-white border-[rgba(210, 53, 52, 0.10)] border-solid border-[1px] hover:cursor-pointer ${
+              className={`min-h-[50px] rounded-full bg-white border-[rgba(210, 53, 52, 0.10)] border-solid border-[1px] hover:cursor-pointer ${
                 totalPage === currentPage &&
                 "!cursor-not-allowed !text-primary !border-primary"
               }`}

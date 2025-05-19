@@ -18,6 +18,7 @@ import ProviderRateForm from "@/components/appforms/ProviderRateForm";
 import ShippingRateForm from "@/components/appforms/ShippingRateForm";
 import CheckoutAddresses from "@/components/checkout/CheckoutAddresses";
 import ReturnOrderForm from "@/components/appforms/ReturnOrderForm";
+import CourseRateForm from "@/components/appforms/CourseRateForm";
 const AppDialog = ({
   isDialogOpen,
   setIsDialogOpen,
@@ -141,6 +142,14 @@ const AppDialog = ({
                 <ShippingRateForm
                   dialogOpen={setIsDialogOpen}
                   orderId={orderId}
+                />
+              )}
+              {authStage === "courserate" && (
+                <CourseRateForm
+                  dialogOpen={setIsDialogOpen}
+                  orderId={orderId}
+                  rateable_id={rateable_id}
+                  refetch={refetch}
                 />
               )}
             </DialogContent>
