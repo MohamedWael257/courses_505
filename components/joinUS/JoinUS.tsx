@@ -213,7 +213,7 @@ export default function JoinUS() {
                 <FormInput
                   name="trader_name"
                   label="trader_name"
-                  className="h-16 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
+                  className="h-14 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
                   placeholder="trader_name"
                 />
                 <FormSelect
@@ -236,13 +236,13 @@ export default function JoinUS() {
                 <FormInput
                   name="email"
                   label="email"
-                  className="h-16 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
+                  className="h-14 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
                   placeholder="email"
                 />
                 <FormInput
                   name="experiences"
                   label="experiences"
-                  className="h-16 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
+                  className="h-14 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
                   placeholder="experiences"
                 />
                 <div className="flex flex-col gap-3 my-3">

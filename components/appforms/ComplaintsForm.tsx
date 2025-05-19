@@ -160,14 +160,14 @@ const ComplaintsForm: React.FC = () => {
           <FormInput
             name="full_name"
             label={"fullname"}
-            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
+            className="h-14  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
             placeholder={"fullname"}
             showRequired
           />
           <FormInput
             name="email"
             label={"email"}
-            className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
+            className="h-14  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder pe-10"
             placeholder={"email"}
             showRequired
           />

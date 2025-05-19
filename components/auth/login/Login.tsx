@@ -130,7 +130,7 @@ const Login: React.FC = () => {
               <FormInput
                 name="email"
                 label="email"
-                className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                 placeholder="email"
               />
               <PasswordController
@@ -138,7 +138,7 @@ const Login: React.FC = () => {
                 name="password"
                 label="password"
                 placeholder="password"
-                className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
               />
             </div>
             <div className="!pt-2">

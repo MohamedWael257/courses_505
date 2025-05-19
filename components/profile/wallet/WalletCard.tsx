@@ -172,13 +172,13 @@ export default function WalletCard({ wallet, refetch }: Props) {
               dir={locale === "ar" ? "rtl" : "ltr"}
               className={`w-[90%] xl:w-[650px] max-w-[90%] xl:max-w-[60%] bg-white border border-secondrydark `}
             >
-              <div className="flex flex-col gap-3 pt-8 w-full p-4">
+              <div className="flex flex-col gap-3 pt-3 w-full p-4">
                 <ScrollArea
                   className="grow "
                   dir={locale === "en" ? "ltr" : "rtl"}
                 >
                   <div className={`h-[600px] flex flex-col pe-2`}>
-                    <div className="mb-6">
+                    <div className="mb-3">
                       <h3 className="text-[24px] font-bold grid grid-cols-[auto_1fr] gap-2">
                         {t("Text.charge_wallet")}
                       </h3>
@@ -189,41 +189,43 @@ export default function WalletCard({ wallet, refetch }: Props) {
                           <FormInput
                             name="bank_name"
                             label="bank_name"
-                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="bank_name"
                             // leftIcon={<Email />}
                           />
                           <FormInput
                             name="bank_number"
                             label="bank_number"
-                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="bank_number"
                             // leftIcon={<Email />}
                           />
                           <FormInput
                             name="iban_number"
                             label="iban_number"
-                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="iban_number"
                             // leftIcon={<Email />}
                           />
                           <FormInput
                             name="amount"
                             label="amount"
-                            className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+                            className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
                             placeholder="amount"
                             // leftIcon={<Email />}
                           />
                           <FormTextarea
                             name="reason"
-                            label="reason"
+                            label="reason_withdrawal"
                             className="md:h-[125px] w-full border-2 border-[#F3F6FC] outline-0 bg-[#fff] placeholder:text-[#2d2d2db2] rounded-xl px-2 pe-5"
-                            placeholder="reason"
+                            placeholder="reason_withdrawal"
                             // leftIcon={<Email />}
                           />
                         </div>
                         <div className="flex justify-end items-center gap-2">
                           <button
+                            onClick={() => setIsDialogOpen(false)}
+                            type="button"
                             disabled={LoadingComplete}
                             className="rounded-full font-bold w-[177px] px-12s  text-center !h-[56px] !mt-[30px] md:!mt-[56px] bg-white hover:bg-primary hover:text-white transition-colors text-primary border border-primary"
                           >

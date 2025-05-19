@@ -197,14 +197,14 @@ export default function RequestQuote() {
                   <FormInput
                     name="name"
                     label="name"
-                    className="h-16 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
+                    className="h-14 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
                     placeholder="name"
                   />
 
                   <FormInput
                     name="email"
                     label="email"
-                    className="h-16 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
+                    className="h-14 placeholder:text-[#2d2d2db2]  placeholder:font-[13px] outline-0	border-[1px] border-[#F3F6FC] rounded-full pe-5"
                     placeholder="email"
                   />
 

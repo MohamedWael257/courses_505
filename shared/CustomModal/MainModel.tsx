@@ -76,7 +76,7 @@ export default function MainModal({
           // type="button"
           onClick={close}
         >
-          <X className="h-16 w-12  bg-[#d9d9d9] text-darkprimary p-3 rounded-lg" />
+          <X className="h-14 w-12  bg-[#d9d9d9] text-darkprimary p-3 rounded-lg" />
         </button>
 
         <p className="text-3xl font-semibold   leading-10 text-center text-primary">

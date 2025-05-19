@@ -151,6 +151,7 @@ export default function CheckoutAddressesDetialssw({
                   onClick={() => {
                     setIsOpen(false);
                   }}
+                  type="button"
                   className="text-center flex items-center gap-2   mx-auto px-7 py-3 bg-white border border-primary text-primary font-medium rounded-lg shadow-md hover:bg-orange-600 transition duration-300"
                 >
                   {t("BUTTONS.cancel")}

@@ -218,7 +218,7 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
           <FormControl>
             <div dir="ltr" className="relative">
               {loading ? (
-                <Skeleton className="w-full h-16 rounded-full" />
+                <Skeleton className="w-full h-14 rounded-full" />
               ) : (
                 <PhoneInput
                   enableSearch
@@ -233,7 +233,7 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
                   inputStyle={{
                     width: "100%",
                     borderRadius: "9999px",
-                    height: "64px",
+                    height: "58px",
                     paddingLeft: "60px",
                     borderColor:
                       (errors[`${phone_name ? `${phone_name}` : "phone"}`] ||

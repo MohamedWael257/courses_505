@@ -90,7 +90,7 @@ const EmailVerify: React.FC<EmailVerifyProps> = ({
     <div className="flex flex-col gap-0 pt-8 w-full p-4">
       <ScrollArea className="grow " dir={locale === "en" ? "ltr" : "rtl"}>
         <div className={`h-[450px] flex flex-col pe-2`}>
-          <div className="mb-6">
+          <div className="mb-3">
             <h3 className="text-[24px] font-bold">{t("Text.verifyEmail")}</h3>
             <p className="text-[#A8A8A8] text-[14px]">
               {t("Text.verifyEmailDesc")}
@@ -102,7 +102,7 @@ const EmailVerify: React.FC<EmailVerifyProps> = ({
                 <FormInput
                   name="email"
                   label="email"
-                  className="h-16  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-full border-none pe-10"
+                  className="h-14  placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#F4F4F3]  outline-0	rounded-full border-none pe-10"
                   placeholder="email"
                   // leftIcon={<Email />}
                 />

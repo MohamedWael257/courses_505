@@ -69,8 +69,8 @@ const TypeVerifyCode: React.FC<TypeVerifyCodeProps> = ({ dialogOpen }) => {
     <div className="flex flex-col gap-0 pt-8 w-full p-4">
       <ScrollArea className="grow " dir={locale === "en" ? "ltr" : "rtl"}>
         <div className={`h-[425px] flex flex-col pe-2 mt-3`}>
-          <div className="mb-6">
-            <div className="mb-6">
+          <div className="mb-3">
+            <div className="mb-3">
               <h3 className="text-[24px] font-bold">نسيت كلمة المرور </h3>
               <p className="text-[#A8A8A8] text-[14px]">
                 حدد تفاصيل الاتصال التي يجب أن نستخدمها لإعادة تعيين كلمة المرور

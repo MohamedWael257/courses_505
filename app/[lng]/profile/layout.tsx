@@ -13,6 +13,7 @@ import LogoutButton from "@/components/profile/LogoutButton";
 import UseSession from "@/store/UseSession";
 import ProfileImage from "@/assets/images/profile.png";
 import DeleteAccountButton from "@/components/profile/personal-account/DeleteAccountButton";
+import { RS } from "@/shared/Icons";
 
 export default function ProfileLayout({
   children,
@@ -108,27 +109,38 @@ export default function ProfileLayout({
                             "flex gap-3 items-center px-3 mb-4 text-base py-4 font-normal",
                             {
                               "bg-white text-primary rounded-xl": isActive,
+                            },
+                            {
+                              "flex items-center justify-between":
+                                item.path.includes("wallet"),
                             }
                           )}
                         >
-                          <span
-                            className={clsx(
-                              "w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center",
-                              {
-                                "download-app-section text-primary": isActive,
-                              }
-                            )}
-                          >
-                            {isActive ? item.activeIcon : item.icon}
-                          </span>
-                          <span
-                            className={clsx("text-[16px] font-normal", {
-                              "text-primary": isActive,
-                              "text-[#3C4143]": !isActive,
-                            })}
-                          >
-                            {item.name}
-                          </span>
+                          <div className="flex gap-3 items-center">
+                            <span
+                              className={clsx(
+                                "w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center",
+                                {
+                                  "download-app-section text-primary": isActive,
+                                }
+                              )}
+                            >
+                              {isActive ? item.activeIcon : item.icon}
+                            </span>
+                            <span
+                              className={clsx("text-[16px] font-normal", {
+                                "text-primary": isActive,
+                                "text-[#3C4143]": !isActive,
+                              })}
+                            >
+                              {item.name}
+                            </span>
+                          </div>
+                          {item.path.includes("wallet") && (
+                            <span className="text-darksuccess bg-success/10 text-base font-medium p-2 rounded-2xl flex items-center gap-2">
+                              500 <RS className="*:fill-darksuccess" />
+                            </span>
+                          )}
                         </LocalePath>
                       </li>
                     );

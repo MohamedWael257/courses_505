@@ -98,14 +98,14 @@ export default function PersonalPasswordForm({
               name="current_password"
               label="old_password"
               placeholder="old_password"
-              className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
             />
             <PasswordController
               // @ts-ignore
               name="password"
               label="new_password"
               placeholder="new_password"
-              className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
             />
 
             <PasswordController
@@ -113,7 +113,7 @@ export default function PersonalPasswordForm({
               name="password_confirmation"
               label="confirm_new_password"
               placeholder="confirm_new_password"
-              className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
             />
           </div>
           <div className="!pt-2 w-full h-max flex justify-end ">

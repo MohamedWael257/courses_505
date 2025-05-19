@@ -54,6 +54,7 @@ const useAccountLinks = () => {
       icon: <Wallet className="size-10" color={"#3E3E3E"} />,
 
       activeIcon: <Wallet className="size-10" color={"#4F008C"} />,
+    
     },
   ];
 

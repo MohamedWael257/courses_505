@@ -187,13 +187,13 @@ const locationForm: React.FC<LocationFormProps> = ({
                   <FormInput
                     name="full_name"
                     label="full_name"
-                    className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                    className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                     placeholder="full_name"
                   />{" "}
                   <FormInput
                     name="email"
                     label="email"
-                    className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                    className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                     placeholder="email"
                   />
                 </div>
@@ -232,7 +232,7 @@ const locationForm: React.FC<LocationFormProps> = ({
                   <FormInput
                     name="location_name"
                     label="location_name"
-                    className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                    className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                     placeholder="location_name"
                   />
                 </div>
@@ -240,13 +240,13 @@ const locationForm: React.FC<LocationFormProps> = ({
                   <FormInput
                     name="location_number"
                     label="location_number"
-                    className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                    className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                     placeholder="location_number"
                   />
                   <FormInput
                     name="room_number"
                     label="room_number"
-                    className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                    className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                     placeholder="room_number"
                   />
                 </div>{" "}
@@ -254,13 +254,13 @@ const locationForm: React.FC<LocationFormProps> = ({
                   <FormInput
                     name="location_discription"
                     label="location_discription"
-                    className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                    className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                     placeholder="location_discription"
                   />
                   <FormInput
                     name="location_email"
                     label="location_email"
-                    className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
+                    className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-7 pe-10"
                     placeholder="location_email"
                   />
                 </div>
@@ -272,7 +272,8 @@ const locationForm: React.FC<LocationFormProps> = ({
 
               <div className="flex justify-end items-center gap-2 py-4">
                 <button
-                  disabled={loading}
+                  type="button"
+                  disabled={loading || mainLoader}
                   className="rounded-full font-bold w-[177px] px-12s  text-center !h-[56px] !mt-[30px] md:!mt-[56px] bg-white hover:bg-primary hover:text-white transition-colors text-primary border border-primary"
                 >
                   {t("BUTTONS.cancel")}

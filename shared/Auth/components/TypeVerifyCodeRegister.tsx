@@ -93,7 +93,7 @@ const TypeVerifyCodeRegister: React.FC<TypeVerifyCodeRegisterProps> = ({
     <div className="flex flex-col gap-0 pt-8 w-full p-4">
       <ScrollArea className="grow " dir={locale === "en" ? "ltr" : "rtl"}>
         <div className={`h-[425px] flex flex-col pe-2 mt-3`}>
-          <div className="mb-6">
+          <div className="mb-3">
             <h3 className="text-[24px] font-bold">
               {t("Text.forgotPassword")}
             </h3>

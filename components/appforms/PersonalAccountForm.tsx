@@ -150,13 +150,13 @@ export default function PersonalAccountForm({
             <FormInput
               name="full_name"
               label={"fullname"}
-              className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
               placeholder={"fullname"}
             />
             <FormInput
               name="email"
               label={"email"}
-              className="h-16 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
+              className="h-14 placeholder:text-[#9E9E9E] placeholder:font-normal placeholder:text-base bg-[#fff]  outline-0	rounded-full border border-subborder px-4  pe-10"
               placeholder={"email"}
             />
 
@@ -169,6 +169,7 @@ export default function PersonalAccountForm({
 
             <div className="flex justify-end items-center gap-2">
               <button
+                type="button"
                 disabled={LoadingComplete}
                 className="rounded-full font-bold w-[177px] px-12s  text-center !h-[56px] !mt-[30px] md:!mt-[56px] bg-white hover:bg-primary hover:text-white transition-colors text-primary border border-primary"
               >
