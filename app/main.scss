@@ -23,8 +23,8 @@
 @import "../styles/app-form.scss";
 @import "../styles/app-modal.scss";
 @import "../styles/app-uploader.scss";
+@import "../styles/app-drawer.scss";
 @import "../styles/react-quill.scss";
-
 
 ::-webkit-scrollbar {
   @apply w-2;
@@ -117,6 +117,7 @@ body.swal2-toast-shown .swal2-container.toast {
     }
   }
 }
+
 .main-modal::-webkit-scrollbar {
   @apply size-2;
 }

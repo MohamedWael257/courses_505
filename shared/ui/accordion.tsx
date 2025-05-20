@@ -21,6 +21,7 @@ AccordionItem.displayName = "AccordionItem";
 type AccordionTriggerProps = React.ComponentPropsWithoutRef<
   typeof AccordionPrimitive.Trigger
 > & {
+  icon?: any;
   iconColor?: string;
   iconWidth?: string;
   showIcon?: boolean;
@@ -28,48 +29,68 @@ type AccordionTriggerProps = React.ComponentPropsWithoutRef<
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   AccordionTriggerProps
->(({ className, iconColor, iconWidth, showIcon, children, ...props }, ref) => (
-  <AccordionPrimitive.Header className="flex">
-    <AccordionPrimitive.Trigger
-      ref={ref}
-      // [&[data-state=open]>svg]:bg-[#965C221a] [&[data-state=open]>svg]:p-1 [&[data-state=open]>svg]:rounded-lg
-      className={cn(
-        "flex flex-1 items-center  py-4 font-medium transition-all ",
-        showIcon
-          ? "[&[data-state=open]>svg.icon-open]:block [&[data-state=open]>svg.icon-closed]:hidden [&[data-state=closed]>svg.icon-open]:hidden [&[data-state=closed]>svg.icon-closed]:block"
-          : "justify-between [&[data-state=open]>svg]:rotate-180 ",
-        className
-      )}
-      {...props}
-    >
-      {showIcon && (
-        <>
-          <Minus
-            className={cn(
-              "icon-open h-6 w-6 text-error shrink-0 transition-transform duration-200 mx-4"
-            )}
-          />
-          <Plus
-            className={cn(
-              "icon-closed h-6 w-6 text-error shrink-0 transition-transform duration-200 mx-4"
-            )}
-          />
-        </>
-      )}
-      {children}
+>(
+  (
+    { className, iconColor, iconWidth, showIcon, icon, children, ...props },
+    ref
+  ) => (
+    <AccordionPrimitive.Header className="flex">
+      <AccordionPrimitive.Trigger
+        ref={ref}
+        // [&[data-state=open]>svg]:bg-[#965C221a] [&[data-state=open]>svg]:p-1 [&[data-state=open]>svg]:rounded-lg
+        className={cn(
+          "flex flex-1 items-center  py-4 font-medium transition-all ",
+          showIcon
+            ? "[&[data-state=open]>svg.icon-open]:block [&[data-state=open]>svg.icon-closed]:hidden [&[data-state=closed]>svg.icon-open]:hidden [&[data-state=closed]>svg.icon-closed]:block"
+            : icon
+            ? "justify-between  items-center [&[data-state=open]>svg.icon-open]:block [&[data-state=open]>svg.icon-closed]:hidden [&[data-state=closed]>svg.icon-open]:hidden [&[data-state=closed]>svg.icon-closed]:block"
+            : "justify-between [&[data-state=open]>svg]:rotate-180 ",
+          className
+        )}
+        {...props}
+      >
+        {showIcon && (
+          <>
+            <Minus
+              className={cn(
+                "icon-open h-6 w-6 text-error shrink-0 transition-transform duration-200 mx-4"
+              )}
+            />
+            <Plus
+              className={cn(
+                "icon-closed h-6 w-6 text-error shrink-0 transition-transform duration-200 mx-4"
+              )}
+            />
+          </>
+        )}
+        {children}
 
-      {!showIcon && (
-        <ChevronDown
-          className={`${
-            iconWidth ? `h-${iconWidth} w-${iconWidth}` : "h-6 w-6"
-          } ${
-            iconColor ? `text-[#${iconColor}]` : "text-[#965C22]"
-          } shrink-0 transition-transform duration-200`}
-        />
-      )}
-    </AccordionPrimitive.Trigger>
-  </AccordionPrimitive.Header>
-));
+        {!showIcon && (
+          <>
+            {icon ? (
+              <>
+                <Minus
+                  className={cn(
+                    "icon-open h-6 w-6 text-darkprimary shrink-0 transition-transform duration-200 mx-4"
+                  )}
+                />
+                <Plus
+                  className={cn(
+                    "icon-closed h-6 w-6 text-darkprimary shrink-0 transition-transform duration-200 mx-4"
+                  )}
+                />
+              </>
+            ) : (
+              <ChevronDown
+                className={`h-6 w-6 text-error shrink-0 transition-transform duration-200`}
+              />
+            )}
+          </>
+        )}
+      </AccordionPrimitive.Trigger>
+    </AccordionPrimitive.Header>
+  )
+);
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
 
 const AccordionContent = React.forwardRef<

@@ -6,6 +6,7 @@ import { Skeleton } from "../ui/skeleton";
 import { Cart4, Heart, Notificaation, Person, Spinner } from "../Icons";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import LangSwitcher from "../lang/LangSwitcher";
+import NotificationsDrawer from "./NotificationsDrawer";
 
 export default function HeaderPages({
   memoizedSession,
@@ -22,22 +23,7 @@ export default function HeaderPages({
   return (
     <div className="flex items-center 2xl:gap-4 gap-2">
       <LangSwitcher />
-      {/* {mainLoader ? (
-        <Skeleton className="!bg-primary w-28 h-12" />
-      ) : (
-        <div className="relative">
-          <p className="bg-white w-6 h-6 grid place-content-center rounded-full absolute -top-2 -end-3 shadow-card-shadow">
-            {productCount}
-          </p>
-          <LocalePath
-            href="/cart"
-            className="flex items-center gap-2 bg-primary text-white rounded-xl p-3 max-w-40 "
-          >
-            <Cart4 className="size-6" />
-            {totalPrice} {t("SR")}
-          </LocalePath>
-        </div>
-      )} */}
+
       <div className="relative">
         <p className="bg-error/90 text-[10px] p-[6px] text-white w-3 h-3 grid place-content-center rounded-full absolute -top-[4px] -start-0 shadow-card-shadow">
           {productCount}
@@ -54,11 +40,12 @@ export default function HeaderPages({
           <Heart className="size-6" />
         </LocalePath>
       </div>
+      <NotificationsDrawer />
 
-      <LocalePath href="/notifications" className="relative">
+      {/* <LocalePath href="/notifications" className="relative">
         <p className="bg-error/90 w-2 h-2 rounded-full absolute top-[-2px] start-[2px]"></p>
         <Notificaation className=" size-6" />
-      </LocalePath>
+      </LocalePath> */}
 
       {/* {isClient && (
         <>

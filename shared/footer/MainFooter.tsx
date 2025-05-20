@@ -53,7 +53,7 @@ export default function FooterIndex({ settings }: any) {
             <div className="grid grid-cols-2 ">
               {MainLinks.map((el: FooterLink, index: number) => (
                 <li
-                  className="my-2 font-normal hover:text-thirdy cursor-pointer"
+                  className="my-2 font-normal hover:text-primary text-darkprimary transition-colors cursor-pointer"
                   key={index}
                 >
                   <LocalePath href={el.path}>

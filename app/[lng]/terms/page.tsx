@@ -12,11 +12,6 @@ export default function page() {
           <div className="overflow-x-hidden">
             {data ? (
               <>
-                <div className="bg-secgreynormal">
-                  <div className=" container md:py-10 py-6">
-                    <AppBreadCrumbs paths={paths} title={data?.title} />
-                  </div>
-                </div>
                 <div className=" container">
                   <div className=" container md:py-10 py-6">
                     <div

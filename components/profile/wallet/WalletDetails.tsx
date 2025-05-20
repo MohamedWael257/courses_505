@@ -65,8 +65,8 @@ export default function WalletDetails({ transactions, refetch }: Props) {
                   </span> */}
                   </div>
                 ))}
-              </div>
-            </ScrollArea>
+                </div>
+              </ScrollArea>
           </>
         ) : (
           <EmptyWallet />

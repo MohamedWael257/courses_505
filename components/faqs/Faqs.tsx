@@ -38,8 +38,8 @@ export default function Faqs({ faqs, current_page, paggination }: Props) {
     }, 300);
   };
   return (
-    <div className=" container md:py-10 py-6">
-      <div ref={containerRef} className="lg:w-3/4 text-start">
+    <div className=" container md:py-10 py-6 ">
+      <div ref={containerRef} className="lg:w-[80%] text-start">
         {faqs?.map((ele, index: number) => (
           <SharedAccordion
             type="single"
@@ -49,9 +49,12 @@ export default function Faqs({ faqs, current_page, paggination }: Props) {
           >
             <AccordionItem
               value={`${ele.question}`}
-              className="bg-white  border-2 border-[#F3F3F3] w-full px-2 rounded-lg transition-[2s_height]"
+              className="bg-white  border-b-2 border-b-[#F3F3F3] w-full px-2  transition-[2s_height]"
             >
-              <AccordionTrigger className=" w-full  font-medium text-start   leading-6 text-base text-[#7F8995]">
+              <AccordionTrigger
+                icon
+                className=" w-full  font-medium text-start   leading-6 text-base text-[#7F8995]"
+              >
                 {ele.question}
               </AccordionTrigger>
 

@@ -1,0 +1,22 @@
+.app-drawer {
+  .ant-drawer-content-wrapper {
+    @apply md:w-[476px] #{!important};
+  }
+  .ant-drawer-header-title {
+    @apply flex-row-reverse gap-3;
+  }
+  .ant-drawer-close {
+    @apply size-10 rounded-xl bg-[#F0F0F2] m-0;
+  }
+}
+.notifications-drawer-container {
+  .ant-drawer-content-wrapper {
+    @apply md:w-[476px] #{!important};
+  }
+  .ant-drawer-header-title {
+    @apply flex-row-reverse gap-3;
+  }
+  .ant-drawer-close {
+    @apply size-10 rounded-xl bg-[#F0F0F2];
+  }
+}

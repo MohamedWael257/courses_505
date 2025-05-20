@@ -29,7 +29,7 @@ export default function CustomCard({
 
   return (
     <div className="bg-secprimary">
-      <div className="lg:h-[500px] h-screen xl:w-[60%] w-3/4 mx-auto text-center relative lg:pt-36 pt-8 container">
+      <div className="lg:h-[400px] h-screen xl:w-[60%] w-3/4 mx-auto text-center relative lg:pt-20 pt-8 container">
         <div className="relative z-40">
           <h2
             className={` ${

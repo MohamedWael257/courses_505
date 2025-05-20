@@ -55,6 +55,7 @@
   "Text": {
     "return_write_code": " قم باعادة كتابة رمز الخصم",
     "success_code": "تم خصم {discount}",
+    "seen_mark": "تمييز كمقروء",
 
     "giftsDetailsSuccessTitle": "لقد تم استخدام النقط بنجاح",
     "giftsDetailsSuccessDesc": "لقد تم اضافة الخصم الي قسائم الشراء الخاصة بك بنجاح ويمكنك الاستفادة منها في أي وقت حتى تاريخ انتهاء الخصم.",

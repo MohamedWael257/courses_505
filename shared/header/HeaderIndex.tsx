@@ -68,7 +68,8 @@ export default function HeaderIndex({ settings }: any) {
   const isRedLogo =
     pathname?.endsWith("books") ||
     pathname?.endsWith("faqs") ||
-    pathname?.endsWith("contact-us") ||
+    pathname?.endsWith("about") ||
+    pathname?.endsWith("contact") ||
     (pathname?.includes("courses") && !pathname?.includes("profile")) ||
     pathname?.endsWith("terms") ||
     pathname?.endsWith("en") ||

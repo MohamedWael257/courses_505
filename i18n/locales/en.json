@@ -53,6 +53,7 @@
   "Text": {
     "return_write_code": "Please rewrite the discount code",
     "success_code": "Discount of {discount} applied",
+    "seen_mark": "Mark as Read",
 
     "giftsDetailsSuccessTitle": "Points used successfully",
     "giftsDetailsSuccessDesc": "The discount has been successfully added to your vouchers and can be used at any time until the expiration date.",
