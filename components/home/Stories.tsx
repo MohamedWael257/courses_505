@@ -59,7 +59,9 @@ export default function Stories({ stories }: Props) {
           }}
         >
           {[...Array(6)].map((item, index) => (
-            <div className="bg-greynormal p-6 rounded-2xl w-full cursor-default  relative z-[9999] ">
+            <div
+              key={index}
+              className="bg-greynormal p-6 rounded-2xl w-full cursor-default  relative z-[9999] ">
               <div className="flex gap-2">
                 <Rate
                   tooltips={desc}

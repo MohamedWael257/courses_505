@@ -87,7 +87,9 @@ export default function CoursesIndex({
         <> */}
         <div className="grid gap-6 items-center">
           {[...Array(3)].map((item: any, index) => (
-            <div className="grid grid-cols-3 gap-4 items-center ">
+            <div
+              key={index}
+              className="grid grid-cols-3 gap-4 items-center ">
               <div className="grid grid-cols-[auto_1fr] gap-4 items-center col-span-2">
                 <ImageWithFallback
                   src={course}

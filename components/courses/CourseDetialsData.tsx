@@ -210,7 +210,10 @@ export default function CourseDetialsData({ data }: Props) {
           </h2>
           <div className="grid gap-6">
             {[...Array(3)].map((item, index) => (
-              <div className="p-4 rounded-2xl border border-greynormal">
+              <div
+                key={index}
+                className="p-4 rounded-2xl border border-greynormal"
+              >
                 <div className="flex justify-between items-center">
                   <h2 className="font-medium text-lg text-darkprimary leading-7 text-start">
                     المجموعة الأولي

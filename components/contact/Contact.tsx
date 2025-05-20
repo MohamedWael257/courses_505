@@ -92,7 +92,10 @@ export default function Contact({ settings }: { settings: any }) {
             </p>
             {setting?.phones?.map((ele: any, index: number) => {
               return (
-                <div className="mt-6 grid grid-cols-[auto_1fr] items-center">
+                <div
+                  key={index}
+                  className="mt-6 grid grid-cols-[auto_1fr] items-center"
+                >
                   <FaLocationDot
                     size={35}
                     className="mx-4 text-error border-[1px] border-error/[.15] rounded-full p-2"

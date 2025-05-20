@@ -1,4 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable react-hooks/rules-of-hooks */
+
 "use client";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
@@ -42,7 +43,7 @@ interface LocationFormProps {
   refetch: any;
   refresh?: any;
 }
-const locationForm: React.FC<LocationFormProps> = ({
+const LocationForm: React.FC<LocationFormProps> = ({
   setAuthStage,
   dialogOpen,
   refetch,
@@ -295,4 +296,4 @@ const locationForm: React.FC<LocationFormProps> = ({
   );
 };
 
-export default locationForm;
+export default LocationForm;
