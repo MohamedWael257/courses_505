@@ -57,7 +57,6 @@ const GeneralSlider: React.FC<GeneralSliderProps> = ({
   spaceBetween = 0,
   breakpoints,
 }) => {
-  console.log("🚀 ~ extraSettings:", extraSettings);
   const swiperRef = useRef<any | null>(null);
   const options: any = {
     spaceBetween: `${spaceBetween}`,

@@ -395,9 +395,9 @@ export default function ChatsIndex() {
                             className={`relative w-fit p-4  bg-greynormal rounded-xl `}
                             // onClick={() => handleImageClick(msg?.ImageUrl)}
                           >
-                            <img
-                              // width={1000}
-                              // height={1000}
+                            <ImageWithFallback
+                              width={1000}
+                              height={1000}
                               src={msg?.message}
                               alt="Chat Image"
                               className="w-[200px] mx-auto h-[300px] object-contain"

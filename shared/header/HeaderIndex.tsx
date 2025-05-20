@@ -73,7 +73,9 @@ export default function HeaderIndex({ settings }: any) {
     (pathname?.includes("courses") && !pathname?.includes("profile")) ||
     pathname?.endsWith("terms") ||
     pathname?.endsWith("en") ||
-    pathname == "/";
+    pathname == "/" ||
+    pathname == "" ||
+    pathname == "/ar";
 
   const isAuth = pathname?.includes("auth");
   return (
