@@ -123,6 +123,9 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
         }
       } catch (error) {
         console.error("Error fetching countries:", error);
+        setDefaultCountry("sa");
+        setDialCode("+966");
+        setPhone("+966");
       } finally {
         setLoading(false);
       }
@@ -222,7 +225,7 @@ const PhoneNumber: React.FC<PhoneNumberProps> = ({
               ) : (
                 <PhoneInput
                   enableSearch
-                  country={countries[0]?.shortName}
+                  country={countries[0]?.shortName || "sa"}
                   disabled={disabled}
                   placeholder={t(placeholder)}
                   onlyCountries={
